@@ -1,6 +1,6 @@
 # MATH 390.03-02 Spring 2016
 
-This is the course homepage for Bayesian Data Analysis Math 390.03-02 for the Fall semester 2015 at Queens College, City University of New York taught by Professor Adam Kapelner. The syllabus can be found [here](https://raw.githubusercontent.com/kapelner/QC_Math_390.03-02_Spr_2016/master/syllabus/syllabus.pdf).
+This is the course homepage for the Bayesian Statistics Experimental Courses (AKA Math 390.03-02) for the Spring semester 2016 at Queens College, City University of New York taught by Professor Adam Kapelner. The syllabus can be found [here](https://raw.githubusercontent.com/kapelner/QC_Math_390.03-02_Spr_2016/master/syllabus/syllabus.pdf).
 
 ## Lectures
 
@@ -48,12 +48,12 @@ My lectures can be listened to as clyp.it tracks and lecture notes are also scan
 
 ## Exams
 
-* Midterm I October 8 (in class). 
+* Midterm I March 9 (in class). 
 
 <!--
 [(exam)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm1/midterm1.pdf) [(exam solutions)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm1/midterm1_solutions.pdf)-->
 
-* Midterm II November 12 (in class). 
+* Midterm II April 20 (in class). 
 
 <!--
 [(exam)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm2/midterm2.pdf) [(exam solutions)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm2/midterm2_solutions.pdf)-->
@@ -67,8 +67,7 @@ My lectures can be listened to as clyp.it tracks and lecture notes are also scan
 
 I *want* you to come to office hours! My office hours are:
 
-Time: TBA
-Location: Kiely Hall 604 (my office)
+Time TBA at Kiely Hall 604 (my office)
 
 ## Grades and Class Standing
 
