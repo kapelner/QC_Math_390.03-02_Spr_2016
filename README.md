@@ -27,9 +27,9 @@ My lectures can be listened to as clyp.it tracks and lecture notes are also scan
 * Lecture 6 [(audio)](https://clyp.it/ikhse5o0) [(Qingyun Ni)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec06qn.pdf) [(Kelvin Chang)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec06kc.pdf) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec06kap.pdf)
 * Lecture 5 [(audio)](https://clyp.it/g3ragjsg) [(Katherine Sandoval)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec05ks.pdf) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec05kap.pdf)
 * Lecture 4 [(Salma Ismail)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec04si.pdf) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec04kap.pdf)
-* Lecture 3 [(Qingyun Ni)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec03qn.pdf) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec03kap.pdf)
-* Lecture 2 [(Qingyun Ni)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec02qn.pdf) [(Gabriel Campos)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec02gc.pdf)   [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec02kap.pdf)
-* Lecture 1 [(Gabriel Campos)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec01gc.pdf) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec01kap.pdf)-->
+* Lecture 3 [(Qingyun Ni)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec03qn.pdf) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec03kap.pdf)-->
+* Lecture 2 [(audio)](https://clyp.it/epg3ptbh) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec02kap.pdf)
+* Lecture 1 [(audio)](https://clyp.it/pxhx0ple) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec01kap.pdf)
 
 ## Homeworks
 
@@ -67,7 +67,7 @@ My lectures can be listened to as clyp.it tracks and lecture notes are also scan
 
 I *want* you to come to office hours! My office hours are:
 
-Time TBA at Kiely Hall 604 (my office)
+Time M/W 11:40AM - 12:20PM in Kiely Hall 604 (my office)
 
 ## Grades and Class Standing
 
