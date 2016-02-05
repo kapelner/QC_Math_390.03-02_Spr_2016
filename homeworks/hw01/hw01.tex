@@ -24,7 +24,7 @@
 \begin{abstract}
 The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
 
-Reading is still \textit{required}. For this homework set, review Math 241 concerning random variables, support, parameter space, PMF's, PDF's, CDF's, Bayes Rule, read about parametric families and maximum likelihood estimators on the Internet, read ch 4 of Bolstad and read the preface and Ch1 of McGrayne.
+Reading is still \textit{required}. For this homework set, review Math 241 concerning random variables, support, parameter space, PMF's, PDF's, CDF's, Bayes Rule, read about parametric families and maximum likelihood estimators on the Internet, read the preface and ch 1 and 4 of Bolstad and read the preface and Ch1 of McGrayne.
 
 The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
 
@@ -44,6 +44,153 @@ NAME: \line(1,0){380}
 \clearpage
 }
 
+
+\problem{These exercises will review the Bernoulli model.}
+
+
+\begin{enumerate}
+
+\easysubproblem{If $X \sim \bernoulli{\theta}$, find $\expe{X}$, $\var{X}$, $\support{X}$ and $\Theta$. No need to derive from first principles, just find the formulas.}\spc{2}
+
+\intermediatesubproblem{If $X \sim \bernoulli{\theta}$, find $\median{X}$.}\spc{2}
+
+\intermediatesubproblem{If $X \sim \bernoulli{\theta}$, write the \qu{parametric statistical model} below using the notation we used in class only.}\spc{2}
+
+
+\intermediatesubproblem{Explain what the semicolon notation in the previous answer indicates.}\spc{2}
+
+\easysubproblem{If $\Xoneton \iid \bernoulli{\theta}$, find the likelihood, $\mathcal{L}$, of $\theta$.}\spc{2}
+
+\hardsubproblem{Given the likelihood above, what would $\mathcal{L}$ be if the data was $<0,1,0,1,3.7>$ and why should that be?}\spc{2}
+
+\easysubproblem{If $\Xoneton \iid \bernoulli{\theta}$, find the log-likelihood of $\theta$.}\spc{2}
+
+\hardsubproblem{[MA] If $\Xoneton \iid f(x;\theta)$, explain why the log-likelihood of $\theta$ is always normally distributed.}\spc{6}
+
+\easysubproblem{If $\Xoneton \iid \bernoulli{\theta}$, find the score function (i.e the derivative of the log-likelihood) of $\theta$.}\spc{2}
+
+\intermediatesubproblem{If $\Xoneton \iid \bernoulli{\theta}$, find the maximum likelihood estimator for $\theta$.}\spc{5}
+
+\easysubproblem{If $\Xoneton \iid \bernoulli{\theta}$, find the maximum likelihood \textit{estimate} for $\theta$.}\spc{1}
+
+\easysubproblem{Given the previous two questions, describe the difference between a random variable and a datum.}\spc{3}
+
+\easysubproblem{If your data is $<0,1,1,0,1,1,0,1,1,1>$, find the maximum likelihood estimate for $\theta$.}\spc{1}
+
+\easysubproblem{Given this data, find a 99\% confidence interval for $\theta$.}\spc{3}
+
+\easysubproblem{Given this data, test $H_0: \theta = 0.5$ versus $H_a: \theta \neq 0.5$.}\spc{3}
+
+\end{enumerate}
+
+\problem{We will review the frequentist perspective here.}
+
+\begin{enumerate}
+
+\hardsubproblem{Why do frequentists have an insistence on $\theta$ being a fixed, immutable quantity?}\spc{3}
+
+\easysubproblem{What are the three goals of inference?}\spc{2}
+
+\easysubproblem{What are the three reasons why \emph{frequentists} (adherents to the frequentist perspective) use MLEs i.e. list three properties of MLEs that make them powerful.}\spc{3}
+
+\hardsubproblem{[MA] Give the conditions for asymptotic normality of the MLE,
+
+\beqn
+\frac{\thetahatmle - \theta}{\se{\thetahatmle}} \convd \stdnormnot.
+\eeqn
+
+You can find them online.}\spc{3}
+
+\hardsubproblem{[MA] In class we said that $\se{\thetahatmle}$ cannot be found without $\theta$ so we substituted $\thetahatmle$ into $\se{\thetahatmle}$ and called it $\seest{\thetahatmle}$ (note the hat over the SE). Show that this too is asymptotically normal, \ie
+
+\beqn
+\frac{\thetahatmle - \theta}{\seest{\thetahatmle}} \convd \stdnormnot
+\eeqn
+
+You need the continuous mapping theorem and Slutsky's theorem.
+}\spc{4}
+
+\easysubproblem{[MA] Explain why the previous question allows us to build asymptotically valid confidence intervals using $\bracks{\thetahatmle \pm z_{\alpha/2} \seest{\thetahatmle}}$}.\spc{3}
+
+\intermediatesubproblem{Why does all of frequentist inference break down if $n$ isn't large?}\spc{3}
+
+\easysubproblem{Write the three frequentist interpretations of a confidence interval}.\spc{3}
+
+\intermediatesubproblem{Why are each of these unsatisfactory?}\spc{3}
+
+\easysubproblem{What are the two possible outcomes of a hypothesis test?}\spc{3}
+
+\intermediatesubproblem{What is the weakness of the interpretation in both outcomes?}\spc{3}
+
+\hardsubproblem{[MA] What is the weakness of the interpretation of the $p$-val?}\spc{3}
+
+
+\end{enumerate}
+
+
+\problem{We review and build upon conditional probability here.}
+
+\begin{enumerate}
+
+
+\easysubproblem{Explain why $\cprob{B}{A} \propto \prob{A,B}$.}\spc{3}
+
+\easysubproblem{if $B$ represents the hypothesis or the putative cause and $A$ represents evidence or data, explain what Bayesian Conditionalism is, going from which probability statement to which probability statement.}\spc{3}
+
+\intermediatesubproblem{In class we presented the posterior odds form of Bayes Theorem. Prove it below.}\spc{3}
+
+\intermediatesubproblem{Show that the Bayes Factor is the ratio of posterior odds of the hypothesis to prior odds of the hypothesis.}\spc{2}
+
+\easysubproblem{On the \href{https://en.wikipedia.org/wiki/Bayes_factor}{wikipedia page about Bayes Factors}, Harrold Jeffreys (who we will be returning to later in the semester) gave interpretations of Bayes Factors (which is denoted $K$ there and $B$ in Bolstad's book on page 70). Give the ranges of $K$ here (not in terms of powers of 10, but as a pure number) for his interpretations i.e. \qu{negative,} \qu{strong,} etc.}\spc{3}
+
+\hardsubproblem{[MA] Conceptually why should the likelihood being greater than $\prob{A}$ imply that the hypothesis is more likely after observing the data than before?}\spc{3}
+\end{enumerate}
+
+\problem{We examine here paternity testing (i.e. answering the question \qu{is this guy the father of my child?}) via the simplistic test using blood types. I'm not an expert on the subject, but more advanced genetic tests. In this case consider a child of blood type B and the mother of blood type A. Using this \href{http://www.cccoe.net/genetics/blood2.html}{hereditary guide}, we know that the mother's type must be Ao so she passed on an o to the child thus the child got the B from the father. Thus the father had type AB, BB or Bo. I got the following data from \href{http://www.sciencedirect.com/science/article/pii/S1110863011000796}{this paper} (so let's assume this case is in Nigeria in 1998). A mother and a father passes one of their alleles with probability 50\%. So if you are genotype AO
+
+\begin{table}
+\centering
+\begin{tabular}{cc}
+Genotype & Frequency \\ \hline
+OO	&0.52 \\
+AA	&0.0196 \\
+AO	&0.2016 \\
+BB	&0.0196 \\
+BO	&0.2016 \\
+AB	&0.0392 \\
+\end{tabular}
+\end{table}
+} 
+
+\begin{enumerate}
+
+\easysubproblem{Bob is the alleged father and he has blood type B but his genotype is unknown. What is the probability he passes on a B to the child?}\spc{3}
+
+\easysubproblem{What is the probability a stranger passes on a B to the child?}\spc{2}
+
+\easysubproblem{Assume our prior is 50-50 Bob is the father, the customary compromise between a possibly bitter mother and father. What is the prior odds of Bob being the father? Don't think too hard about this one; it is marked easy for a reason.}\spc{1}
+
+\hardsubproblem{We are interested in the posterior question. What is the probability Bob is the father given the child with blood type B?}\spc{3}
+
+\hardsubproblem{What is the Bayes Factor here? See (a) and (b).}\spc{2}
+
+\easysubproblem{What is the probability Bob is not the father given the child with blood type B? Should be easy once you have (c) and (e).}\spc{3}
+
+\end{enumerate}
+
+\problem{These are questions about McGrayne's book, preface and chapter 1.}
+
+\begin{enumerate}
+
+\easysubproblem{Explain Hume's problem of induction with the sun rising every day.}\spc{3}
+
+\easysubproblem{Explain the \qu{inverse probability problem.}}\spc{3}
+
+\easysubproblem{What is Bayes' billiard table problem?}\spc{3}
+
+\hardsubproblem{[MA] How did Price use Bayes' idea to prove the existence of the deity?} \spc{3}
+
+\end{enumerate}
 
 
 \end{document}
