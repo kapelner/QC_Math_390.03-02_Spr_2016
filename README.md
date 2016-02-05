@@ -33,17 +33,6 @@ My lectures can be listened to as clyp.it tracks and lecture notes are also scan
 
 ## Homeworks
 
-<!--
-* [Homework 11](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw11/hw11.pdf?raw=true) (due 12/14/15)
-* [Homework 10](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/hw10.pdf?raw=true) (due 12/4/15)
-* [Homework 9](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw09/hw09.pdf?raw=true) (due 11/23/15)
-* [Homework 8](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw08/hw08.pdf?raw=true) (due 11/6/15)
-* [Homework 7](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw07/hw07.pdf?raw=true) (due 10/30/15)
-* [Homework 6](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw06/hw06.pdf?raw=true) (due 10/23/15)
-* [Homework 5](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw05/hw05.pdf?raw=true) (due 10/15/15)
-* [Homework 4](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw04/hw04.pdf?raw=true) (due 10/02/15)
-* [Homework 3](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw03/hw03.pdf?raw=true) (due 9/25/15)
-* [Homework 2](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw02/hw02.pdf?raw=true) (due 9/17/15)-->
 * Homework 1 due 2/12/16 [(download)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw01/hw01.pdf)
 
 ## Exams
