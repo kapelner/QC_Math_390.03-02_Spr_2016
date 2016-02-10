@@ -62,27 +62,124 @@ NAME: \line(1,0){380}
 
 \hardsubproblem{Prove the version of Bayes Rule found on page 20. State your assumption(s) explicitly. Reference class notes as well.}\spc{4}
 
-\easysubproblem{Give two problems / domains Laplace used the inverse probability theory to help solve}\spc{3}
+\easysubproblem{Give two scientific contexts where Laplace used inverse probability theory to solve major problems.}\spc{3}
 
 \hardsubproblem{[MA] Why did Laplace turn into a frequentist later in life?} \spc{3}
 
 \easysubproblem{State Laplace's version of Bayes Rule (p31).} \spc{3}
 
-\easysubproblem{Why was Bayes Rule damned (pp36-37)?} \spc{3}
+\easysubproblem{Why was Bayes Rule \qu{damned} (pp36-37)?} \spc{3}
 
 \easysubproblem{According to Edward Molina, what is the prior (p41)?} \spc{3}
 
 \easysubproblem{What is the source of the \qu{credibility} metric that insurance companies used in the 1920's?} \spc{3}
 
-\hardsubproblem{In class we discussed the \qu{principle of indifference} which is a term I borrowed from \href{http://www.amazon.com/Philosophical-Theories-Probability-Issues-Science/dp/041518276X/ref=sr_1_1?ie=UTF8&qid=1455112335&sr=8-1&keywords=donald+gillies+theory+of+probability}{Donald Gillies' Philosophical Theories of Probability}. McGrayne in her research of original sources comes up with many names for this principle. List all of them here.} \spc{3}
+\easysubproblem{Can the principle of inverse probability work without priors? Yes/no} \spc{1}
+
+\hardsubproblem{In class we discussed the \qu{principle of indifference} which is a term I borrowed from \href{http://www.amazon.com/Philosophical-Theories-Probability-Issues-Science/dp/041518276X/ref=sr_1_1?ie=UTF8&qid=1455112335&sr=8-1&keywords=donald+gillies+theory+of+probability}{Donald Gillies' Philosophical Theories of Probability}. On Wikipedia, it says that Jacob Bernoulli called it the \qu{principle of insufficient reason}. McGrayne in her research of original sources comes up with many names throughout history this principle was named. List all of them you can find here.} \spc{1}
+
+\easysubproblem{Jeffreys seems to be the founding father of modern Bayesian Statistics. But why did the world turn frequentist in the 1920's? (p57)} \spc{1}
 \end{enumerate}
 
 
-\problem{More about likelihood estimators}
+\problem{More about likelihood estimators. These exercises are important because we will soon be doing normal mean estimation using the Bayesian shrinkage estimator.}
 
 \begin{enumerate}
 
-\easysubproblem{Write the PDF of $X$.}\spc{3}
+\easysubproblem{Write the PDF of $X \sim \normnot{\theta}{1^2}$.}\spc{3}
+
+\hardsubproblem{Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\theta}{1^2}$.}\spc{3}
+
+\hardsubproblem{[MA] Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\mu}{\sigsq}$. Solve the system of equations $\partialop{\mu}{\ell(\theta)} = 0$ and $\partialop{\sigsq}{\ell(\theta)} = 0$ where $\ell(\theta)$ denotes the log likelihood. You can easily find this online. But try to do it yourself.} \spc{8}
+
+\end{enumerate}
+
+\problem{More about likelihood estimators. These exercises are important because we will soon be doing normal mean estimation using the Bayesian shrinkage estimator.}
+
+\begin{enumerate}
+
+\easysubproblem{Write the PDF of $X \sim \normnot{\theta}{1^2}$.}\spc{3}
+
+\hardsubproblem{Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\theta}{1^2}$.}\spc{3}
+
+\hardsubproblem{[MA] Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\mu}{\sigsq}$. Solve the system of equations $\partialop{\mu}{\ell(\theta)} = 0$ and $\partialop{\sigsq}{\ell(\theta)} = 0$ where $\ell(\theta)$ denotes the log likelihood. You can easily find this online. But try to do it yourself.} \spc{8}
+
+\end{enumerate}
+
+\problem{This problem is concerned with one of the definitions of probability. In Math 241 I taught that there were two perspectives on probability which loosely yielded four definitions according to \href{http://www.amazon.com/Philosophical-Theories-Probability-Issues-Science/dp/041518276X/ref=sr_1_1?ie=UTF8&qid=1455112335&sr=8-1&keywords=donald+gillies+theory+of+probability}{Gillies}. As a review, we have:
+
+\begin{enumerate}[1.]
+\item \textbf{The Objective View} --- This is the view that probabilities are properties of the physical world and can only be defined by either
+
+\begin{enumerate}[(a)] 
+\item its \textbf{Long Run Frequency} Seeing the same event over and over again and tabulating when the event occurs will create a frequency which will asympotically become the probability or
+\item its \textbf{Propensity} which means deep down inside, the physical object is wired for events in certain proportions
+\end{enumerate}
+
+
+Thus events that are non physical such as the probability of Donald Trump winning the 2016 election is outside of the purview of probability. The objective view of probability is tied to the frequentist view of statistics. We also have the...
+
+\item \textbf{The Epistemic View} --- This is the view that probabilities are inherently living inside the minds of human beings who are forced to grapple with uncertainty as they see it. This was Laplace's view --- probability is an illusion because we don't have certainty about the universe. The two definitions here are that probability
+
+\begin{enumerate}[(a)] 
+\item is \textbf{Logical} which means that given the same information, everyone would come to the same conclusion.
+\item is \textbf{Subjective} which means that given the same information, everyone would \textit{not} come to the same conclusion. Thus probability is defined as the degree of belief of some individual which differs from another individual.
+\end{enumerate}
+
+Thus events that are non physical such as the probability of Donald Trump winning the 2016 election can now be legitimate probabilities as they can be computed.\\
+
+We will focus here on the logical definition.
+
+\end{enumerate}
+}
+
+\begin{enumerate}
+
+\easysubproblem{In the logical definition we see written \qu{given the same information}. What does \qu{information} mean here? $X$ or $\theta$?}\spc{1}
+
+\easysubproblem{In the logical definition we see written \qu{would come to the same conclusion}. What does \qu{conclusion} mean here? Look at the four parts of the Bayes Rule equation for posterior inference and write the correct one.}\spc{1}
+
+\easysubproblem{Given parts (a) and (b), what does everyone need to start with for conclusions to be the same?}\spc{1}
+
+\extracreditsubproblem{[MA] For some reason in order for the logical definition to work, Keynes required the principle of indifference which is a stronger assumption than everyone begins with equal priors. I can't figure out why. Extra credit to anyone who figures out why this is the case.}\spc{0}
+
+
+\easysubproblem{In order for the logical definition to work, one must employ the principle of indifference. State that principle for a discrete set $\Theta_0 = \braces{\theta_1, \ldots, \theta_m}$ by giving the prior distribution of $\theta$.}\spc{2}
+
+\easysubproblem{In order for the logical definition to work, one must employ the principle of indifference. State that principle for a continuous set $\Theta_0 = \bracks{a,~b}$ by giving the prior distribution of $\theta$.}\spc{2}
+
+\hardsubproblem{Show that if $\Theta_0 = \braces{\theta_1, \ldots}$ i.e. is countably infinite, the principle of indifference fails. Proof by contradiction is an easy strategy.}\spc{2}
+
+\hardsubproblem{[MA] Show that if $\Theta_0 = \reals$ or some subset of $\reals$ of infinite measure, the principle of indifference fails. Proof by contradiction is an easy strategy.}\spc{2}
+
+\hardsubproblem{State a practical case where you would not want to use the principle of indifference. Think simple. Think coins and coin flips.}\spc{4} %put paradoxes on next homework...
+
+\hardsubproblem{[MA] How is the objectivist view of probability related to the frequentist view of statistics?}\spc{4}
+
+\hardsubproblem{[MA] How is the epistemic view of probability related to the Bayesian view of statistics?}\spc{4}
+
+\end{enumerate}
+
+
+\problem{More about fundamentals of the Bayesian perspective.}
+
+\begin{enumerate}
+
+
+\intermediatesubproblem{Imagine in class we had a prior on $\theta$ in the Bernoulli family of indifferent between $\theta = 0.25$ and $\theta = 0.75$. What is the \textit{prior predictive distribution} i.e. what is the distribution of $X_1$ not seeing any data just given the prior. Draw the tree out as I did in class and it will be obvious.} \spc{4}
+
+\hardsubproblem{Give the formula in general for the prior predictive distribution for both the discrete and continuous case for general $\mathcal{F}$. Call it $\prob{X}$.} \spc{3}
+
+
+\easysubproblem{Is this the same as the marginal likelihood / prior on the data as we've seen in class? Yes/no. Write a sentence giving more flesh to the definition of that pesky denominator $\prob{X}$.}\spc{2}
+
+
+\intermediatesubproblem{The denominator of the expression for the posterior $\prob{\Xoneton}$ is called the \qu{marginal likelihood} or the \qu{prior on the data}. Explain why if the \qu{classic} idea of independence you learned in 241 i.e. $\prob{\Xoneton} = \prod_{i=1}^n \prob{X_i}$ was applicable in the Bayesian perspective then no learning can be done from experience. Use the expression for the posterior predictive distribution to make a simple one-line statement.}\spc{3}
+
+\intermediatesubproblem{[MA] We have showed that $\Xoneton$ are not independent. Show here that although they are not independent, they are identically distributed. You will need to use the property that $X_1~|~\theta, \ldots, X_n~|~\theta \iid p(x)$. I know this is splitting hairs, but it's a good property to prove.}\spc{3}
+
+\hardsubproblem{We showed in class that $\Xoneton$ are not independent. Independence is in some sense \qu{too strong} in te }\spc{3}
+
 \end{enumerate}
 
 
