@@ -90,7 +90,7 @@ NAME: \line(1,0){380}
 
 \hardsubproblem{Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\theta}{1^2}$.}\spc{3}
 
-\hardsubproblem{[MA] Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\mu}{\sigsq}$. Solve the system of equations $\partialop{\mu}{\ell(\theta)} = 0$ and $\partialop{\sigsq}{\ell(\theta)} = 0$ where $\ell(\theta)$ denotes the log likelihood. You can easily find this online. But try to do it yourself.} \spc{8}
+\hardsubproblem{[MA] Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\mu}{\sigsq}$. Solve the system of equations $\partialop{\mu}{\ell(\theta)} = 0$ and $\partialop{\sigsq}{\ell(\theta)} = 0$ where $\ell(\theta)$ denotes the log likelihood. You can easily find this online. But try to do it yourself.} \spc{10}
 
 \end{enumerate}
 
@@ -100,9 +100,9 @@ NAME: \line(1,0){380}
 
 \easysubproblem{Write the PDF of $X \sim \normnot{\theta}{1^2}$.}\spc{3}
 
-\hardsubproblem{Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\theta}{1^2}$.}\spc{3}
+\hardsubproblem{Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\theta}{1^2}$.}\spc{5}
 
-\hardsubproblem{[MA] Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\mu}{\sigsq}$. Solve the system of equations $\partialop{\mu}{\ell(\theta)} = 0$ and $\partialop{\sigsq}{\ell(\theta)} = 0$ where $\ell(\theta)$ denotes the log likelihood. You can easily find this online. But try to do it yourself.} \spc{8}
+\hardsubproblem{[MA] Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\mu}{\sigsq}$. Solve the system of equations $\partialop{\mu}{\ell(\theta)} = 0$ and $\partialop{\sigsq}{\ell(\theta)} = 0$ where $\ell(\theta)$ denotes the log likelihood. You can easily find this online. But try to do it yourself.} \spc{11}
 
 \end{enumerate}
 
@@ -139,14 +139,14 @@ We will focus here on the logical definition.
 
 \easysubproblem{In the logical definition we see written \qu{would come to the same conclusion}. What does \qu{conclusion} mean here? Look at the four parts of the Bayes Rule equation for posterior inference and write the correct one.}\spc{1}
 
-\easysubproblem{Given parts (a) and (b), what does everyone need to start with for conclusions to be the same?}\spc{1}
+\easysubproblem{Given parts (a) and (b), what does everyone need to start with being the same for conclusions to be the same?}\spc{1}
 
-\extracreditsubproblem{[MA] For some reason in order for the logical definition to work, Keynes required the principle of indifference which is a stronger assumption than everyone begins with equal priors. I can't figure out why. Extra credit to anyone who figures out why this is the case.}\spc{0}
+\extracreditsubproblem{[MA] For some reason in order for the logical definition to work, Keynes required the principle of indifference which is a stronger assumption than everyone begins with equal priors. Why do you think that is?}\spc{4}
 
 
-\easysubproblem{In order for the logical definition to work, one must employ the principle of indifference. State that principle for a discrete set $\Theta_0 = \braces{\theta_1, \ldots, \theta_m}$ by giving the prior distribution of $\theta$.}\spc{2}
+\easysubproblem{The logical definition requires employing the principle of indifference. State the principle of indifference for a discrete set $\Theta_0 = \braces{\theta_1, \ldots, \theta_m}$ by giving the prior distribution of $\theta$.}\spc{2}
 
-\easysubproblem{In order for the logical definition to work, one must employ the principle of indifference. State that principle for a continuous set $\Theta_0 = \bracks{a,~b}$ by giving the prior distribution of $\theta$.}\spc{2}
+\easysubproblem{State the principle of indifference for a continuous set $\Theta_0 = \bracks{a,~b}$ by giving the prior distribution of $\theta$.}\spc{2}
 
 \hardsubproblem{Show that if $\Theta_0 = \braces{\theta_1, \ldots}$ i.e. is countably infinite, the principle of indifference fails. Proof by contradiction is an easy strategy.}\spc{2}
 
@@ -160,13 +160,41 @@ We will focus here on the logical definition.
 
 \end{enumerate}
 
+\problem{\textbf{More coin flips.} The purpose of this exercise is for you to review the methods we did in class concerning the binomial likelihood and Bayesian inference for the parameter $\theta = p$.}
+
+\begin{enumerate}
+
+
+\easysubproblem{Assume that $\Theta_0 = \braces{0.1,~0.5}$. Using the principle of indifference, what is the prior?} \spc{1}
+
+\intermediatesubproblem{Draw the space $\Theta_0 \times \mathcal{X}$ to scale just like we did in class.} \spc{10}
+
+\intermediatesubproblem{Draw the space for $\Theta_0$ given the data was 0,0,0 to scale just like we did in class.} \spc{5}
+
+\easysubproblem{Calculate $\cprob{\theta = 0.1}{X_1 = 0,~X_2 = 0,~X_3 = 0}$}. The picture above should help. \spc{3}
+
+\easysubproblem{Assume for the rest of the problem that $\Theta_0 = \braces{\theta_1, \theta_2, \ldots, \theta_5}$. Assume the same data as we did in class $x_1 = 0,~x_2 = 1,~x_3 = 1$. Write out the likelihood. Your answer should not include any $\theta_i$'s but a general free variable $\theta$.}\spc{3}
+
+
+\intermediatesubproblem{Right out an expression for the denominator using the sum notation. The denominator here would be $\prob{X_1 = 0,~X_2 = 1,~X_3 = 1}$.}\spc{3}
+
+\intermediatesubproblem{Solve for the posterior probability of $\theta$ using your answers from the previous questions.} \spc{4}
+
+
+\intermediatesubproblem{Solve for the posterior probability of $\theta$ using your answers from the previous questions.} \spc{5}
+
+\hardsubproblem{Write expressions for $\thetahatmap$, $\thetahatmae$ and $\thetahatmmse$, i.e. the three Bayesian point estimators we discussed in class.} \spc{5}
+
+\hardsubproblem{Find the distribution $\cprob{X^*}{X_1 = 0,~X_2 = 1,~X_3 = 1}$ where $x^*$ is a new realization from the model $\mathcal{F}$ heretofore never seen. Sum signs are okay.} \spc{5}
+\end{enumerate}
+
 
 \problem{More about fundamentals of the Bayesian perspective.}
 
 \begin{enumerate}
 
 
-\intermediatesubproblem{Imagine in class we had a prior on $\theta$ in the Bernoulli family of indifferent between $\theta = 0.25$ and $\theta = 0.75$. What is the \textit{prior predictive distribution} i.e. what is the distribution of $X_1$ not seeing any data just given the prior. Draw the tree out as I did in class and it will be obvious.} \spc{4}
+\intermediatesubproblem{Imagine in class we had a prior on $\theta$ in the Bernoulli family of indifferent between $\theta = 0.25$ and $\theta = 0.75$. What is the \textit{prior predictive distribution} i.e. what is the distribution of $X_1$ not seeing any data just given the prior. Draw the tree out as I did in class and it will be obvious. This is \textit{not} the posterior predictive distribution.} \spc{4}
 
 \hardsubproblem{Give the formula in general for the prior predictive distribution for both the discrete and continuous case for general $\mathcal{F}$. Call it $\prob{X}$.} \spc{3}
 
@@ -174,12 +202,18 @@ We will focus here on the logical definition.
 \easysubproblem{Is this the same as the marginal likelihood / prior on the data as we've seen in class? Yes/no. Write a sentence giving more flesh to the definition of that pesky denominator $\prob{X}$.}\spc{2}
 
 
-\intermediatesubproblem{The denominator of the expression for the posterior $\prob{\Xoneton}$ is called the \qu{marginal likelihood} or the \qu{prior on the data}. Explain why if the \qu{classic} idea of independence you learned in 241 i.e. $\prob{\Xoneton} = \prod_{i=1}^n \prob{X_i}$ was applicable in the Bayesian perspective then no learning can be done from experience. Use the expression for the posterior predictive distribution to make a simple one-line statement.}\spc{3}
+\intermediatesubproblem{More about the marginal likelihood... Explain why if the \qu{classic} idea of independence you learned in 241 i.e. $\prob{X} := \prob{\Xoneton} = \prod_{i=1}^n \prob{X_i}$ was applicable in the Bayesian perspective then no learning can be done from experience. Use the expression for the posterior predictive distribution to make a simple one-line statement.}\spc{3}
 
-\intermediatesubproblem{[MA] We have showed that $\Xoneton$ are not independent. Show here that although they are not independent, they are identically distributed. You will need to use the property that $X_1~|~\theta, \ldots, X_n~|~\theta \iid p(x)$. I know this is splitting hairs, but it's a good property to prove.}\spc{3}
+\intermediatesubproblem{[MA] We have showed that $\Xoneton$ are not independent. Show here that although they are not independent, they are identically distributed. You will need to use the property that $X_1~|~\theta, \ldots, X_n~|~\theta \iid p(x)$ which is known as \qu{conditional independence}. I know this is splitting hairs, but it's a good property to prove.}\spc{4}
 
-\hardsubproblem{We showed in class that $\Xoneton$ are not independent. Independence is in some sense \qu{too strong} in te }\spc{3}
+\easysubproblem{[MA] We showed in class that $\Xoneton$ are not independent. Independence is in some sense \qu{too strong} of an assumption for Bayesian modeling. Instead, we use the weaker assumption called \qu{exchangeability}. Look in the book or on Google and give the definition for exchangeability.}\spc{3}
 
+
+\easysubproblem{[MA] When we collect data for an experiment are the observations exchangeable? Is this an assumption we make use of all the time?}\spc{2}
+
+\easysubproblem{[MA] Look up de Finetti's respresentation theorem. State it here.}\spc{6}
+
+\easysubproblem{[MA] Does exchangeability imply conditional independence for some distribution $\prob{X~|~\theta}$? Yes / No.}\spc{3}
 \end{enumerate}
 
 
