@@ -1,0 +1,309 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 390.03-02 / 650 Fall 2015 Homework \#3}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due 4PM in my mail slot, Friday, February 26, 2015 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, read about the beta prior, the binomial-beta bayesian formulation and the beta-binomial model. Also read ch4 in McGrayne.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
+
+Problems marked \qu{[MA]} are for the masters students only (those enrolled in the 650 course). For those in 390, doing these questions will count as extra credit.
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 10 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+NAME: \line(1,0){380}
+\clearpage
+}
+
+\problem{These are questions about McGrayne's book, chapters 4-7.}
+
+\begin{enumerate}
+
+\easysubproblem{Describe four things Bayesian modeling was applied to during WWII and identify the people who developed each application.}\spc{8}
+
+\intermediatesubproblem{What do you think was the main reason Bayesian Statistics fell out of favor at the end of WWII?}\spc{2}
+
+
+\intermediatesubproblem{Why weren't the leaders of Statistics world in the 1950's able to answer the think-tank's question about the $\prob{\text{war in the next 5 years}}$?}\spc{2}
+
+\easysubproblem{Who was responsible for reviving the interest in Bayesian Statistics post-WWII and why?}\spc{2}
+
+
+\hardsubproblem{In 1955, there were no midair collisions of two planes. How was the actuary able to estimate that the number would be above zero?}\spc{2}
+
+\easysubproblem{The main attack on Bayesian Statistics has always been subjectivity. Answer the following question how Savage would have answered it: \qu{If prior opinions can differ from one researcher to the next, what happens to scientifit objectivity in data analysis?} Do you believe this is the way science works in the real world?}\spc{3}
+
+
+\hardsubproblem{[MA] On page 104, Sharon writes, \qu{Bayesians would also be able to concentrate on what happened, not on what \textit{could} have happened according to Neyman Pearson's samping plan}. (Note that the \qu{Neyman Pearson's samping plan} is synonymous with Frequentist Statistics). Explain (1) how Bayesians concentrate on \qu{what happened} and (2) how Frequentists concentrate on what \qu{\textit{could} have happened}.}\spc{6}
+
+
+\easysubproblem{Who were the two tireless champions of Bayesian Statistics throughout the 50's, 60's and 70's and where geographically were they located during the majority of their career?}\spc{2}
+
+\end{enumerate}
+
+\problem{This problem is concerned with the logical definition of probability. As a review, we have:
+
+\begin{enumerate}[1.]
+\item \textbf{The Objective View} --- This is the view that probabilities are properties of the physical world and can only be defined by either
+
+\begin{enumerate}[(a)] 
+\item its \textbf{Long Run Frequency} Seeing the same event over and over again and tabulating when the event occurs will create a frequency which will asympotically become the probability or
+\item its \textbf{Propensity} which means deep down inside, the physical object is wired for events in certain proportions.
+\end{enumerate}
+
+
+Thus, events that are non physical such as the probability of Donald Trump winning the 2016 election is outside of the purview of probability. The objective view of probability is tied to the frequentist view of statistics. We also have the...
+
+\item \textbf{The Epistemic View} --- This is the view that probabilities are inherently living inside the minds of human beings who are forced to grapple with uncertainty as they see it. Laplace believed probability is an illusion because we don't have certainty about the universe. The two definitions here are that probability...
+
+\begin{enumerate}[(a)] 
+\item is \textbf{Logical} which means that given the same information, everyone would come to the same conclusion.
+\item is \textbf{Subjective} which means that given the same information, everyone would \textit{not} come to the same conclusion. Thus probability is defined as the degree of belief of some individual which differs from another individual.
+\end{enumerate}
+
+Thus events that are non physical such as the probability of Donald Trump winning the 2016 election can now be legitimate probabilities as they can be computed.
+
+
+\end{enumerate}
+}
+
+\begin{enumerate}
+
+\easysubproblem{
+We discussed last time that the logical definition requires the principle of indifference which goes by many different names. We will now go about showing that the principle of indifference has a tenuous foundation and thereby rendering the logical theory of probability inadequate. Thus, our conclusion will be that Bayesian Statistics runs on the Subjective definition which we may develop in a later homework. We begin with demonstrating a paradox in the logical definition for a discrete set of $\theta_0$. \\
+
+Imagine you have a library with thousands of books but all are either red, green, yellow or purple but you don't know the proportions of the books' colors. Imagine you are blindfolded and select a random book and you are only interested if it's \textit{red} or \textit{not red}. According to the principle of indifference, what is your prior probability that the book is red?}\spc{2}
+
+\easysubproblem{Imagine you are blindfolded and select a random book and you are interested if it's red, green, yellow or purple. According to the principle of indifference, what is your prior probability that the book is red?}\spc{1}
+
+
+\intermediatesubproblem{Why do (a) and (b) constitute a paradox? Does this limit the application of the principle of indifference?}\spc{4}
+
+\easysubproblem{Now we're going to work on trashing the principle of indifference for continuous measures. Thanks to Wikipedia... Imagine I have a cube-shaped box. The length of the side we call $S$ and we know it's less than 1 inch in length. Thus its prior distribution under the principle of indifference should be $S \sim \uniform{0}{1}$. What is the expected length of the side a priori (that is according to the prior distribution)? Please do not overthink this.}\spc{1}
+
+\intermediatesubproblem{Given the same prior as previously, imagine the surface area which is calculated as $6S^2$. Find expectation of the surface area. You may need to look at your Math 241 notes to get the variance of the uniform r.v. Is this equal to $6 \expe{S}^2$?}\spc{6}
+
+\intermediatesubproblem{We will not prove this, but it shouldn't come as a surprise that the surface area is not distributed uniformly between 0 and 6 given what you saw in your last answer. What does this mean for the principle of indifference? It only works...}\spc{3}
+
+\easysubproblem{It may be argued that one is only indifferent to the length of the side and that it's okay this implies a non-indifference to the surface area and volume. But here's a paradox that's harder to argue with which I got from \href{http://www.amazon.com/Philosophical-Theories-Probability-Issues-Science/dp/041518276X/ref=sr_1_1?ie=UTF8&qid=1455112335&sr=8-1&keywords=donald+gillies+theory+of+probability}{Gillies' book}. Imagine you have a drink in front of you made up of some parts orange juice and some parts water. You have a prior belief that the ratio of wine/water is $\uniform{1/4}{4}$ using the principle of indifference. What is the probability (according to your prior belief) that the $\prob{\text{wine/water} \geq 2}$?}\spc{2}
+
+\easysubproblem{Using the principle of indifference, what does this imply that the ratio of water/wine should be $\uniform{1/4}{4}$ as well? It shouldn't matter whether you pick wine divided by water or water divided by wine, right? Answer yes/no and give your gut reaction.}\spc{1}
+
+\easysubproblem{Assuming that you wrote \qu{yes} to the previous problem, calculate 
+
+\beqn
+\prob{\inverse{\text{wine/water}} \geq 2^{-1}} = \prob{\text{water/wine} \leq \half}.
+\eeqn
+
+And: is this different to the answer you got in (e)?} \spc{4}
+
+\hardsubproblem{Why is this a paradox? Write a couple sentences how this should doom the principle of indifference in the case of a continuous $\Theta_0$ space.}\spc{4}
+
+\intermediatesubproblem{[MA] Now we're going to see how this fails. Under the prior belief that the ratio of wine/water is $\uniform{1/4}{4}$, derive the PDF of the ratio of water/wine. Is it also $\uniform{1/4}{4}$? If you need a refresher on this stuff, see \href{http://www.math.uah.edu/stat/dist/Transformations.html}{here}. (Note: we're going to see Jeffrey's answer to this issue soon enough in class).}\spc{2}
+
+
+\end{enumerate}
+
+\end{document}
+
+\problem{These are questions about McGrayne's book, preface, chapter 1, 2 and 3.}
+
+\begin{enumerate}
+
+\easysubproblem{Explain Hume's problem of induction with the sun rising every day.}\spc{3}
+
+\easysubproblem{Explain the \qu{inverse probability problem.}}\spc{3}
+
+\easysubproblem{What is Bayes' billiard table problem?}\spc{3}
+
+\hardsubproblem{[MA] How did Price use Bayes' idea to prove the existence of the deity?} \spc{3}
+
+\easysubproblem{Why should Bayes Rule really be called \qu{Laplace's Rule?}}\spc{3}
+
+\hardsubproblem{Prove the version of Bayes Rule found on page 20. State your assumption(s) explicitly. Reference class notes as well.}\spc{4}
+
+\easysubproblem{Give two scientific contexts where Laplace used inverse probability theory to solve major problems.}\spc{3}
+
+\hardsubproblem{[MA] Why did Laplace turn into a frequentist later in life?} \spc{3}
+
+\easysubproblem{State Laplace's version of Bayes Rule (p31).} \spc{3}
+
+\easysubproblem{Why was Bayes Rule \qu{damned} (pp36-37)?} \spc{3}
+
+\easysubproblem{According to Edward Molina, what is the prior (p41)?} \spc{3}
+
+\easysubproblem{What is the source of the \qu{credibility} metric that insurance companies used in the 1920's?} \spc{3}
+
+\easysubproblem{Can the principle of inverse probability work without priors? Yes/no} \spc{1}
+
+\hardsubproblem{In class we discussed the \qu{principle of indifference} which is a term I borrowed from \href{http://www.amazon.com/Philosophical-Theories-Probability-Issues-Science/dp/041518276X/ref=sr_1_1?ie=UTF8&qid=1455112335&sr=8-1&keywords=donald+gillies+theory+of+probability}{Donald Gillies' Philosophical Theories of Probability}. On Wikipedia, it says that Jacob Bernoulli called it the \qu{principle of insufficient reason}. McGrayne in her research of original sources comes up with many names throughout history this principle was named. List all of them you can find here.} \spc{1}
+
+\easysubproblem{Jeffreys seems to be the founding father of modern Bayesian Statistics. But why did the world turn frequentist in the 1920's? (p57)} \spc{1}
+\end{enumerate}
+
+
+\problem{More about likelihood estimators. These exercises are important because we will soon be doing normal mean estimation using the Bayesian shrinkage estimator.}
+
+\begin{enumerate}
+
+\easysubproblem{Write the PDF of $X \sim \normnot{\theta}{1^2}$.}\spc{3}
+
+\hardsubproblem{Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\theta}{1^2}$.}\spc{3}
+
+\hardsubproblem{[MA] Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\mu}{\sigsq}$. Solve the system of equations $\partialop{\mu}{\ell(\theta)} = 0$ and $\partialop{\sigsq}{\ell(\theta)} = 0$ where $\ell(\theta)$ denotes the log likelihood. You can easily find this online. But try to do it yourself.} \spc{10}
+
+\end{enumerate}
+
+\problem{More about likelihood estimators. These exercises are important because we will soon be doing normal mean estimation using the Bayesian shrinkage estimator.}
+
+\begin{enumerate}
+
+\easysubproblem{Write the PDF of $X \sim \normnot{\theta}{1^2}$.}\spc{3}
+
+\hardsubproblem{Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\theta}{1^2}$.}\spc{5}
+
+\hardsubproblem{[MA] Find the MLE for $\theta$ if $\Xoneton \iid \normnot{\mu}{\sigsq}$. Solve the system of equations $\partialop{\mu}{\ell(\theta)} = 0$ and $\partialop{\sigsq}{\ell(\theta)} = 0$ where $\ell(\theta)$ denotes the log likelihood. You can easily find this online. But try to do it yourself.} \spc{11}
+
+\end{enumerate}
+
+\problem{This problem is concerned with one of the definitions of probability. In Math 241 I taught that there were two perspectives on probability which loosely yielded four definitions according to \href{http://www.amazon.com/Philosophical-Theories-Probability-Issues-Science/dp/041518276X/ref=sr_1_1?ie=UTF8&qid=1455112335&sr=8-1&keywords=donald+gillies+theory+of+probability}{Gillies}. As a review, we have:
+
+\begin{enumerate}[1.]
+\item \textbf{The Objective View} --- This is the view that probabilities are properties of the physical world and can only be defined by either
+
+\begin{enumerate}[(a)] 
+\item its \textbf{Long Run Frequency} Seeing the same event over and over again and tabulating when the event occurs will create a frequency which will asympotically become the probability or
+\item its \textbf{Propensity} which means deep down inside, the physical object is wired for events in certain proportions
+\end{enumerate}
+
+
+Thus events that are non physical such as the probability of Donald Trump winning the 2016 election is outside of the purview of probability. The objective view of probability is tied to the frequentist view of statistics. We also have the...
+
+\item \textbf{The Epistemic View} --- This is the view that probabilities are inherently living inside the minds of human beings who are forced to grapple with uncertainty as they see it. This was Laplace's view --- probability is an illusion because we don't have certainty about the universe. The two definitions here are that probability
+
+\begin{enumerate}[(a)] 
+\item is \textbf{Logical} which means that given the same information, everyone would come to the same conclusion.
+\item is \textbf{Subjective} which means that given the same information, everyone would \textit{not} come to the same conclusion. Thus probability is defined as the degree of belief of some individual which differs from another individual.
+\end{enumerate}
+
+Thus events that are non physical such as the probability of Donald Trump winning the 2016 election can now be legitimate probabilities as they can be computed.\\
+
+We will focus here on the logical definition.
+
+\end{enumerate}
+}
+
+\begin{enumerate}
+
+\easysubproblem{In the logical definition we see written \qu{given the same information}. What does \qu{information} mean here? $X$ or $\theta$?}\spc{1}
+
+\easysubproblem{In the logical definition we see written \qu{would come to the same conclusion}. What does \qu{conclusion} mean here? Look at the four parts of the Bayes Rule equation for posterior inference and write the correct one.}\spc{1}
+
+\easysubproblem{Given parts (a) and (b), what does everyone need to start with being the same for conclusions to be the same?}\spc{1}
+
+\extracreditsubproblem{[MA] For some reason in order for the logical definition to work, Keynes required the principle of indifference which is a stronger assumption than everyone begins with equal priors. Why do you think that is?}\spc{4}
+
+
+\easysubproblem{The logical definition requires employing the principle of indifference. State the principle of indifference for a discrete set $\Theta_0 = \braces{\theta_1, \ldots, \theta_m}$ by giving the prior distribution of $\theta$.}\spc{2}
+
+\easysubproblem{State the principle of indifference for a continuous set $\Theta_0 = \bracks{a,~b}$ by giving the prior distribution of $\theta$.}\spc{2}
+
+\hardsubproblem{Show that if $\Theta_0 = \braces{\theta_1, \ldots}$ i.e. is countably infinite, the principle of indifference fails. Proof by contradiction is an easy strategy.}\spc{2}
+
+\hardsubproblem{[MA] Show that if $\Theta_0 = \reals$ or some subset of $\reals$ of infinite measure, the principle of indifference fails. Proof by contradiction is an easy strategy.}\spc{2}
+
+\hardsubproblem{State a practical case where you would not want to use the principle of indifference. Think simple. Think coins and coin flips.}\spc{4} %put paradoxes on next homework...
+
+\hardsubproblem{[MA] How is the objectivist view of probability related to the frequentist view of statistics?}\spc{4}
+
+\hardsubproblem{[MA] How is the epistemic view of probability related to the Bayesian view of statistics?}\spc{4}
+
+\end{enumerate}
+
+\problem{\textbf{More coin flips.} The purpose of this exercise is for you to review the methods we did in class concerning the binomial likelihood and Bayesian inference for the parameter $\theta = p$.}
+
+\begin{enumerate}
+
+
+\easysubproblem{Assume that $\Theta_0 = \braces{0.1,~0.5}$. Using the principle of indifference, what is the prior?} \spc{1}
+
+\intermediatesubproblem{Draw the space $\Theta_0 \times \mathcal{X}$ to scale just like we did in class.} \spc{10}
+
+\intermediatesubproblem{Draw the space for $\Theta_0$ given the data was 0,0,0 to scale just like we did in class.} \spc{5}
+
+\easysubproblem{Calculate $\cprob{\theta = 0.1}{X_1 = 0,~X_2 = 0,~X_3 = 0}$}. The picture above should help. \spc{3}
+
+\easysubproblem{Assume for the rest of the problem that $\Theta_0 = \braces{\theta_1, \theta_2, \ldots, \theta_5}$. Assume the same data as we did in class $x_1 = 0,~x_2 = 1,~x_3 = 1$. Write out the likelihood. Your answer should not include any $\theta_i$'s but a general free variable $\theta$.}\spc{3}
+
+
+\intermediatesubproblem{Right out an expression for the denominator using the sum notation. The denominator here would be $\prob{X_1 = 0,~X_2 = 1,~X_3 = 1}$.}\spc{3}
+
+\intermediatesubproblem{Solve for the posterior probability of $\theta$ using your answers from the previous questions.} \spc{4}
+
+
+\intermediatesubproblem{Solve for the posterior probability of $\theta$ using your answers from the previous questions.} \spc{5}
+
+\hardsubproblem{Write expressions for $\thetahatmap$, $\thetahatmae$ and $\thetahatmmse$, i.e. the three Bayesian point estimators we discussed in class.} \spc{5}
+
+\hardsubproblem{Find the distribution $\cprob{X^*}{X_1 = 0,~X_2 = 1,~X_3 = 1}$ where $x^*$ is a new realization from the model $\mathcal{F}$ heretofore never seen. Sum signs are okay.} \spc{5}
+\end{enumerate}
+
+
+\problem{More about fundamentals of the Bayesian perspective.}
+
+\begin{enumerate}
+
+
+\intermediatesubproblem{Imagine in class we had a prior on $\theta$ in the Bernoulli family of indifferent between $\theta = 0.25$ and $\theta = 0.75$. What is the \textit{prior predictive distribution} i.e. what is the distribution of $X_1$ not seeing any data just given the prior. Draw the tree out as I did in class and it will be obvious. This is \textit{not} the posterior predictive distribution.} \spc{4}
+
+\hardsubproblem{Give the formula in general for the prior predictive distribution for both the discrete and continuous case for general $\mathcal{F}$. Call it $\prob{X}$.} \spc{3}
+
+
+\easysubproblem{Is this the same as the marginal likelihood / prior on the data as we've seen in class? Yes/no. Write a sentence giving more flesh to the definition of that pesky denominator $\prob{X}$.}\spc{2}
+
+
+\intermediatesubproblem{More about the marginal likelihood... Explain why if the \qu{classic} idea of independence you learned in 241 i.e. $\prob{X} := \prob{\Xoneton} = \prod_{i=1}^n \prob{X_i}$ was applicable in the Bayesian perspective then no learning can be done from experience. Use the expression for the posterior predictive distribution to make a simple one-line statement.}\spc{3}
+
+\intermediatesubproblem{[MA] We have showed that $\Xoneton$ are not independent. Show here that although they are not independent, they are identically distributed. You will need to use the property that $X_1~|~\theta, \ldots, X_n~|~\theta \iid p(x)$ which is known as \qu{conditional independence}. I know this is splitting hairs, but it's a good property to prove.}\spc{4}
+
+\easysubproblem{[MA] We showed in class that $\Xoneton$ are not independent. Independence is in some sense \qu{too strong} of an assumption for Bayesian modeling. Instead, we use the weaker assumption called \qu{exchangeability}. Look in the book or on Google and give the definition for exchangeability.}\spc{3}
+
+
+\easysubproblem{[MA] When we collect data for an experiment are the observations exchangeable? Is this an assumption we make use of all the time?}\spc{2}
+
+\easysubproblem{[MA] Look up de Finetti's respresentation theorem. State it here.}\spc{6}
+
+\easysubproblem{[MA] Does exchangeability imply conditional independence for some distribution $\prob{X~|~\theta}$? Yes / No.}\spc{3}
+\end{enumerate}
+
+
+\end{document}
