@@ -1,6 +1,6 @@
 # MATH 390.03-02 Spring 2016
 
-This is the course homepage for the Bayesian Statistics Experimental Courses (AKA Math 390.03-02) for the Spring semester 2016 at Queens College, City University of New York taught by Professor Adam Kapelner. The syllabus can be found [here](https://raw.githubusercontent.com/kapelner/QC_Math_390.03-02_Spr_2016/master/syllabus/syllabus.pdf).
+This is the course homepage for the Bayesian Statistics Experimental Courses (AKA Math 390.03-02 or 650) for the Spring semester 2016 at Queens College, City University of New York taught by Professor Adam Kapelner. The syllabus can be found [here](https://raw.githubusercontent.com/kapelner/QC_Math_390.03-02_Spr_2016/master/syllabus/syllabus.pdf).
 
 ## Lectures
 
@@ -16,14 +16,14 @@ My lectures can be listened to as clyp.it tracks and lecture notes are also scan
 
 ## Homeworks
 
-* Homework 3 due 3/04/16 [(download)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw04/hw04.pdf)
+* Homework 4 due 3/04/16 [(download)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw04/hw04.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw04/hw04.pdf)
 * Homework 3 due 2/26/16 [(download)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw03/hw03.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw03/hw03.pdf)
 * Homework 2 due 2/19/16 [(download)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw02/hw02.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw02/hw02.pdf)
 * Homework 1 due 2/12/16 [(download)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw01/hw01.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw01/hw01.pdf)
 
 ## Exams
 
-* Midterm I March 9 (in class). 
+* Midterm I March 14 (in class). 
 
 <!--
 [(exam)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm1/midterm1.pdf) [(exam solutions)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm1/midterm1_solutions.pdf)-->
