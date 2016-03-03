@@ -55,19 +55,17 @@ NAME: \line(1,0){380}
 
 \hardsubproblem{Let's say $X~|~\beta \sim \betanot{1}{\beta}$ where $\beta~|~\lambda \sim \exponential{\lambda}$. Write an integral expression which when solved, finds the compound / marginal density of $X$. DO NOT solve.}\spc{6}
 
-\hardsubproblem{[MA] Let's say $X~|~\theta,~\sigsq \sim \normnot{\theta}{\sigsq}$ where $\theta~|~\mu,~\tausq \sim \normnot{\mu}{\tausq}$. Write an integral expression which when solved, finds the compound / marginal density of $X$. DO NOT solve.}\spc{6}
+\hardsubproblem{[MA] Let's say $X~|~\theta,~\sigsq \sim \normnot{\theta}{\sigsq}$ where $\theta~|~\mu_0,~\tausq \sim \normnot{\mu_0}{\tausq}$. Write an integral expression which when solved, finds the compound / marginal density of $X$. DO NOT solve.}\spc{6}
 
 \end{enumerate}
 
-\problem{We will now have lots of examples finding kernels from common distributions. Some of these questions are silly, but they will force you to think hard about what the kernel is under different situations.}
+\problem{We will now have lots of examples finding kernels from common distributions. Some of these questions are silly, but they will force you to think hard about what the kernel is under different situations. And... they're fun!}
 
 \begin{enumerate}
 
 \easysubproblem{What is the kernel of $X~|~\theta,~n \sim \binomial{n}{\theta}$?}\spc{3}
 
 \hardsubproblem{What is the kernel of $X, n~|~\theta \sim \binomial{n}{\theta}$? Be careful...}\spc{3}
-
-\easysubproblem{What is the kernel of $X~|~\theta \sim \poisson{\theta}$?}\spc{3}
 
 \easysubproblem{What is the kernel of $X~|~\theta \sim \poisson{\theta}$?}\spc{3}
 
@@ -81,7 +79,7 @@ NAME: \line(1,0){380}
 
 \hardsubproblem{What is the kernel of $\theta,~\sigsq~|~X \sim \normnot{\theta}{\sigsq}$? Be careful...}\spc{4}
 
-\intermediatesubproblem{What is the kernel of 
+\intermediatesubproblem{[MA] What is the kernel of 
 
 \beqn
 X~|~N,~\theta,~n \sim \hypergeometric{N}{\theta}{n} := {{{ \theta \choose x} {{N-\theta} \choose {n-x}}}\over {N \choose n}}
@@ -89,6 +87,81 @@ X~|~N,~\theta,~n \sim \hypergeometric{N}{\theta}{n} := {{{ \theta \choose x} {{N
 
 where $N$ is the number of total balls in the bag, $\theta$ is the number of success balls in the bag and $n$ is the number drawn out of the bag?}\spc{6}
 
+\hardsubproblem{[MA] If $X~|~\theta,~\sigsq \sim \normnot{\theta}{\sigsq}$ and $\theta~|~\mu_0,~\tausq \sim \normnot{\mu_0}{\tausq}$, what is the kernel of $\theta~|~X,~\sigsq,~\mu_0,~\tausq$?}\spc{6}
+
+\end{enumerate}
+
+
+\problem{Some mostly definition questions.}
+
+\begin{enumerate}
+
+\easysubproblem{What is an improper prior?}\spc{4}
+
+\easysubproblem{Is $\theta \sim \betanot{100}{0}$ improper? Yes / no and provide a proof.}\spc{4}
+
+\easysubproblem{When are improper priors \qu{legal}?}\spc{4}
+
+\easysubproblem{When are improper priors \qu{illegal}?}\spc{4}
+
+\hardsubproblem{What does $I(\theta)$ tell you about the random variable with respect to its parameter $\theta$?}\spc{5}
+
+\intermediatesubproblem{If I compute a posterior on the $\theta$ scale and then measure the parameter on another scale, will I (generally) get the same posterior probability? Yes/no explain.}\spc{4}
+
+\easysubproblem{What's the name of the prior that I should use to always guarantee I get the same posterior probability regardless of the scale I measure $\theta$ on?}\spc{0.5}
+
+\easysubproblem{What is the Jeffrey's prior for $\theta$ under the binomial likelihood? Your answer must be a distribution.}\spc{4}
+
+\easysubproblem{State the definition of logit($\theta$).}\spc{0.5}
+
+\extracreditsubproblem{[MA] What is the Jeffrey's prior for logit($\theta$) under the binomial likelihood?}\spc{10}
+
+\hardsubproblem{[MA] Prove Jeffrey's invariance principle i.e. prove that the Jeffrey's prior makes your prior probability immune to transformations. Use the second proof from class.}\spc{8}
+
+\easysubproblem{State the Bayesian CLT.}\spc{4}
+
+\hardsubproblem{In the standard binomial data / beta prior model, use the Bayesian CLT to approximate the distribution of the posterior.}\spc{7}
+
+\easysubproblem{State the Law of Iterated Expectation for two r.v.'s $X$ and $Y$.}\spc{1}
+
+\intermediatesubproblem{Draw the picture from class and explain why the picture illustrates the Law of Iterated Expectation for two r.v.'s $X$ and $Y$.}\spc{7}
+
+\easysubproblem{State the Law of Total Variance for two r.v.'s $X$ and $Y$.}\spc{1}
+
+\intermediatesubproblem{Draw the picture from class and explain why the picture illustrates the Law of Total Variance for two r.v.'s $X$ and $Y$.}\spc{7}
+
+\easysubproblem{State and explain the relationship between prior and posterior variance.}\spc{4}
+
+\easysubproblem{If your prior variance is less than your posterior variance, generally speaking, what happened?}\spc{6}
+
+\end{enumerate}
+
+
+\problem{We will now look at model checking by looking at pictures.}
+
+\begin{enumerate}
+
+\easysubproblem{If $\theta \sim \stdbetanot$, what is the prior predictive distribution for $n$ observations?}\spc{1}
+
+
+\easysubproblem{If $\alpha = 100$ and $\beta = 3$ and $n=50$. Run the following code to look at the prior predictive distribution.
+
+ 
+  
+    and you get 10 successes.}\spc{1}
+
+\easysubproblem{Why should the data look plausible under the prior predictive distribution?}\spc{4}
+
+\easysubproblem{Why should the data look plausible under the posterior predictive distribution?}\spc{4}
+
+\easysubproblem{Why are looking at these illustrations called \qu{graphical checks}?}\spc{4}
+
+\easysubproblem{Why are looking at these illustrations called \qu{self-consistency checks}?}\spc{4}
+
+
+\hardsubproblem{[MA] \href{https://en.wikipedia.org/wiki/George_E._P._Box}{George Box} said, \qu{all models are wrong but some are useful}. What does this mean?}\spc{5}
+
+\hardsubproblem{[MA] \href{https://en.wikipedia.org/wiki/Andrew_Gelman}{Andrew Gelman} refines George Box's quotation by saying, we know all models are wrong \qu{but do the model's deficiencies have a noticable impact on inference}? What does this mean? Keep in mind Gelman loves these graphical checks a la the previous parts of this question.}\spc{5}
 
 \end{enumerate}
 
