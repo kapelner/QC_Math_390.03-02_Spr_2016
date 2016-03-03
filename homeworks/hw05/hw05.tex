@@ -146,9 +146,9 @@ where $N$ is the number of total balls in the bag, $\theta$ is the number of suc
 \easysubproblem{If $\theta \sim \stdbetanot$, what is the prior predictive distribution for $n$ observations?}\spc{1}
 
 
-\easysubproblem{If $\alpha = 100$ and $\beta = 3$ and $n=50$. Run the following code to look at the prior predictive distribution. No need to print out the illustration.
+\easysubproblem{If $\alpha = 100$ and $\beta = 3$ and $n=50$. Run the following code to look at the prior predictive distribution. No need to print out the illustration. You will need R on your computer for this (download it from \href{https://cran.r-project.org/bin/windows/base/}{here} if you are on windows and \href{https://cran.r-project.org/bin/macosx/}{here} if you are on MAC).
 
-If you now get 10 successes on your 50 observations (the red line), does this indicate a problem? Yes/No}
+If you now get 10 successes on your 50 observations (the red line), does this indicate a problem in the model? Yes/No}
 
 
 \begin{verbatim}
@@ -163,11 +163,11 @@ barplot(dbetabinom.ab(1 : n, size = n, shape1 = alpha, shape2 = beta),
 	names = 1 : n, xlab = "x", ylab = "prob(x)")
 abline(v = 10, col = "red", lwd = 5)
 #copy this line last and paste it in R and press "enter"
-\end{verbatim}~\spc{1}  
+\end{verbatim}~\spc{0.1}
 
 \easysubproblem{If you use the Jeffrey's prior $\alpha = 0.5$ and $\beta = 0.5$, run the following code to look at the prior predictive distribution. No need to print out the illustration.
 
-If you now get 10 successes on your 50 observations, does this indicate a problem? Yes/No}
+If you now get 10 successes on your 50 observations, does this indicate a problem in the model? Yes/No}
 
 \begin{verbatim}
 #begin copying this line
@@ -183,7 +183,7 @@ abline(v = 10, col = "red", lwd = 5)
 
 \easysubproblem{If you use $\alpha = 100$ and $\beta = 3$ prior and you got 10 successes, we now look at the posterior predictive distribution by running the following code. No need to print out the illustration.
 
-Does this indicate a problem? Yes/No}
+Does this indicate a problem in the model? Yes/No}
 
 \begin{verbatim}
 #begin copying this line
@@ -197,7 +197,7 @@ abline(v = 10, col = "red", lwd = 5)
 
 \easysubproblem{If you use the Jeffrey's prior with the same data, we now look at the posterior predictive distribution by running the following code. No need to print out the illustration.
 
-Does this indicate a problem? Yes/No}
+Does this indicate a problem in the model? Yes/No}
 \begin{verbatim}
 #begin copying this line
 alpha = 0.5 + 10
