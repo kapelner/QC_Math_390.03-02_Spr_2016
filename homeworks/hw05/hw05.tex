@@ -50,7 +50,9 @@ NAME: \line(1,0){380}
 
 \begin{enumerate}
 
-\easysubproblem{Let $X$ be $\normnot{0}{1^2}$ 1/3 of the time and $\exponential{3}$ 2/3 of the time. What is its pdf?}\spc{6}
+\easysubproblem{If $X$ is independent to $W$ and $X$ is independent to $Z$ and $X$ is independent to $U$, can you write $\cprob{X}{U,V,W,Y,Z}$ more compactly? Do so below.}\spc{1}
+
+\easysubproblem{Let $X$ be $\normnot{0}{1^2}$ 1/3 of the time and $\exponential{3}$ 2/3 of the time. What is its pdf?}\spc{2}
 
 
 \hardsubproblem{Let's say $X~|~\beta \sim \betanot{1}{\beta}$ where $\beta~|~\lambda \sim \exponential{\lambda}$. Write an integral expression which when solved, finds the compound / marginal density of $X$. DO NOT solve.}\spc{6}
@@ -114,9 +116,9 @@ where $N$ is the number of total balls in the bag, $\theta$ is the number of suc
 
 \easysubproblem{State the definition of logit($\theta$).}\spc{0.5}
 
-\extracreditsubproblem{[MA] What is the Jeffrey's prior for logit($\theta$) under the binomial likelihood?}\spc{10}
+\hardsubproblem{What is the Jeffrey's prior for logit($\theta$) under the binomial likelihood?}\spc{2}
 
-\hardsubproblem{[MA] Prove Jeffrey's invariance principle i.e. prove that the Jeffrey's prior makes your prior probability immune to transformations. Use the second proof from class.}\spc{8}
+\hardsubproblem{[MA] Prove Jeffrey's invariance principle i.e. prove that the Jeffrey's prior makes your prior probability immune to transformations. Use the second proof from class.}\spc{12}
 
 \easysubproblem{State the Bayesian CLT.}\spc{4}
 
@@ -128,7 +130,7 @@ where $N$ is the number of total balls in the bag, $\theta$ is the number of suc
 
 \easysubproblem{State the Law of Total Variance for two r.v.'s $X$ and $Y$.}\spc{1}
 
-\intermediatesubproblem{Draw the picture from class and explain why the picture illustrates the Law of Total Variance for two r.v.'s $X$ and $Y$.}\spc{7}
+\intermediatesubproblem{Draw the picture from class and explain why the picture illustrates the Law of Total Variance for two r.v.'s $X$ and $Y$.}\spc{8}
 
 \easysubproblem{State and explain the relationship between prior and posterior variance.}\spc{4}
 
@@ -137,31 +139,84 @@ where $N$ is the number of total balls in the bag, $\theta$ is the number of suc
 \end{enumerate}
 
 
-\problem{We will now look at model checking by looking at pictures.}
+\problem{We will now perform model checking by looking at pictures.}
 
 \begin{enumerate}
 
 \easysubproblem{If $\theta \sim \stdbetanot$, what is the prior predictive distribution for $n$ observations?}\spc{1}
 
 
-\easysubproblem{If $\alpha = 100$ and $\beta = 3$ and $n=50$. Run the following code to look at the prior predictive distribution.
+\easysubproblem{If $\alpha = 100$ and $\beta = 3$ and $n=50$. Run the following code to look at the prior predictive distribution. No need to print out the illustration.
 
- 
-  
-    and you get 10 successes.}\spc{1}
+If you now get 10 successes on your 50 observations (the red line), does this indicate a problem? Yes/No}
+
+
+\begin{verbatim}
+#begin copying this line
+options(repos = "http://lib.stat.cmu.edu/R/CRAN/")
+install.packages("VGAM")
+library(VGAM)
+n = 50
+alpha = 100
+beta = 3
+barplot(dbetabinom.ab(1 : n, size = n, shape1 = alpha, shape2 = beta), 
+	names = 1 : n, xlab = "x", ylab = "prob(x)")
+abline(v = 10, col = "red", lwd = 5)
+#copy this line last and paste it in R and press "enter"
+\end{verbatim}~\spc{1}  
+
+\easysubproblem{If you use the Jeffrey's prior $\alpha = 0.5$ and $\beta = 0.5$, run the following code to look at the prior predictive distribution. No need to print out the illustration.
+
+If you now get 10 successes on your 50 observations, does this indicate a problem? Yes/No}
+
+\begin{verbatim}
+#begin copying this line
+alpha = 0.5
+beta = 0.5
+barplot(dbetabinom.ab(1 : n, size = n, shape1 = alpha, shape2 = beta), 
+	names = 1 : n, xlab = "x", ylab = "prob(x)")
+abline(v = 10, col = "red", lwd = 5)
+#copy this line last and paste it in R and press "enter"
+\end{verbatim}
 
 \easysubproblem{Why should the data look plausible under the prior predictive distribution?}\spc{4}
 
-\easysubproblem{Why should the data look plausible under the posterior predictive distribution?}\spc{4}
+\easysubproblem{If you use $\alpha = 100$ and $\beta = 3$ prior and you got 10 successes, we now look at the posterior predictive distribution by running the following code. No need to print out the illustration.
 
-\easysubproblem{Why are looking at these illustrations called \qu{graphical checks}?}\spc{4}
+Does this indicate a problem? Yes/No}
 
-\easysubproblem{Why are looking at these illustrations called \qu{self-consistency checks}?}\spc{4}
+\begin{verbatim}
+#begin copying this line
+alpha = 100 + 10
+beta = 3 + 40
+barplot(dbetabinom.ab(1 : n, size = n, shape1 = alpha, shape2 = beta), 
+	names = 1 : n, xlab = "x*", ylab = "prob(x*|x)")
+abline(v = 10, col = "red", lwd = 5)
+#copy this line last and paste it in R and press "enter"
+\end{verbatim} ~\spc{1}
 
+\easysubproblem{If you use the Jeffrey's prior with the same data, we now look at the posterior predictive distribution by running the following code. No need to print out the illustration.
 
-\hardsubproblem{[MA] \href{https://en.wikipedia.org/wiki/George_E._P._Box}{George Box} said, \qu{all models are wrong but some are useful}. What does this mean?}\spc{5}
+Does this indicate a problem? Yes/No}
+\begin{verbatim}
+#begin copying this line
+alpha = 0.5 + 10
+beta = 0.5 + 40
+barplot(dbetabinom.ab(1 : n, size = n, shape1 = alpha, shape2 = beta), 
+	names = 1 : n, xlab = "x*", ylab = "prob(x*|x)")
+abline(v = 10, col = "red", lwd = 5)
+#copy this line last and paste it in R and press "enter"
+\end{verbatim} ~\spc{1}
 
-\hardsubproblem{[MA] \href{https://en.wikipedia.org/wiki/Andrew_Gelman}{Andrew Gelman} refines George Box's quotation by saying, we know all models are wrong \qu{but do the model's deficiencies have a noticable impact on inference}? What does this mean? Keep in mind Gelman loves these graphical checks a la the previous parts of this question.}\spc{5}
+\easysubproblem{Why should the data look plausible under the posterior predictive distribution?}\spc{3}
+
+\easysubproblem{Why are looking at these illustrations called \qu{graphical checks}?}\spc{3}
+
+\easysubproblem{Why are looking at these illustrations called \qu{self-consistency checks}?}\spc{3}
+
+\hardsubproblem{[MA] \href{https://en.wikipedia.org/wiki/George_E._P._Box}{George Box} said, \qu{all models are wrong but some are useful}. What does this mean?}\spc{3}
+
+\hardsubproblem{[MA] \href{https://en.wikipedia.org/wiki/Andrew_Gelman}{Andrew Gelman} refines George Box's quotation by saying, we know all models are wrong \qu{but do the model's deficiencies have a noticable impact on inference}? What does he mean by asking this question? Keep in mind Gelman loves these graphical checks a la (b), (c), (e) and (f).}\spc{5}
 
 \end{enumerate}
 
