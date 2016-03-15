@@ -1,0 +1,149 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\title{Math 390.03-02 / 650.03-01 Spring 2016 \\ Midterm Examination One}
+\author{Professor Adam Kapelner}
+
+\date{Monday, March 14, 2016}
+
+\begin{document}
+\maketitle
+
+\noindent Full Name \line(1,0){410}
+
+\thispagestyle{empty}
+
+\section*{Code of Academic Integrity}
+
+\footnotesize
+Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
+
+Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
+
+\paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using a cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
+\\
+
+\noindent I acknowledge and agree to uphold this Code of Academic Integrity. \\
+
+\begin{center}
+\line(1,0){250} ~~~ \line(1,0){100}\\
+~~~~~~~~~~~~~~~~~~~~~signature~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ date
+\end{center}
+
+\normalsize
+
+\section*{Instructions}
+
+This exam is seventy five minutes and closed-book. You are allowed one page (front and back) of a \qu{cheat sheet.} You may use a graphing calculator of your choice. Please read the questions carefully. If the question reads \qu{compute,} this means the solution will be a number otherwise you can leave the answer in \textit{any} widely accepted mathematical notation which could be resolved to an exact or approximate number with the use of a computer. I advise you to skip problems marked \qu{[Extra Credit]} until you have finished the other questions on the exam, then loop back and plug in all the holes. I also advise you to use pencil. The exam is 100 points total plus extra credit. Partial credit will be granted for incomplete answers on most of the questions. \fbox{Box} in your final answers. Good luck!
+
+\pagebreak
+
+
+\problem This question is about \qu{batting averages} in baseball.
+
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{baseball.jpg}
+\end{figure}
+
+\noindent Every hitter's \emph{sample} batting average (BA) is defined as:
+
+\beqn
+BA := \frac{\text{sample \# of hits}}{\text{sample \# of at bats}}
+\eeqn
+
+In this problem we care about estimating a hitter's \emph{true} batting average which we call $\theta$. Each player has a different $\theta$ but we focus in this problem on one specific player. In order to estimate the player's true batting average, we use the sample batting average as defined above. 
+
+\benum
+\subquestionwithpoints{2} For the remainder of the problem, we assume that each at bat (for any player) are \emph{conditionally} $\iid$ based on the players' true batting average, $\theta$. So if a player has $n$ at bats, then each successful hit in each at bat can be modeled via
+
+\beqn
+X_1~|~\theta, ~X_2~|~\theta, \ldots, ~X_n~|~\theta \iid \bernoulli{\theta}.
+\eeqn
+
+Under this model above, if the player had $n=4$ at bats, would the $\prob{X_3,X_2,X_4,X_1}$ be equal to the $\prob{X_1,X_2,X_3,X_4}$? Yes / no. \spc{1}
+
+\subquestionwithpoints{3} If the player had $n=4$ at bats and $\sum_{i=0}^n x_i=0$ hits, compute $\thetahatmle$.\spc{2}
+
+\subquestionwithpoints{4} Compute a frequentist confidence interval for $\theta$ given the data in (b).\spc{2}
+
+
+\subquestionwithpoints{3} Describe in English the main problem with the interval in (c).\spc{2}
+
+\subquestionwithpoints{2} Set the following prior: $\theta \sim \stduniform$. Is this an informative prior for the true batting average? Yes/no \spc{1}
+
+\subquestionwithpoints{5} Given the prior in (e) and the data in (b), find the posterior distribution of this player's true batting average.\spc{3}
+
+\subquestionwithpoints{3} Based on your posterior distribution in (f), give your best estimate to the value of $\theta$ which minimizes squared error loss.\spc{3}
+
+\subquestionwithpoints{2} Based on your posterior distribution in (f), describe using an integral or \texttt{R}-language expression your best estimate to the value of $\theta$ which minimizes absolute error loss but do not compute.\spc{4}
+
+\subquestionwithpoints{4} Based on your posterior distribution in (f), give your best estimate to the value of $\theta$ using the posterior mode.\spc{2}
+
+\subquestionwithpoints{5} Find an integral expression for the probability this hitter bats above a 300 batting average (which means the true batting average is 0.3 or greater). Do not compute. \spc{2}
+
+\subquestionwithpoints{5} Assuming you have access to \texttt{R} and its function \texttt{qbeta}, give the 95\% credible region for $\theta$. The three arguments for \texttt{qbeta} are (1) quantile (2) alpha and (3) beta. Then, provide an interpretation for this interval. \spc{2}
+
+\subquestionwithpoints{3} What would the Jeffrey's prior be in our model situation described in (a)? \spc{1}
+
+\subquestionwithpoints{2} Would the posterior under the Haldane prior be proper given the data in (b)? Yes / No. \spc{0.5}
+
+\subquestionwithpoints{5} The batting average is \textit{only} measured as the batting average and never logged or transformed. Would there be any value in using the Jeffrey's prior instead of the prior in (e)? Discuss. \spc{5}
+
+
+\subquestionwithpoints{5} Looking at the entire dataset for 6,061 batters who had 100 or more at bats, I fit a beta function to the sample batting averages and estimated $\alpha = 42.3$ and $\beta = 127.7$ (which we called \qu{empirical Bayes} estimates in class). Consider building a prior from this estimate as
+
+\beqn
+\theta \sim \betanot{42.3}{127.7}.
+\eeqn
+
+Would a prior based on these hyperparameter estimates be \qu{objective}? Yes / No. Why? \spc{3}
+
+\subquestionwithpoints{2} Is the prior from (o) considered a \qu{conjugate prior}? Yes / No.\spc{0.5}
+
+\subquestionwithpoints{3} Using the prior from (o), find the $\thetahatmmse$ without considering the data whatsoever. Round to 3 digits. \spc{3}
+
+\subquestionwithpoints{4} Using the prior from (o) and the data from (b), find the posterior $\thetahatmmse$. Round to 3 digits. \spc{2}
+
+\subquestionwithpoints{5} The posterior estimate from (q) is different from the frequentist estimate in (b) due to shrinkage. What is the proportion of shrinkage for the posterior estimate in (q)? We denoted this as $\rho$ in class. Round to 3 digits. \spc{3}
+
+\subquestionwithpoints{4} [Extra Credit] Using the Bayesian CLT, compute a 95\% credible region for $\theta$ for the data in (b) and the prior in (o). Round to 3 digits. \spc{3}
+
+\subquestionwithpoints{3} Based on the data in (b) and the prior in (o), what is the probability this batter gets a hit on his next at bat? \spc{3}
+
+\subquestionwithpoints{5} Based on the data in (b) and the prior in (o), write an exact expression for the batter getting 14 or more hits on the next 20 at bats. You can leave your answer in terms of the beta function. Do not compute explicitly. \spc{5}
+
+\subquestionwithpoints{6} Based on the data in (b) and the prior in (o), find the kernel of the distribution for the number of hits this batter gets in the next $m$ at bats. Partial credit is given. \spc{3}
+
+\subquestionwithpoints{2} Based on the data in (b) and the prior in (o), the joint posterior predictive distribution for $n=4$ looks like as follows. 
+
+%library(VGAM)
+%barplot(dbetabinom.ab(0 : 4, 4, shape1 = 42.3 + 0, shape2 = 127.7 + 4), names = 0 : 4, xlab = "X* (# hits)", ylab = "prob(X*|X)")
+\begin{figure}[htp]
+\centering
+\includegraphics[width=3.0in]{post_pred.pdf}
+\end{figure}
+
+Does the data from (b) look abnormal for this model? Yes / no. \spc{0.5}
+
+\subquestionwithpoints{7} Test the following hypotheses by finding an integral or \texttt{R}-language expression for the Bayesian $p$-val for the data in (b) and prior in (o):
+
+\beqn
+&& H_0: \theta \geq \theta_0 \\
+&& H_a: \theta < \theta_0
+\eeqn
+
+where $\theta_0 = \expe{\theta}$. That is, we're testing if this batter is truly \qu{below-average} as compared to the 6,061 career major league baseball players from the official dataset.\spc{8}
+
+\subquestionwithpoints{7} Write an integral or \texttt{R}-language expression for $K$, the Bayes Factor in favor of $H_a$.\spc{9}
+
+\subquestionwithpoints{3} For the model in (a), specify $\mathcal{F}$ (the likelihood model) of a hit at a single at bat. \spc{3}
+
+\subquestionwithpoints{3} [Extra credit] For the the data in (b) and prior in (o), compute $\expesub{X}{\cexpesub{\theta}{\theta}{X}}$ using the Law of Iterated Expectation. \spc{2}
+
+\subquestionwithpoints{3} [Extra credit] For the data in (b), what is the frequentist predictive distribution?
+
+\eenum
+
+\end{document}
