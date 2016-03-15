@@ -1,0 +1,204 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 390.03-02 / 650 Fall 2015 Homework \#6}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due 4PM in my mail slot, Friday, March 25, 2016 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, read about the negative binomial-beta, exponential-beta, normal-normal models, mixture models and kernels of PMFs / PDFs. Also read ch11 and 12 in McGrayne.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
+
+Problems marked \qu{[MA]} are for the masters students only (those enrolled in the 650 course). For those in 390, doing these questions will count as extra credit.
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 10 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+NAME: \line(1,0){380}
+\clearpage
+}
+
+\problem{These are questions about McGrayne's book, chapters 11 and 12.}
+
+\begin{enumerate}
+
+\easysubproblem{Did Savage like Shlaifer? Yes / No and why?}\spc{3}
+
+\easysubproblem{How did Neyman-Pearson approach statistical decision theory? What is the weakness to this approach? (p145)}\spc{3}
+
+\easysubproblem{Who popularized \qu{probability trees} (and \qu{tree flipping}) similar to exercises we did in Math 241?}\spc{1}
+
+\easysubproblem{Where are Bayesian methods taught more widely than any other discipline in academia?}\spc{2}
+
+\easysubproblem{Despite the popularity of his Bayesian textbook on business decision theory, why didn't Schlaifer's Bayesianism catch on in the real world of business executives making decisions?}\spc{3}
+
+\easysubproblem{Why did the pollsters fail (big time) to predict Harry Truman's victory in the 1948 presidential election?}\spc{2}
+
+\easysubproblem{When does the diference between Bayesianism and Frequentism grow \qu{immense}?}\spc{3}
+
+\easysubproblem{How did Mosteller demonstrate that Madison wrote the 12 Federalist papers of unknown authorship?}\spc{3}
+
+\end{enumerate}
+
+
+\problem{We will ask some basic problems on Empirical Bayesianism.}
+
+\begin{enumerate}
+
+\easysubproblem{Explain the methodology of Empirical Bayes the best as you can.}\spc{6}
+
+\hardsubproblem{In what situations do you think Empirical Bayes methods work the best?}\spc{2}
+
+\end{enumerate}
+
+
+
+\problem{We will again be looking at the beta-prior, negative-binomial-likelihood Bayesian model. But first consider the more basic case where $\Xoneton \exchdist \geometric{\theta}$ and $\theta \sim \stdbetanot$.}
+
+
+\begin{enumerate}
+
+
+\easysubproblem{What is the likelihood model here? Write the PMF using the parameterization from class only.}\spc{2}
+
+\intermediatesubproblem{Demonstrate that the posterior in this case is Beta and find the posterior parameters.}\spc{6}
+
+\easysubproblem{Give expressions for $\thetahatmmse,~\thetahatmae$ and $\thetahatmap$ (use the approximation for the median of the beta distribution given in the notes for $\thetahatmae$). Are they all similar is $n$ is large?}\spc{3}
+
+\hardsubproblem{Interpret the hyperparameters $\alpha$ and $\beta$ in the context of the posterior parameters.}\spc{5}
+
+
+
+\easysubproblem{State the Jeffrey's prior for this model and explain why it is not proper.}\spc{2}
+
+\easysubproblem{In what circumstances does Jeffrey's prior lead to a proper posterior?}\spc{2}
+
+\easysubproblem{Given the posterior in (b), find the posterior in the case where you only observe one $x$.}\spc{2}
+
+\hardsubproblem{You've seen the following data from the model: 5, 8, 6, 9, 11, 10, 7, 10, 11, 8, 9, 7, 7, 6. Design a prior using Empirical Bayes for $\theta$.}\spc{5}
+
+
+\hardsubproblem{[MA] Use an objective prior. Imagine you now have seen 5 Bernoulli experiments go by with no success which you are patiently waiting for (since you can't use the cookie-cutter formulas until you see the success). Write an expression which if evaluated will provide the best guess of $\theta$ (best in a squared error loss sense) only given this \qu{partial} information. If you numerically compute it, you should get approximately 0.0238.}\spc{6}
+
+
+\intermediatesubproblem{Consider $\Xoneton \exchdist \negbin{r}{\theta}$ where $r$ is considered known and $\theta \sim \stdbetanot$ Demonstrate that the posterior in this case is Beta and find the posterior parameters.}\spc{6}
+
+\easysubproblem{Give expressions for $\thetahatmmse,~\thetahatmae$ and $\thetahatmap$ (use the approximation for the median of the beta distribution given in the notes for $\thetahatmae$). Are they all similar is $n$ is large?}\spc{3}
+
+
+\easysubproblem{[MA] Find the Jeffrey's prior for $\theta$ as a function of $r$. Look up the $I(\theta)$ on the Internet for the negative binomial given the parameterization we used in class. You do not need to do the derivation yourself.}\spc{2}
+
+\hardsubproblem{[MA] Derive the posterior distribution PMF for one new negative binomial observation after seeing $n$ observations. This is a lot of computation.}\spc{18}
+
+\hardsubproblem{[MA] Write an integral expression for the joint posterior distribution for $m$ new negative binomail observations. Extra credit if you can find the solution somewhere on the Internet.}\spc{6}
+
+\intermediatesubproblem{Derive the PMF of the BetaGeometric($\alpha, \beta$) distribution. Hint: the formula for the BetaNegativeBinomial($r, \alpha, \beta$) PMF was given in class. All you need to do is solve for the special case when $r=1$. Leave in terms of the beta function.}\spc{5}
+
+\intermediatesubproblem{Find the kernel of the BetaGeometric distribution.}\spc{6}
+
+
+\intermediatesubproblem{Imagine $r=3$ and you've seen the following data from the model: 5, 8, 6, 9, 11, 10, 7, 10, 11, 8, 9, 7, 7, 6. Find an expression for the probability the next observation will be 10.}\spc{3}
+
+\easysubproblem{Evaluate the probability in (p).}\spc{2}
+
+\end{enumerate}
+
+\end{document}
+
+
+
+
+\intermediatesubproblem{Calculate a 95\% a priori credible region for $\theta$. Use \texttt{R} on your computer (or \href{http://www.r-fiddle.org/}{R-Fiddle} online) and its \texttt{qbeta} function.}\spc{1}
+
+\easysubproblem{You flip the same coin 100 times and you observe 39 heads. Find the distribution of $\theta~|~X$.}\spc{0.5}
+
+
+\easysubproblem{Calculate a 95\% a posteriori credible region for $\theta$.}\spc{1}
+
+\easysubproblem{Why is your answer to (d) a smaller interval than (b)?}\spc{3}
+
+\intermediatesubproblem{Test the hypothesis that this coin is fair given prior information from (a) and the data from (c). Use the credible region method. Make sure you say whether you retain or reject the null and justify why.}\spc{10}
+
+\intermediatesubproblem{Calculate the Bayesian $p$-val for the test in (f) given the intermediate calculation performed in (f).}\spc{3}
+
+\intermediatesubproblem{Test the hypothesis that this coin has a bias towards Heads (not tails) given prior information from (a) and the data from (c). Make sure you say whether you retain or reject the null and justify why.}\spc{6}
+
+\easysubproblem{Calculate the Bayesian $p$-val for the test in (h).}\spc{3}
+
+\easysubproblem{Let's say you wanted to test whether the coin is fair but you are indifferent to any $\theta$ which is different from 0.5 by a margin of 0.1. Write out the hypotheses for this test.}\spc{3}
+
+\intermediatesubproblem{Test the hypotheses from (j) given prior information from (a) and the data from (c). Make sure you say whether you retain or reject the null and justify why.}\spc{10}
+
+
+\easysubproblem{Calculate the Bayesian $p$-val for the test in (k).}\spc{3}
+
+\intermediatesubproblem{Given the tested hypotheses from (k) and data from (c), write the formula for the Bayes factor by specifying what $\mathcal{M}_1$ and $\mathcal{M}_2$ are and then writing the integral expression. Do not solve.}\spc{4}
+
+
+\intermediatesubproblem{[MA] Calculate the Bayes Factor numerically by solving the integral expression in (m). Interpret your value of $K$ (or $B$) according to \href{https://en.wikipedia.org/wiki/Bayes_factor}{wikipedia page about Bayes Factors}.}\spc{9}
+
+
+\hardsubproblem{Instead of the hypotheses in (j), use the hypotheses $H_0: \theta = 0.5$ vs. $H_a$ being the prior from (a) and calculate the Bayes Factor. Interpret your value of $K$ (or $B$) according to \href{https://en.wikipedia.org/wiki/Bayes_factor}{wikipedia page about Bayes Factors}. Use data from (c).}\spc{10}
+
+
+\intermediatesubproblem{Use a frequentist approach to test the null that this coin is fair given the data from (c). Calculate a $p$-val as well.}\spc{9}
+
+\hardsubproblem{Write about why your answers to all these hypothesis tests (except the one sided test in h) differ from each other and differ from the frequentist test in (p).}\spc{10}
+
+\easysubproblem{Given prior information from (a) and the data from (c), what is the distribution of one future coin flip?}\spc{1}
+
+\intermediatesubproblem{[MA] Rederive the posterior predictive distribution for the general $\theta \sim \stdbetanot$ case for $n$ data points and $m$ future observations.}\spc{9}
+
+\easysubproblem{Given prior information from (a) and the data from (c), what is the distribution of ten future coin flips?}\spc{2}
+
+\easysubproblem{How can you think about the beta-binomial distribution in terms of binomial sampling from bags?}\spc{7}
+
+\intermediatesubproblem{For your distribution in (t) what is the expected number of heads and the standard error number of heads? (See \href{https://en.wikipedia.org/wiki/Beta-binomial_distribution}{wikipedia}).}\spc{7}
+
+\hardsubproblem{[MA] For your distribution in (s), find a 95\% central interval for the number of heads and the number of tails expected on 10 future coin flips.}\spc{12}
+
+\intermediatesubproblem{Given prior information from (a) and the now new data: three tails, find the frequentist and Bayesian confidence intervals for $\theta$.}\spc{2}
+
+\easysubproblem{Forget the prior information from (a). If you get 3 tails, what is the estimate of the probability of heads using the \qu{law of succession}?}\spc{2}
+
+\intermediatesubproblem{Prove that the $\thetahatmmse$ is a shrinkage estimator.}\spc{6}
+
+\easysubproblem{Assume again the prior information from (a). What is the shrinkage proportion $\rho$ for this prior when  estimating $\theta$ via $\thetahatmmse$?.}\spc{2}
+
+
+
+\hardsubproblem{Prove that $\thetahatmmse$ is a biased estimator (i.e. its expectation is \textit{not} $\theta$).}\spc{5}
+
+\easysubproblem{Prove that $\displaystyle \limitn \rho = 0$ and therefore this bias $\rightarrow 0$ as your dataset gets larger.}\spc{4}
+
+\hardsubproblem{[MA] Why on Earth should anyone use shrinkage estimators if they're biased? Google it. Discuss.}\spc{6}
+
+\end{enumerate}
+
+\end{document}
