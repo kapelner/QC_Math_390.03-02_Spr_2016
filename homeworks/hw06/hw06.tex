@@ -106,6 +106,16 @@ NAME: \line(1,0){380}
 
 \hardsubproblem{[MA] Use an objective prior. Imagine you now have seen 5 Bernoulli experiments go by with no success which you are patiently waiting for (since you can't use the cookie-cutter formulas until you see the success). Write an expression which if evaluated will provide the best guess of $\theta$ (best in a squared error loss sense) only given this \qu{partial} information. If you numerically compute it, you should get approximately 0.0238.}\spc{6}
 
+%xs = seq(0, 100000)
+%sum = 0
+%alpha = 1
+%beta = 1
+%
+%for (x in xs){
+%	sum = sum + (alpha + 1)/(alpha+beta+1 + x) * beta(alpha + 1, x + beta) / beta(alpha, beta) 
+%}
+%sum
+
 
 \intermediatesubproblem{Consider $\Xoneton \exchdist \negbin{r}{\theta}$ where $r$ is considered known and $\theta \sim \stdbetanot$ Demonstrate that the posterior in this case is Beta and find the posterior parameters.}\spc{6}
 
