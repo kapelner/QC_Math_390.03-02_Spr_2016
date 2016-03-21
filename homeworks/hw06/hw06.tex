@@ -207,13 +207,40 @@ NAME: \line(1,0){380}
 
 \intermediatesubproblem{Use an uninformative prior like in the previous question. What is the posterior?}\spc{5}
 
-\intermediatesubproblem{Write the integral to solve for the posterior predictive distribution for a single observation given $n$ observed observations.}\spc{5}
+\intermediatesubproblem{Write the integral to solve for the posterior predictive distribution for a single observation given $n$ observed data points.}\spc{5}
 
 \hardsubproblem{[MA] Solve the integral.}\spc{6}
 
 \extracreditsubproblem{[MA] Find the joint posterior predictive distribution for $m$ future observations.}\spc{0.1}
 
 \hardsubproblem{[MA] What is the Jeffrey's prior for the exponential likelihood? Try yourself before you Google the answer.}\spc{5}
+
+\end{enumerate}
+
+
+\problem{We now begin the normal-normal conjugate model.}
+
+\begin{enumerate}
+
+\easysubproblem{If $X \sim \normnot{\theta}{\sigsq}$, what is the kernel of $\theta~|~X,~\sigsq$?}\spc{1}
+
+\easysubproblem{If $X \sim \normnot{\theta}{\sigsq}$, what is the kernel of $\sigsq~|~X,~\theta$?}\spc{1}
+
+\easysubproblem{If $X \sim \normnot{\theta}{\sigsq}$, what is the kernel of $\theta~,\sigsq~|~X$?}\spc{1}
+
+\hardsubproblem{Show that posterior of $\theta~|~X,~\sigsq$ is normal if $\theta \sim \normnot{\mu_0}{\tausq}$. Try to do it yourself and only copy from the notes if you have to.}\spc{15}
+
+
+\easysubproblem{What is the definition of the convolution of two r.v.'s $X_1$ and $X_2$?}\spc{1}
+
+\hardsubproblem{Show that predictive distribution of $X^*~|~X,~\sigsq$ is normal if $\theta \sim \normnot{\mu_0}{\tausq}$ by solving the integral and not using the convolution.}\spc{12}
+
+\hardsubproblem{Even though you solved this in (f), using the law of iterated expectation, find the expectation of the predictive distribution of $X^*~|~X,~\sigsq$.}\spc{8}
+
+\hardsubproblem{Even though you solved this in (f), Using the law of total variance, find the variance of the predictive distribution of $X^*~|~X,~\sigsq$.}\spc{6}
+
+
+\easysubproblem{In this problem we found the posterior, $\theta~|~X,~\sigsq$. What are all the other posteriors that could be of interest? Explain the inferential targets of each.}\spc{6}
 
 \end{enumerate}
 
