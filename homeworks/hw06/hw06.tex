@@ -135,80 +135,87 @@ NAME: \line(1,0){380}
 
 \intermediatesubproblem{Imagine $r=3$ and you've seen the following data from the model: 5, 8, 6, 9, 11, 10, 7, 10, 11, 8, 9, 7, 7, 6. Find an expression for the probability the next observation will be 10.}\spc{3}
 
-\easysubproblem{Evaluate the probability in (p).}\spc{2}
+\easysubproblem{Evaluate the probability in (q).}\spc{2}
 
 \end{enumerate}
 
-\end{document}
+
+\problem{We will ask some basic problems on the Gamma-Poisson conjugate model.}
+
+\begin{enumerate}
+
+\easysubproblem{If $X \sim \poisson{\theta}$, what is the kernel of $\theta~|~X$?}\spc{2}
+
+\easysubproblem{Write the PDF of $\theta$ which is the gamma distribution with the standard hyperparameters we used in class.}\spc{1}
+
+\easysubproblem{What is the support and parameter space?}\spc{2}
+
+\easysubproblem{What is the expectation and standard error and mode?}\spc{2}
 
 
+\easysubproblem{Draw four different pictures of different hyperparameter combinations to demonstrate this model's flexibility}\spc{8}
 
 
-\intermediatesubproblem{Calculate a 95\% a priori credible region for $\theta$. Use \texttt{R} on your computer (or \href{http://www.r-fiddle.org/}{R-Fiddle} online) and its \texttt{qbeta} function.}\spc{1}
+\intermediatesubproblem{Prove that the Poisson likelihood for $n=1$ with a gamma prior yields a gamma posterior and find its parameters.}\spc{4}
 
-\easysubproblem{You flip the same coin 100 times and you observe 39 heads. Find the distribution of $\theta~|~X$.}\spc{0.5}
+\intermediatesubproblem{Prove that the Poisson likelihood for $n$ observations with a gamma prior yields a gamma posterior and find its parameters.}\spc{8}
 
+\intermediatesubproblem{For the Poisson likelihood for $n$ observations with a gamma prior find $\thetahatmmse$, $\thetahatmae$ and $\thetahatmap$.}\spc{2}
 
-\easysubproblem{Calculate a 95\% a posteriori credible region for $\theta$.}\spc{1}
+\intermediatesubproblem{Demonstrate that $\thetahatmmse$ is a shrinkage estimator and find $\rho$.}\spc{4}
 
-\easysubproblem{Why is your answer to (d) a smaller interval than (b)?}\spc{3}
+\easysubproblem{Demonstrate that $\prob{\theta} \propto 1$ is improper.}\spc{2}
 
-\intermediatesubproblem{Test the hypothesis that this coin is fair given prior information from (a) and the data from (c). Use the credible region method. Make sure you say whether you retain or reject the null and justify why.}\spc{10}
+\easysubproblem{Demonstrate that $\prob{\theta} \propto 1$ can be created by using an improper Gamma distribution (i.e. a Gamma distribution with parameters that are not technically in its parameter space and thereby does not admit a distribution function).}\spc{2}
 
-\intermediatesubproblem{Calculate the Bayesian $p$-val for the test in (f) given the intermediate calculation performed in (f).}\spc{3}
+\easysubproblem{What is the Jeffrey's prior for the Poisson likelihood model?}\spc{2}
 
-\intermediatesubproblem{Test the hypothesis that this coin has a bias towards Heads (not tails) given prior information from (a) and the data from (c). Make sure you say whether you retain or reject the null and justify why.}\spc{6}
+\easysubproblem{What is the equivalent of the Haldane prior in the Binomial likelihood model for the Poisson likelihood model?}\spc{2}
 
-\easysubproblem{Calculate the Bayesian $p$-val for the test in (h).}\spc{3}
+\intermediatesubproblem{[MA] Prove that posterior predictive distribution for the next exchangeable Poisson realization given $n$ observed Poisson realizations is negative binomially distributed and show its parameters are $p = \beta / (\beta + 1)$ and $r = \alpha$ for $\alpha \in \naturals$.}\spc{10}
 
-\easysubproblem{Let's say you wanted to test whether the coin is fair but you are indifferent to any $\theta$ which is different from 0.5 by a margin of 0.1. Write out the hypotheses for this test.}\spc{3}
-
-\intermediatesubproblem{Test the hypotheses from (j) given prior information from (a) and the data from (c). Make sure you say whether you retain or reject the null and justify why.}\spc{10}
-
-
-\easysubproblem{Calculate the Bayesian $p$-val for the test in (k).}\spc{3}
-
-\intermediatesubproblem{Given the tested hypotheses from (k) and data from (c), write the formula for the Bayes factor by specifying what $\mathcal{M}_1$ and $\mathcal{M}_2$ are and then writing the integral expression. Do not solve.}\spc{4}
+\hardsubproblem{If $\alpha \notin \naturals$, create an \qu{extended negative binomial} r.v. and find its PMF.}\spc{5}
 
 
-\intermediatesubproblem{[MA] Calculate the Bayes Factor numerically by solving the integral expression in (m). Interpret your value of $K$ (or $B$) according to \href{https://en.wikipedia.org/wiki/Bayes_factor}{wikipedia page about Bayes Factors}.}\spc{9}
+\easysubproblem{Why is the extended negative binomial r.v. also known as the gamma-Poisson mixture distribution?}\spc{3}
+
+\extracreditsubproblem{[MA] Find the joint posterior predictive distribution for $m$ future observations. I couldn't find the answer to this myself nor compute the integral.}\spc{5}
+
+\intermediatesubproblem{If you observe $0,3,2,4,2,6,1,0,5$, give a 95\% CR for $\theta$. Pick an objective prior.}\spc{5}
+
+\intermediatesubproblem{Using the data and the prior from (r), test if $\theta < 2$.}\spc{8}
 
 
-\hardsubproblem{Instead of the hypotheses in (j), use the hypotheses $H_0: \theta = 0.5$ vs. $H_a$ being the prior from (a) and calculate the Bayes Factor. Interpret your value of $K$ (or $B$) according to \href{https://en.wikipedia.org/wiki/Bayes_factor}{wikipedia page about Bayes Factors}. Use data from (c).}\spc{10}
-
-
-\intermediatesubproblem{Use a frequentist approach to test the null that this coin is fair given the data from (c). Calculate a $p$-val as well.}\spc{9}
-
-\hardsubproblem{Write about why your answers to all these hypothesis tests (except the one sided test in h) differ from each other and differ from the frequentist test in (p).}\spc{10}
-
-\easysubproblem{Given prior information from (a) and the data from (c), what is the distribution of one future coin flip?}\spc{1}
-
-\intermediatesubproblem{[MA] Rederive the posterior predictive distribution for the general $\theta \sim \stdbetanot$ case for $n$ data points and $m$ future observations.}\spc{9}
-
-\easysubproblem{Given prior information from (a) and the data from (c), what is the distribution of ten future coin flips?}\spc{2}
-
-\easysubproblem{How can you think about the beta-binomial distribution in terms of binomial sampling from bags?}\spc{7}
-
-\intermediatesubproblem{For your distribution in (t) what is the expected number of heads and the standard error number of heads? (See \href{https://en.wikipedia.org/wiki/Beta-binomial_distribution}{wikipedia}).}\spc{7}
-
-\hardsubproblem{[MA] For your distribution in (s), find a 95\% central interval for the number of heads and the number of tails expected on 10 future coin flips.}\spc{12}
-
-\intermediatesubproblem{Given prior information from (a) and the now new data: three tails, find the frequentist and Bayesian confidence intervals for $\theta$.}\spc{2}
-
-\easysubproblem{Forget the prior information from (a). If you get 3 tails, what is the estimate of the probability of heads using the \qu{law of succession}?}\spc{2}
-
-\intermediatesubproblem{Prove that the $\thetahatmmse$ is a shrinkage estimator.}\spc{6}
-
-\easysubproblem{Assume again the prior information from (a). What is the shrinkage proportion $\rho$ for this prior when  estimating $\theta$ via $\thetahatmmse$?.}\spc{2}
-
-
-
-\hardsubproblem{Prove that $\thetahatmmse$ is a biased estimator (i.e. its expectation is \textit{not} $\theta$).}\spc{5}
-
-\easysubproblem{Prove that $\displaystyle \limitn \rho = 0$ and therefore this bias $\rightarrow 0$ as your dataset gets larger.}\spc{4}
-
-\hardsubproblem{[MA] Why on Earth should anyone use shrinkage estimators if they're biased? Google it. Discuss.}\spc{6}
+\hardsubproblem{[MA] We talked about that the negative binomial is an \qu{overdispersed} Poisson. Show that the negative binomial converges to a Poisson. Try yourself before you Google the answer.}\spc{5}
 
 \end{enumerate}
+
+
+\problem{We will ask some basic problems on the Gamma-Exponential conjugate model.}
+
+\begin{enumerate}
+
+\easysubproblem{If $X \sim \exponential{\theta}$, what is the kernel of $\theta~|~X$?}\spc{2}
+
+\intermediatesubproblem{Prove that the Exponential likelihood for $n=1$ with a gamma prior yields a gamma posterior and find its parameters.}\spc{8}
+
+\intermediatesubproblem{Prove that the Exponential likelihood for $n$ observations with a gamma prior yields a gamma posterior and find its parameters.}\spc{6}
+
+\intermediatesubproblem{For the Poisson likelihood for $n$ observations with a gamma prior find $\thetahatmmse$, $\thetahatmae$ and $\thetahatmap$.}\spc{2}
+
+\intermediatesubproblem{Demonstrate that $\thetahatmmse$ is a shrinkage estimator and find $\rho$.}\spc{4}
+
+\intermediatesubproblem{Use an uninformative prior like in the previous question. What is the posterior?}\spc{5}
+
+\intermediatesubproblem{Write the integral to solve for the posterior predictive distribution for a single observation given $n$ observed observations.}\spc{5}
+
+\hardsubproblem{[MA] Solve the integral.}\spc{6}
+
+\extracreditsubproblem{[MA] Find the joint posterior predictive distribution for $m$ future observations.}\spc{0.1}
+
+\hardsubproblem{[MA] What is the Jeffrey's prior for the exponential likelihood? Try yourself before you Google the answer.}\spc{5}
+
+\end{enumerate}
+
 
 \end{document}
