@@ -1,0 +1,282 @@
+\documentclass[12pt]{article}
+
+\include{preamble}
+
+\newtoggle{professormode}
+\toggletrue{professormode} %STUDENTS: DELETE or COMMENT this line
+
+
+
+\title{MATH 390.03-02 / 650 Fall 2015 Homework \#7}
+
+\author{Professor Adam Kapelner} %STUDENTS: write your name here
+
+\iftoggle{professormode}{
+\date{Due in my mail slot, Friday, April 8, 2016 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+}
+
+\renewcommand{\abstractname}{Instructions and Philosophy}
+
+\begin{document}
+\maketitle
+
+\iftoggle{professormode}{
+\begin{abstract}
+The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
+
+Reading is still \textit{required}. For this homework set, read about the normal-normal conjugate and semi-conjugate model. Also read ch13 in McGrayne.
+
+The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
+
+Problems marked \qu{[MA]} are for the masters students only (those enrolled in the 650 course). For those in 390, doing these questions will count as extra credit.
+
+This homework is worth 100 points but the point distribution will not be determined until after the due date. See syllabus for the policy on late homework.
+
+Up to 10 points are given as a bonus if the homework is typed using \LaTeX. Links to instaling \LaTeX~and program for compiling \LaTeX~is found on the syllabus. You are encouraged to use \url{overleaf.com}. If you are handing in homework this way, read the comments in the code; there are two lines to comment out and you should replace my name with yours and write your section. The easiest way to use overleaf is to copy the raw text from hwxx.tex and preamble.tex into two new overleaf tex files with the same name. If you are asked to make drawings, you can take a picture of your handwritten drawing and insert them as figures or leave space using the \qu{$\backslash$vspace} command and draw them in after printing or attach them stapled.
+
+The document is available with spaces for you to write your answers. If not using \LaTeX, print this document and write in your answers. I do not accept homeworks which are \textit{not} on this printout. Keep this first page printed for your records.
+
+\end{abstract}
+
+\thispagestyle{empty}
+\vspace{1cm}
+NAME: \line(1,0){380}
+\clearpage
+}
+
+
+\problem{These are questions about McGrayne's book, chapters 13 and 14.}
+
+\begin{enumerate}
+
+\easysubproblem{Write a one paragraph biography of John Tukey.}\spc{6}
+
+\easysubproblem{Why did Alfred Kinsey's wife want to poison John Tukey?}\spc{2}
+
+\easysubproblem{Tukey helped NBC with polling predictions for the presidential campaign. What was NBC's polling algorithm based on?}\spc{2}
+
+\easysubproblem{Why is \qu{objectivity an heirloom and a fallacy?}}\spc{2}
+
+\easysubproblem{Why do you think Tukey called Bayes Rule by the name \qu{borrowing strength?}}\spc{2}
+
+\easysubproblem{Why is it that we don't know a lot of Bayes Rule's modern history?}\spc{2}
+
+\easysubproblem{Generally speaking, how does Nate Silver predict elections?}\spc{2}
+
+\easysubproblem{How many Bayesians of import were there in 1979?}\spc{1}
+
+\easysubproblem{What advice did Chernoff give to Susan Holmes? (Note: Susan Holmes was my undergraduate advisor).}\spc{3}
+
+\easysubproblem{How did Rasmussen's team estimate the probability of a nuclear plant core meltdown?}\spc{3}
+
+\easysubproblem{How did the Three Mile Island accident vindicate Rasmussen's committee report?}\spc{3}
+
+\end{enumerate}
+
+\end{document}
+
+
+
+
+\problem{These are questions about McGrayne's book, chapters 11 and 12.}
+
+\begin{enumerate}
+
+\easysubproblem{Did Savage like Shlaifer? Yes / No and why?}\spc{3}
+
+\easysubproblem{How did Neyman-Pearson approach statistical decision theory? What is the weakness to this approach? (p145)}\spc{3}
+
+\easysubproblem{Who popularized \qu{probability trees} (and \qu{tree flipping}) similar to exercises we did in Math 241?}\spc{1}
+
+\easysubproblem{Where are Bayesian methods taught more widely than any other discipline in academia?}\spc{2}
+
+\easysubproblem{Despite the popularity of his Bayesian textbook on business decision theory, why didn't Schlaifer's Bayesianism catch on in the real world of business executives making decisions?}\spc{3}
+
+\easysubproblem{Why did the pollsters fail (big time) to predict Harry Truman's victory in the 1948 presidential election?}\spc{2}
+
+\easysubproblem{When does the diference between Bayesianism and Frequentism grow \qu{immense}?}\spc{3}
+
+\easysubproblem{How did Mosteller demonstrate that Madison wrote the 12 Federalist papers of unknown authorship?}\spc{3}
+
+\end{enumerate}
+
+
+\problem{We will ask some basic problems on Empirical Bayesianism.}
+
+\begin{enumerate}
+
+\easysubproblem{Explain the methodology of Empirical Bayes the best as you can.}\spc{6}
+
+\hardsubproblem{In what situations do you think Empirical Bayes methods work the best?}\spc{2}
+
+\end{enumerate}
+
+
+
+\problem{We will again be looking at the beta-prior, negative-binomial-likelihood Bayesian model. But first consider the more basic case where $\Xoneton \exchdist \geometric{\theta}$ and $\theta \sim \stdbetanot$.}
+
+
+\begin{enumerate}
+
+
+\easysubproblem{What is the likelihood model here? Write the PMF using the parameterization from class only.}\spc{2}
+
+\intermediatesubproblem{Demonstrate that the posterior in this case is Beta and find the posterior parameters.}\spc{6}
+
+\easysubproblem{Give expressions for $\thetahatmmse,~\thetahatmae$ and $\thetahatmap$ (use the approximation for the median of the beta distribution given in the notes for $\thetahatmae$). Are they all similar is $n$ is large?}\spc{3}
+
+\hardsubproblem{Interpret the hyperparameters $\alpha$ and $\beta$ in the context of the posterior parameters.}\spc{5}
+
+
+
+\easysubproblem{State the Jeffrey's prior for this model and explain why it is not proper.}\spc{2}
+
+\easysubproblem{In what circumstances does Jeffrey's prior lead to a proper posterior?}\spc{2}
+
+\easysubproblem{Given the posterior in (b), find the posterior in the case where you only observe one $x$.}\spc{2}
+
+\hardsubproblem{You've seen the following data from the model: 5, 8, 6, 9, 11, 10, 7, 10, 11, 8, 9, 7, 7, 6. Design a prior using Empirical Bayes for $\theta$.}\spc{5}
+
+
+\hardsubproblem{[MA] Use an objective prior. Imagine you now have seen 5 Bernoulli experiments go by with no success which you are patiently waiting for (since you can't use the cookie-cutter formulas until you see the success). Write an expression which if evaluated will provide the best guess of $\theta$ (best in a squared error loss sense) only given this \qu{partial} information. If you numerically compute it, you should get approximately 0.0238.}\spc{6}
+
+%xs = seq(0, 100000)
+%sum = 0
+%alpha = 1
+%beta = 1
+%
+%for (x in xs){
+%	sum = sum + (alpha + 1)/(alpha+beta+1 + x) * beta(alpha + 1, x + beta) / beta(alpha, beta) 
+%}
+%sum
+
+
+\intermediatesubproblem{Consider $\Xoneton \exchdist \negbin{r}{\theta}$ where $r$ is considered known and $\theta \sim \stdbetanot$ Demonstrate that the posterior in this case is Beta and find the posterior parameters.}\spc{6}
+
+\easysubproblem{Give expressions for $\thetahatmmse,~\thetahatmae$ and $\thetahatmap$ (use the approximation for the median of the beta distribution given in the notes for $\thetahatmae$). Are they all similar is $n$ is large?}\spc{3}
+
+
+\easysubproblem{[MA] Find the Jeffrey's prior for $\theta$ as a function of $r$. Look up the $I(\theta)$ on the Internet for the negative binomial given the parameterization we used in class. You do not need to do the derivation yourself.}\spc{2}
+
+\hardsubproblem{[MA] Derive the posterior distribution PMF for one new negative binomial observation after seeing $n$ observations. This is a lot of computation.}\spc{18}
+
+\hardsubproblem{[MA] Write an integral expression for the joint posterior distribution for $m$ new negative binomail observations. Extra credit if you can find the solution somewhere on the Internet.}\spc{6}
+
+\intermediatesubproblem{Derive the PMF of the BetaGeometric($\alpha, \beta$) distribution. Hint: the formula for the BetaNegativeBinomial($r, \alpha, \beta$) PMF was given in class. All you need to do is solve for the special case when $r=1$. Leave in terms of the beta function.}\spc{5}
+
+\intermediatesubproblem{Find the kernel of the BetaGeometric distribution.}\spc{6}
+
+
+\intermediatesubproblem{Imagine $r=3$ and you've seen the following data from the model: 5, 8, 6, 9, 11, 10, 7, 10, 11, 8, 9, 7, 7, 6. Find an expression for the probability the next observation will be 10.}\spc{3}
+
+\easysubproblem{Evaluate the probability in (q).}\spc{2}
+
+\end{enumerate}
+
+
+\problem{We will ask some basic problems on the Gamma-Poisson conjugate model.}
+
+\begin{enumerate}
+
+\easysubproblem{If $X \sim \poisson{\theta}$, what is the kernel of $\theta~|~X$?}\spc{2}
+
+\easysubproblem{Write the PDF of $\theta$ which is the gamma distribution with the standard hyperparameters we used in class.}\spc{1}
+
+\easysubproblem{What is the support and parameter space?}\spc{2}
+
+\easysubproblem{What is the expectation and standard error and mode?}\spc{2}
+
+
+\easysubproblem{Draw four different pictures of different hyperparameter combinations to demonstrate this model's flexibility}\spc{8}
+
+
+\intermediatesubproblem{Prove that the Poisson likelihood for $n=1$ with a gamma prior yields a gamma posterior and find its parameters.}\spc{4}
+
+\intermediatesubproblem{Prove that the Poisson likelihood for $n$ observations with a gamma prior yields a gamma posterior and find its parameters.}\spc{8}
+
+\intermediatesubproblem{For the Poisson likelihood for $n$ observations with a gamma prior find $\thetahatmmse$, $\thetahatmae$ and $\thetahatmap$.}\spc{2}
+
+\intermediatesubproblem{Demonstrate that $\thetahatmmse$ is a shrinkage estimator and find $\rho$.}\spc{4}
+
+\easysubproblem{Demonstrate that $\prob{\theta} \propto 1$ is improper.}\spc{2}
+
+\easysubproblem{Demonstrate that $\prob{\theta} \propto 1$ can be created by using an improper Gamma distribution (i.e. a Gamma distribution with parameters that are not technically in its parameter space and thereby does not admit a distribution function).}\spc{2}
+
+\easysubproblem{What is the Jeffrey's prior for the Poisson likelihood model?}\spc{2}
+
+\easysubproblem{What is the equivalent of the Haldane prior in the Binomial likelihood model for the Poisson likelihood model?}\spc{2}
+
+\intermediatesubproblem{[MA] Prove that posterior predictive distribution for the next exchangeable Poisson realization given $n$ observed Poisson realizations is negative binomially distributed and show its parameters are $p = \beta / (\beta + 1)$ and $r = \alpha$ for $\alpha \in \naturals$.}\spc{10}
+
+\hardsubproblem{If $\alpha \notin \naturals$, create an \qu{extended negative binomial} r.v. and find its PMF.}\spc{5}
+
+
+\easysubproblem{Why is the extended negative binomial r.v. also known as the gamma-Poisson mixture distribution?}\spc{3}
+
+\extracreditsubproblem{[MA] Find the joint posterior predictive distribution for $m$ future observations. I couldn't find the answer to this myself nor compute the integral.}\spc{5}
+
+\intermediatesubproblem{If you observe $0,3,2,4,2,6,1,0,5$, give a 95\% CR for $\theta$. Pick an objective prior.}\spc{5}
+
+\intermediatesubproblem{Using the data and the prior from (r), test if $\theta < 2$.}\spc{8}
+
+
+\hardsubproblem{[MA] We talked about that the negative binomial is an \qu{overdispersed} Poisson. Show that the negative binomial converges to a Poisson. Try yourself before you Google the answer.}\spc{5}
+
+\end{enumerate}
+
+
+\problem{We will ask some basic problems on the Gamma-Exponential conjugate model.}
+
+\begin{enumerate}
+
+\easysubproblem{If $X \sim \exponential{\theta}$, what is the kernel of $\theta~|~X$?}\spc{2}
+
+\intermediatesubproblem{Prove that the Exponential likelihood for $n=1$ with a gamma prior yields a gamma posterior and find its parameters.}\spc{8}
+
+\intermediatesubproblem{Prove that the exponential likelihood for $n$ observations with a gamma prior yields a gamma posterior and find its parameters.}\spc{6}
+
+\intermediatesubproblem{For the exponential likelihood for $n$ observations with a gamma prior find $\thetahatmmse$, $\thetahatmae$ and $\thetahatmap$.}\spc{2}
+
+\intermediatesubproblem{Demonstrate that $\thetahatmmse$ is a shrinkage estimator and find $\rho$.}\spc{4}
+
+\intermediatesubproblem{Use an uninformative prior like in the previous question. What is the posterior?}\spc{5}
+
+\intermediatesubproblem{Write the integral to solve for the posterior predictive distribution for a single observation given $n$ observed data points.}\spc{5}
+
+\hardsubproblem{[MA] Solve the integral.}\spc{6}
+
+\extracreditsubproblem{[MA] Find the joint posterior predictive distribution for $m$ future observations.}\spc{0.1}
+
+\hardsubproblem{[MA] What is the Jeffrey's prior for the exponential likelihood? Try yourself before you Google the answer.}\spc{5}
+
+\end{enumerate}
+
+
+\problem{We now begin the normal-normal conjugate model.}
+
+\begin{enumerate}
+
+\easysubproblem{If $X \sim \normnot{\theta}{\sigsq}$, what is the kernel of $\theta~|~X,~\sigsq$?}\spc{1}
+
+\easysubproblem{If $X \sim \normnot{\theta}{\sigsq}$, what is the kernel of $\sigsq~|~X,~\theta$?}\spc{1}
+
+\easysubproblem{If $X \sim \normnot{\theta}{\sigsq}$, what is the kernel of $\theta~,\sigsq~|~X$?}\spc{1}
+
+\hardsubproblem{Show that posterior of $\theta~|~X,~\sigsq$ is normal if $\theta \sim \normnot{\mu_0}{\tausq}$. Try to do it yourself and only copy from the notes if you have to.}\spc{15}
+
+
+\easysubproblem{What is the definition of the convolution of two r.v.'s $X_1$ and $X_2$?}\spc{1}
+
+\hardsubproblem{Show that predictive distribution of $X^*~|~X,~\sigsq$ is normal if $\theta \sim \normnot{\mu_0}{\tausq}$ by solving the integral and not using the convolution.}\spc{12}
+
+\hardsubproblem{Even though you solved this in (f), using the law of iterated expectation, find the expectation of the predictive distribution of $X^*~|~X,~\sigsq$.}\spc{8}
+
+\hardsubproblem{Even though you solved this in (f), Using the law of total variance, find the variance of the predictive distribution of $X^*~|~X,~\sigsq$.}\spc{6}
+
+
+\easysubproblem{In this problem we found the posterior, $\theta~|~X,~\sigsq$. What are all the other posteriors that could be of interest? Explain the inferential targets of each.}\spc{6}
+
+\end{enumerate}
+
+
+\end{document}
