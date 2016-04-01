@@ -73,7 +73,144 @@ NAME: \line(1,0){380}
 
 \end{enumerate}
 
+
+
+\problem{We will review classical \textit{frequentist} concepts from \qu{Math 241/242}. Much of this can be drawn from lecture 14 first page.}
+
+\begin{enumerate}
+
+\easysubproblem{If $\Xoneton \iid \normnot{\theta}{\sigsq}$ and $\Xbar := \oneover{n}\sum_{i=1}^n X_i$, what is the distribution of the following:
+\beqn
+\frac{\Xbar - \theta}{\frac{\sigma}{\sqrt{n}}} \sim ~~~~~~~~~~~~~~~~~
+\eeqn}~\spc{1}
+
+\easysubproblem{If $\Xoneton \iid \normnot{\theta}{\sigsq}$ and $\Xbar := \oneover{n}\sum_{i=1}^n X_i$, what is the distribution of $\Xbar$ assuming $\sigsq$ is known? This is from your Math 241 notes.}\spc{1}
+
+\easysubproblem{Write the definition of $S^2$, the r.v. which is the sample variance \textit{estimator}. Hint: use capital letters.}\spc{1}
+
+\easysubproblem{Write the definition of $S$, the sample standard deviation \textit{estimator} (or standard error estimator --- both terms are synonymous). Hint: use capital letters.}\spc{1}
+
+\easysubproblem{Write the definition of $s^2$, the r.v. which is the sample variance \textit{estimate}. Hint: use lowercase letters.}\spc{1}
+
+
+\extracreditsubproblem{[MA] This is for Alina: Prove that $\expe{S^2} = \sigsq$, i.e. $S^2$ is an unbiased estimator of what it seeks to estiamte, the true variance of the r.v. i.e. $\sigsq$. Note that here you should not use the normality of the underlying r.v.'s (but for the other subparts of this question this is necessary). This vindicates the weird $n-1$ term in the bottom (which is part of \href{https://en.wikipedia.org/wiki/Bessel\%27s_correction}{Bessel's correction}). The answer is eminently Googlable... but don't spoil the fun. Do this on a separate piece of paper as there is not enough room below.}\spc{10}
+
+
+\easysubproblem{Write the density function of the r.v. $\frac{n-1}{\sigsq}S^2$. I gave this in the notes in the beginning of lecture 14. You can find the density online \href{https://en.wikipedia.org/wiki/Chi-squared_distribution}{here}. Note that the proof of this is really difficult and involves linear algebra.}\spc{1}
+
+\intermediatesubproblem{Show that the $\chisq{n-1}$ density from above is actually a gamma density and find its parameters. All you need to do is match the density function with $\alpha$ and $\beta$ on a gamma PDF.}\spc{1}
+
+
+\intermediatesubproblem{What is the distribution of $S^2$? Hint: use the fact that if $X \sim \chisq{\nu}$ and $c > 0$ then $cX \sim \gammanot{\overtwo{\nu}}{2c}$.}\spc{1}
+
+\intermediatesubproblem{What is the distribution of $\inverse{\frac{n-1}{\sigsq}S^2} = \frac{\sigsq}{(n-1)S^2}$? Hint: use the fact that if $X \sim \gammanot{\alpha}{\beta}$ then $\oneover{X} \sim \invgammanot{\alpha}{\oneover{\beta}}$.}\spc{1}
+
+
+\easysubproblem{This answer is in the notes. If $\Xoneton \iid \normnot{\theta}{\sigsq}$ and $\Xbar := \oneover{n}\sum_{i=1}^n X_i$, what is the distribution of the following where $S$ is defined as in (d):
+\beqn
+\frac{\Xbar - \theta}{\frac{S}{\sqrt{n}}} \sim ~~~~~~~~~~~~~~~~~
+\eeqn}~\spc{1}
+
+\easysubproblem{Write the PDF of the general (also called noncentral) $T$ distribution below. You need to use the notation given in class. You can look up the answer \href{https://en.wikipedia.org/wiki/Noncentral_t-distribution}{here} or in the notes (lecture 14, bottom of page 4).}\spc{3}
+
+\easysubproblem{What is the kernel of the non-central $T$?}\spc{3}
+
+\intermediatesubproblem{What is the distribution of $\Xbar$ assuming $\sigsq$ is \textit{unknown}? This will differ from (b).  Use the answer from part (k) above and the fact that $a T_\nu + c \sim T_\nu(c, a)$ which means that if you shift and scale a T with $\nu$ degrees of freedom, you get a noncentral $T_\nu$ with the new center and scaling as parameters.}\spc{2}
+
+\end{enumerate}
+
+\problem{Now we will move to the Bayesian normal-normal model for estimating $\sigsq$.}
+%and demonstrate the similarities with the classical results
+
+\begin{enumerate}
+
+\easysubproblem{If $\Xoneton \exchdist \normnot{\theta}{\sigsq}$ and $X$ represents all $\Xoneton$, in HW6 6(b) you found the kernel of $\sigsq~|~X,~\theta$. Show that this is the kernel of an inverse gamma. Use the $\sigsqhat$ substituion we did in class.}\spc{4}
+
+\intermediatesubproblem{Is $\sigsqhat$ equivalent to $s^2$? Why or why not?}\spc{2}
+
+\intermediatesubproblem{Why is using $\sigsqhat$ permitted in the setup in (a) but doesn't make sense in the frequentist setup?}\spc{2}
+
+\easysubproblem{In class we looked at $\sigsq \sim \invgammanot{\alpha}{\beta}$ but we used a different parameterization. Write the different parameterization below and explain why this was done i.e. interpret the meaning of the two new parameters.}\spc{6}
+
+\intermediatesubproblem{Show that $\sigsq~|~X,~\theta$ is distributed as an inverse gamma with the prior from (d) and find its parameters.}\spc{2}
+
+\easysubproblem{What is the Jeffrey's prior for $\sigsq$ (look in the notes and write it down --- no need to prove it). Is it proper?}\spc{2}
+
+\easysubproblem{Show that the Jeffrey's prior for $\sigsq$ is an improper inverse gamma distribution and find its parameters. Note these parameters are not in the parameter space of a proper inverse gamma distribution.}\spc{2}
+
+\easysubproblem{Under the Jeffrey's prior for $\sigsq$, what is the posterior?}\spc{2}
+
+
+\intermediatesubproblem{You are in a milk manufacturing plant producing 1 quart cartons of whole milk. You are willing to assume that the nozzle emits 1 qt on average. In your previous job, you remember inspecting 3 cartons of which you saw 1.02, 0.97, 1.03 quarts of milk inside. Create a prior based on what you've seen in your previous job. This forces you to understand (d).}\spc{4}
+
+\hardsubproblem{The company wishes to test if there's too much variability i.e. that there is more than $\sigma = 0.1$ variability. You take a sample of 10 and see 1.153, 1.045, 1.268, 1.333, 0.799, 1.075, 1.27, 1.07, 1.192 and 1.079 quarts. Find the $p$ value. You can write the answer below as a function of \texttt{rinvgamma} or \texttt{pinvgamma}. E.C. for computing it and testing this at $\alpha = 5\%$. You may want to use the \texttt{actuar} package (see \href{http://www.inside-r.org/packages/cran/actuar/docs/pinvgamma}{here}).}\spc{12}
+
+\end{enumerate}
+
+\problem{Now we will move to the Bayesian normal-normal model for estimating $\sigsq$ and demonstrate the similarities with the classical results.}
+
+\begin{enumerate}
+
+\easysubproblem{If $\Xoneton \exchdist \normnot{\theta}{\sigsq}$ and $X$ represents all $\Xoneton$, in HW6 6(c) you found the kernel of $\theta,~\sigsq~|~X = x$. Do so again below but this time use the substition that we made in class:
+
+\beqn
+\sum_{i=1}^n (x_i - \theta)^2 = (n-1)s^2 + n(\xbar - \theta)^2
+\eeqn
+
+where $s^2$ is your answer from 2(e). We do this here because this substition is important for what comes next.}\spc{10}
+
+\intermediatesubproblem{If $\prob{\theta,~\sigsq} \propto \oneover{\sigsq}$, show that this is a conjugate prior for the posterior of both the mean and variance, $\cprob{\theta,~\sigsq}{X}$. We called this two-dimensional distribution the normal-inverse-gamma but we did not go into details about it.}\spc{4}
+
+\easysubproblem{Using Bayes Rule, break up $\cprob{\theta,~\sigsq}{X}$ into two pieces.}\spc{1}
+
+\easysubproblem{Using your answer from (c), explain how you can create samples $\bracks{\theta_s, \sigsq_s}$ from the distribution $\cprob{\theta,~\sigsq}{X}$.}\spc{3}
+
+\intermediatesubproblem{Using these samples, how would you estimate $\cexpe{\theta}{X}$ and $\cexpe{\sigsq}{X}$?}\spc{3}
+
+\hardsubproblem{[MA] Using these samples, how would you estimate $\corr{\theta~|~X}{~\sigsq~|~X}$ i.e. the correlation between the posterior distributions of the two parameters?}\spc{5}
+
+\easysubproblem{If $\Xoneton \exchdist \normnot{\theta}{\sigsq}$ and $\theta \sim \normnot{\mu_0}{\tausq}$ write the distribution of $\theta~|~X,\sigsq$. Hint: it's in the notes and it was HW6 6(d).}\spc{5}
+
+\easysubproblem{Find $\cprob{\theta}{X,~\sigsq}$ which is the first part of (c) above. This is in the notes. Note how this prior is equivalent to saying $\prob{\theta} \propto 1$.}\spc{3}
+
+\intermediatesubproblem{Show that $\cprob{\sigsq}{X}$ which is the second part of (c) above is an inverse gamma and find its parameters.}\spc{4}
+
+\hardsubproblem{Show that $\cprob{\theta}{X}$ is a non-central $T$ distribution. You can reference 2(m) here. The answer is in the notes, but try to do it yourself. How does this compare to 2(n)?}\spc{10}
+
+\hardsubproblem{Show that $\cprob{\sigsq}{X}$ is an inverse gamma distribution and find its parameters.}\spc{10}
+
+\intermediatesubproblem{How does this compare to 2(j)? Note that $X \sim \invgammanot{\alpha}{\beta}$ then $cX \sim \invgammanot{\alpha}{\frac{\beta}{c}}$.}\spc{2}
+
+\easysubproblem{Write down the distribution of $X^*~|~X$ which is in the notes (lec 14, page 6). Note that the answer I wrote down is for the non-informative prior only.}\spc{3}
+
+\extracreditsubproblem{[MA] Prove (m).}\spc{3}
+
+\easysubproblem{Now under the informative conjugate prior:
+
+\beqn
+\prob{\theta,~\sigsq} &=& \cprob{\theta}{\sigsq} \prob{\sigsq} \\
+&=& \normnot{\mu_0}{\frac{\sigsq}{m}} \invgammanot{\overtwo{\nu_0}}{\overtwo{\nu_0 \sigsq_0}}
+\eeqn
+
+what is the distribution of $\theta~|~X,~\sigsq$? The new $\theta_p$ here has a nicer form than before.}\spc{2}
+
+\easysubproblem{What is the distribution of $\theta~|~X$? No need to derive it; just copy it from the notes.}\spc{4}
+
+\hardsubproblem{[MA] Prove (p) above. Or prove my notes are wrong.}\spc{10}
+
+
+\easysubproblem{What is the distribution of $\sigsq~|~\theta$? No need to derive it; just copy it from the notes.}\spc{4}
+
+\hardsubproblem{[MA] Prove (r) above. Or prove my notes are wrong.}\spc{10}
+
+\easysubproblem{Explain how to sample from the distribution of $X^*~|~X$.}\spc{4}
+
+\easysubproblem{Guess the form of the distribution of $X^*~|~X$ given (m), (p) and (r).}\spc{4}
+
+\end{enumerate}
+
 \end{document}
+
 
 
 
