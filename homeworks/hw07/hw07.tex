@@ -185,32 +185,72 @@ where $s^2$ is your answer from 2(e). We do this here because this substition is
 
 \extracreditsubproblem{[MA] Prove (m).}\spc{3}
 
-\easysubproblem{Now under the informative conjugate prior:
+\easysubproblem{Now consider the informative conjugate prior of
 
 \beqn
-\prob{\theta,~\sigsq} &=& \cprob{\theta}{\sigsq} \prob{\sigsq} \\
-&=& \normnot{\mu_0}{\frac{\sigsq}{m}} \invgammanot{\overtwo{\nu_0}}{\overtwo{\nu_0 \sigsq_0}}
+\prob{\theta,~\sigsq} = \cprob{\theta}{\sigsq} \prob{\sigsq} =  \normnot{\mu_0}{\frac{\sigsq}{m}} \invgammanot{\overtwo{\nu_0}}{\overtwo{\nu_0 \sigsq_0}}.
 \eeqn
 
-what is the distribution of $\theta~|~X,~\sigsq$? The new $\theta_p$ here has a nicer form than before.}\spc{2}
+What is its kernel? Collect common terms and be neat.}\spc{3}
 
-\easysubproblem{What is the distribution of $\theta~|~X$? No need to derive it; just copy it from the notes.}\spc{4}
 
-\hardsubproblem{[MA] Prove (p) above. Or prove my notes are wrong.}\spc{10}
+\intermediatesubproblem{What is the distribution of $\theta~|~X,~\sigsq$? The new $\theta_p$ here has a nicer form than before.}\spc{2}
 
+\easysubproblem{What is the distribution of $\theta~|~X$? No need to derive it; just copy it from the notes.}\spc{2}
+
+\hardsubproblem{[MA] Prove (q) above. Or prove my notes are wrong.}\spc{10}
 
 \easysubproblem{What is the distribution of $\sigsq~|~\theta$? No need to derive it; just copy it from the notes.}\spc{4}
 
-\hardsubproblem{[MA] Prove (r) above. Or prove my notes are wrong.}\spc{10}
+\hardsubproblem{[MA] Prove (s) above. Or prove my notes are wrong.}\spc{10}
 
 \easysubproblem{Explain how to sample from the distribution of $X^*~|~X$.}\spc{4}
 
-\easysubproblem{Guess the form of the distribution of $X^*~|~X$ given (m), (p) and (r).}\spc{4}
+\easysubproblem{Guess the form of the distribution of $X^*~|~X$ given (m), (q) and (s).}\spc{4}
 
 \end{enumerate}
 
-\end{document}
+\problem{We model the returns of S\&P 500 here.}
 
+\begin{enumerate}
+\easysubproblem{Below are the 16,428 daily returns (as a percentage) of the S\&P 500 dating back to January 4, 1950 and the code used to generate it. Does the data look normal? Yes/no}\spc{1}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7in]{daily_returns}
+\end{figure}
+
+\begin{verbatim}
+X = read.csv('sp_tot_ret_price_1950.csv')
+n = nrow(X)
+n
+hist(X[,4], br = 1000, 
+  main = 'daily returns (as a percentage) of the S&P 500')
+\end{verbatim}
+
+\intermediatesubproblem{Regardless of normality, do you think the data comes from exchangeable r.v.'s?}\spc{4}
+
+\intermediatesubproblem{Assume exchangeability and normality regardless of what you wrote in (a) and (b). The sample average is $\xbar=$0.0003415 and the sample standard deviation is $s=$0.0096. Under a relatively objective prior, give a 95\% credible region for the true daily return.}\spc{4}
+
+\intermediatesubproblem{Give a 95\% credible region for tomorrow's return.}\spc{15}
+
+\intermediatesubproblem{Below is the posterior predictive distribution in blue graphed atop the actual data in red. Is our model a good fit? Yes/no and explain.}\spc{4}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=7in]{daily_ret_post}
+\end{figure}
+
+\begin{verbatim}
+hist(X[,4], br = 450, 
+  main = 'daily returns of the S&P 500 with posterior replications', 
+  col='red')
+hist(rnorm(16428, 0.0003415, 0.0096), br = 100, add = TRUE, 
+  col = 'blue')
+\end{verbatim}
+
+\end{enumerate}
+\end{document}
 
 
 
