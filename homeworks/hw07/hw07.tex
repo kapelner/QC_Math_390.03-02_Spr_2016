@@ -55,7 +55,7 @@ NAME: \line(1,0){380}
 
 \easysubproblem{Tukey helped NBC with polling predictions for the presidential campaign. What was NBC's polling algorithm based on?}\spc{2}
 
-\easysubproblem{Why is \qu{objectivity an heirloom and a fallacy?}}\spc{2}
+\easysubproblem{Why is \qu{objectivity an heirloom ... and ... a fallacy?}}\spc{2}
 
 \easysubproblem{Why do you think Tukey called Bayes Rule by the name \qu{borrowing strength?}}\spc{2}
 
@@ -84,7 +84,7 @@ NAME: \line(1,0){380}
 \frac{\Xbar - \theta}{\frac{\sigma}{\sqrt{n}}} \sim ~~~~~~~~~~~~~~~~~
 \eeqn}~\spc{1}
 
-\easysubproblem{If $\Xoneton \iid \normnot{\theta}{\sigsq}$ and $\Xbar := \oneover{n}\sum_{i=1}^n X_i$, what is the distribution of $\Xbar$ assuming $\sigsq$ is known? This is from your Math 241 notes.}\spc{1}
+\easysubproblem{If $\Xoneton \iid \normnot{\theta}{\sigsq}$ and $\Xbar := \oneover{n}\sum_{i=1}^n X_i$, what is the distribution of $\Xbar$ assuming $\sigsq$ is known? This can be derived from (a) or found in your Math 241 notes.}\spc{1}
 
 \easysubproblem{Write the definition of $S^2$, the r.v. which is the sample variance \textit{estimator}. Hint: use capital letters.}\spc{1}
 
@@ -143,23 +143,23 @@ NAME: \line(1,0){380}
 
 \intermediatesubproblem{You are in a milk manufacturing plant producing 1 quart cartons of whole milk. You are willing to assume that the nozzle emits 1 qt on average. In your previous job, you remember inspecting 3 cartons of which you saw 1.02, 0.97, 1.03 quarts of milk inside. Create a prior based on what you've seen in your previous job. This forces you to understand (d).}\spc{4}
 
-\hardsubproblem{The company wishes to test if there's too much variability i.e. that there is more than $\sigma = 0.1$ variability. You take a sample of 10 and see 1.153, 1.045, 1.268, 1.333, 0.799, 1.075, 1.27, 1.07, 1.192 and 1.079 quarts. Find the $p$ value. You can write the answer below as a function of \texttt{rinvgamma} or \texttt{pinvgamma}. E.C. for computing it and testing this at $\alpha = 5\%$. You may want to use the \texttt{actuar} package (see \href{http://www.inside-r.org/packages/cran/actuar/docs/pinvgamma}{here}).}\spc{12}
+\hardsubproblem{The company wishes to test if there's too much variability i.e. that there is more than $\sigma = 0.1$ variability. You take a sample of 10 and see 1.153, 1.045, 1.268, 1.333, 0.799, 1.075, 1.27, 1.07, 1.192 and 1.079 quarts. Find the $p$ value. You can write the answer below as a function of \texttt{rinvgamma}, \texttt{qinvgamma} or \texttt{pinvgamma}. E.C. for computing it and testing this at $\alpha = 5\%$. You may want to use the \texttt{actuar} package (see \href{http://www.inside-r.org/packages/cran/actuar/docs/pinvgamma}{here}).}\spc{12}
 
 \end{enumerate}
 
-\problem{Now we will move to the Bayesian normal-normal model for estimating $\sigsq$ and demonstrate the similarities with the classical results.}
+\problem{Now we will move to the Bayesian normal-normal model for estimating both the mean and variance and demonstrate similarities with the classical results.}
 
 \begin{enumerate}
 
-\easysubproblem{If $\Xoneton \exchdist \normnot{\theta}{\sigsq}$ and $X$ represents all $\Xoneton$, in HW6 6(c) you found the kernel of $\theta,~\sigsq~|~X = x$. Do so again below but this time use the substition that we made in class:
+\easysubproblem{If $\Xoneton \exchdist \normnot{\theta}{\sigsq}$ and $X$ represents all $\Xoneton$, in HW6 6(c) you found the kernel of $\theta,~\sigsq~|~X = x$. Do so again below but this time use the substitution that we made in class:
 
 \beqn
 \sum_{i=1}^n (x_i - \theta)^2 = (n-1)s^2 + n(\xbar - \theta)^2
 \eeqn
 
-where $s^2$ is your answer from 2(e). We do this here because this substition is important for what comes next.}\spc{10}
+where $s^2$ is your answer from 2(e). We do this here because this substitution is important for what comes next.}\spc{8}
 
-\intermediatesubproblem{If $\prob{\theta,~\sigsq} \propto \oneover{\sigsq}$, show that this is a conjugate prior for the posterior of both the mean and variance, $\cprob{\theta,~\sigsq}{X}$. We called this two-dimensional distribution the normal-inverse-gamma but we did not go into details about it.}\spc{4}
+\intermediatesubproblem{If $\prob{\theta,~\sigsq} \propto \oneover{\sigsq}$, show that this is a conjugate prior for the posterior of both the mean and variance, $\cprob{\theta,~\sigsq}{X}$. We called this two-dimensional distribution the \qu{normal-inverse-gamma} distribution but we did not go into details about it.}\spc{6}
 
 \easysubproblem{Using Bayes Rule, break up $\cprob{\theta,~\sigsq}{X}$ into two pieces.}\spc{1}
 
@@ -169,9 +169,9 @@ where $s^2$ is your answer from 2(e). We do this here because this substition is
 
 \hardsubproblem{[MA] Using these samples, how would you estimate $\corr{\theta~|~X}{~\sigsq~|~X}$ i.e. the correlation between the posterior distributions of the two parameters?}\spc{5}
 
-\easysubproblem{If $\Xoneton \exchdist \normnot{\theta}{\sigsq}$ and $\theta \sim \normnot{\mu_0}{\tausq}$ write the distribution of $\theta~|~X,\sigsq$. Hint: it's in the notes and it was HW6 6(d).}\spc{5}
+\easysubproblem{If $\Xoneton \exchdist \normnot{\theta}{\sigsq}$ and $\theta \sim \normnot{\mu_0}{\tausq}$ write the distribution of $\theta~|~X,\sigsq$. Hint: it's in the notes and it was HW6 6(d). Note this problem is independent of the other problems.}\spc{5}
 
-\easysubproblem{Find $\cprob{\theta}{X,~\sigsq}$ which is the first part of (c) above. This is in the notes. Note how this prior is equivalent to saying $\prob{\theta} \propto 1$.}\spc{3}
+\easysubproblem{Find $\cprob{\theta}{X,~\sigsq}$ which is the first part of (c) above. Assume the prior from (b) and not from (g). This is in the notes. Note how this prior is equivalent to saying $\prob{\theta} \propto 1$.}\spc{3}
 
 \intermediatesubproblem{Show that $\cprob{\sigsq}{X}$ which is the second part of (c) above is an inverse gamma and find its parameters.}\spc{4}
 
@@ -204,7 +204,7 @@ What is its kernel? Collect common terms and be neat.}\spc{3}
 
 \hardsubproblem{[MA] Prove (s) above. Or prove my notes are wrong.}\spc{10}
 
-\easysubproblem{Explain how to sample from the distribution of $X^*~|~X$.}\spc{4}
+\easysubproblem{Explain how to sample from the distribution of $X^*~|~X$. Hint: write it as a double integrel of two conditional distributions and a marginal distribution (all conditional on $X$).}\spc{4}
 
 \easysubproblem{Guess the form of the distribution of $X^*~|~X$ given (m), (q) and (s).}\spc{4}
 
@@ -228,13 +228,13 @@ hist(X[,4], br = 1000,
   main = 'daily returns (as a percentage) of the S&P 500')
 \end{verbatim}
 
-\intermediatesubproblem{Regardless of normality, do you think the data comes from exchangeable r.v.'s?}\spc{4}
+\intermediatesubproblem{Regardless of normality, do you think the data is exchangeable?}\spc{4}
 
-\intermediatesubproblem{Assume exchangeability and normality regardless of what you wrote in (a) and (b). The sample average is $\xbar=$0.0003415 and the sample standard deviation is $s=$0.0096. Under a relatively objective prior, give a 95\% credible region for the true daily return.}\spc{4}
+\intermediatesubproblem{Assume exchangeability and normality regardless of what you wrote in (a) and (b). The sample average is $\xbar=$0.0003415 and the sample standard deviation is $s=$0.0096. Under a relatively objective prior, give a 95\% credible region for the true mean daily return.}\spc{4}
 
-\intermediatesubproblem{Give a 95\% credible region for tomorrow's return.}\spc{15}
+\intermediatesubproblem{Give a 95\% credible region for \emph{tomorrow's} return.}\spc{15}
 
-\intermediatesubproblem{Below is the posterior predictive distribution in blue graphed atop the actual data in red. Is our model a good fit? Yes/no and explain.}\spc{4}
+\intermediatesubproblem{Below is a sample of the same $n$ from the posterior predictive distribution in blue graphed atop the actual data in red (and a zoomed view of the tail). Is our model a good fit? Yes/no and explain.}\spc{2}
 
 \begin{figure}[h]
 \centering
@@ -244,11 +244,15 @@ hist(X[,4], br = 1000,
 \begin{verbatim}
 hist(X[,4], br = 450, 
   main = 'daily returns of the S&P 500 with posterior replications', 
-  col='red')
+  col='red', xlim = c(-.1, -.02), ylim = c(0, 150))
 hist(rnorm(16428, 0.0003415, 0.0096), br = 100, add = TRUE, 
-  col = 'blue')
+  col = 'blue', xlim = c(-.1, -.02), ylim = c(0, 150))
 \end{verbatim}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=7in]{zoom}
+\end{figure}
 \end{enumerate}
 \end{document}
 
