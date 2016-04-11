@@ -6,6 +6,7 @@ This is the course homepage for the Bayesian Statistics Experimental Courses (AK
 
 My lectures can be listened to as clyp.it tracks and lecture notes are also scanned in as PDF files contributed by students and myself. Clyp has an iphone and android app as well.
 
+* Lecture 16 4/11/16 [(audio)](https://clyp.it/01hbpm5q) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec17kap.pdf)
 * Lecture 16 4/6/16 [(audio)](https://clyp.it/yq4azo3f) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec16kap.pdf)
 * Lecture 15 4/4/16 [(audio)](https://clyp.it/wtvfwmww) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec15kap.pdf)
 * Lecture 14 3/30/16 [(audio)](https://clyp.it/co3uftb4) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec14kap.pdf) [(Bilal Azmi)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec14ba.pdf)
