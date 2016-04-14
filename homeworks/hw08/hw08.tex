@@ -51,7 +51,7 @@ NAME: \line(1,0){380}
 
 \easysubproblem{If $\theta$ and $\sigsq$ are assumed to be independent, how can $\prob{\theta,~\sigsq}$ be factored?}\spc{1}
 
-\easysubproblem{If $\theta \sim \normnot{\sigsq / m}{\tausq}$ and $\sigsq \sim \invgammanot{\overtwo{n_0}}{\overtwo{n_0 \sigsq_0}}$, find the kernel of $\prob{\theta,~\sigsq}$. (Note that I have renamed $\nu_0$ to $n_0$ to reflect that this hyperparameter is directly interpretable as number of prior samples you've seen in the normal-normal conjugate model but if you use the old notation, I will not penalize you.)}\spc{2}
+\easysubproblem{If $\theta \sim \normnot{\mu_0}{\tausq}$ and $\sigsq \sim \invgammanot{\overtwo{n_0}}{\overtwo{n_0 \sigsq_0}}$, find the kernel of $\prob{\theta,~\sigsq}$. (Note that I have renamed $\nu_0$ to $n_0$ to reflect that this hyperparameter is directly interpretable as number of prior samples you've seen in the normal-normal conjugate model but if you use the old notation, I will not penalize you.)}\spc{2}
 
 \easysubproblem{Using your answer to (b), find the kernel of $\cprob{\theta,~\sigsq}{X}$}.\spc{2}
 
@@ -64,6 +64,119 @@ NAME: \line(1,0){380}
 \easysubproblem{Describe how you would sample from $\cprob{\sigsq}{X}$ using a grid approximation.}\spc{8}
 
 \hardsubproblem{What's the bad part about not using a conjugate model?}\spc{4}
+\end{enumerate}
+
+
+\problem{This problem is about least squares regression.}
+
+
+\begin{enumerate}
+
+\easysubproblem{What are some names for the $x$ variable?}\spc{1}
+
+\easysubproblem{What are some names for the $y$ variable?}\spc{1}
+
+\easysubproblem{How is this data different than all other data we've considered thus far in the semester?}\spc{1}
+
+\easysubproblem{How are $x$ and $y$ related? Use the general $f$ for the functional relationship here.}\spc{1}
+
+\easysubproblem{What is $\errorrv$?}\spc{1}
+
+\easysubproblem{Why should we limit the size of $f$?}\spc{1}
+
+\easysubproblem{Describe the set $\mathcal{F}_{\ell}$, the set of all linear models.}\spc{1}
+
+\easysubproblem{What is the objective function to minimize when fitting a linear model?}\spc{1}
+
+\hardsubproblem{Consider you have fit a univariate linear regression and have computed the least squares estimates $b_0$ and $b_1$. Define the residual $e_i = y_i - (b_0 + b_1 x_i)$ i.e the distance between the true value of the response and your predicted value using the best fit line. Does $e_i = \epsilon_i$?}\spc{1}
+
+\hardsubproblem{Prove that the average of the residuals is zero always.}\spc{5}
+
+\easysubproblem{What are the four OLS assumptions?}\spc{4}
+
+\intermediatesubproblem{Why is normality of the errors a reasonable thing to assume?}\spc{3}
+
+\easysubproblem{Assume the four OLS assumptions. What are the MLE's for $\beta_0$ and $\beta_1$? No need to derive them; just copy them from the notes.}\spc{1}
+
+\intermediatesubproblem{Explain why $b_1 \neq \beta_1 \neq B_1$.}\spc{3}
+
+\intermediatesubproblem{In regression, the conditional expectation function is called $\cexpe{Y}{X}$. Find its value when assuming the OLS assumptions.}\spc{6}
+
+\end{enumerate}
+
+
+
+\problem{These are questions about logistic regression.}
+
+\begin{enumerate}
+
+\intermediatesubproblem{What is the distribution of $Y$ under the logistic linear model. You cannot use the $\prob{\cdot}$ function in your answer.}\spc{3}
+
+\hardsubproblem{[MA] Why is there no closed form solution for $b_0$ and $b_1$?}\spc{6}
+
+
+\easysubproblem{Consider $b_0 = 3$ and $b_1 = -1$. What is the probability of $Y$ being the positive classs if $x=3$? If your answer to (a) is correct, this is simple.}\spc{3}
+
+\easysubproblem{Consider $b_0 = 3$ and $b_1 = -1$. What is the probability of $Y$ being the positive classs if $x=5.3$? If your answer to (a) is correct, this is simple.}\spc{3}
+
+\intermediatesubproblem{Consider $b_0 = 3$ and $b_1 = -1$. What is the probability of $Y$ being the positive class if $x=1000$? Is your calculator lying to you?}\spc{3}
+
+\end{enumerate}
+
+
+\problem{These are questions about the multivariate regression.}
+
+\begin{enumerate}
+
+\easysubproblem{Under the OLS assumptions, what is the distribution of $Y~|~\X$?}\spc{2}
+
+\intermediatesubproblem{What is the PDF of the r.v. from (a)?}\spc{2}
+
+\easysubproblem{Is each $Y_i$ $\iid$?}\spc{2}
+
+\intermediatesubproblem{Is each $Y_i~|~X_i$ $\iid$?}\spc{2}
+
+\intermediatesubproblem{[MA] Find the distribution of $\Xt Y~|~\X$.}\spc{3}
+
+\hardsubproblem{[MA] Under the OLS assumptions, prove that the MLE for $\beta$ (the vector) is the same as the least squares solution $b = \XtXinv\Xt y$.}\spc{6}
+
+
+\easysubproblem{Under the OLS assumptions, what is the distribution of $\XtXinv\Xt Y~|~\X$?}\spc{2}
+
+
+\intermediatesubproblem{What is the PDF of the r.v. from (g)? Expand all terms.}\spc{4}
+
+\hardsubproblem{[MA] Is $B_1$ independent of $B_9$? Explain why or why not.}\spc{6}
+
+\hardsubproblem{[MA] How would you calculate $\var{B_1 + B_9}$?}\spc{3}
+
+\end{enumerate}
+
+\problem{These are questions about ridge for univariate regression.}
+
+\begin{enumerate}
+
+\easysubproblem{Write the objective function we are minimizing with the $L2$ penalty (end of Lecture 18). Use the notation $m$ for the penalty on $\beta_0^2 + \beta_1^2$.}\spc{2}
+
+
+\easysubproblem{Write the objective function from (a) in terms of $y_i,~x_i,~\beta_0,~\beta_1$ and $m$ and standard math operators.}\spc{2}
+
+\hardsubproblem{Find the ridge estimator for $b_{R,1}$ by minimizing the objective function in (b) as a function of $\beta_1$. You may need to work on the next problem a bit too.}\spc{12}
+
+\hardsubproblem{Find the ridge estimator for $b_{R,0}$ by minimizing the objective function in (b) as a function of $\beta_0$. You may need to work on the previous problem a bit too.}\spc{9}
+
+\hardsubproblem{Find the kernel of $\cprob{\beta_1,~\beta_0}{X,y,\sigsq}$ assuming the OLS assumptions and the priors $\beta_0 \sim \normnot{0}{\sigsq / m}$ and $\beta_1 \sim \normnot{0}{\sigsq / m}$.}\spc{12}
+
+\hardsubproblem{Find the mode of the kernel in (e) in both the $\beta_0$ and $\beta_1$ dimensions simultaneously. Hint: you may already have derived this.}\spc{4}
+
+\hardsubproblem{What is the shrinkage factor $\rho$ on $\beta_0$?}\spc{4}
+
+\hardsubproblem{What is the shrinkage factor $\rho$ on $\beta_1$?}\spc{4}
+
+\easysubproblem{What does the ridge estimate for $\beta_1$ become as $m$ becomes really small?}\spc{2}
+
+\easysubproblem{What does the ridge estimate for $\beta_1$ become as $m$ becomes really large?}\spc{4}
+
 \end{enumerate}
 
 \end{document}
