@@ -12,7 +12,7 @@
 \author{Professor Adam Kapelner} %STUDENTS: write your name here
 
 \iftoggle{professormode}{
-\date{Due \emph{in class}, Monday, April 18, 2016 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+\date{Due 4PM Thursday, April 21, 2016 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
 }
 
 \renewcommand{\abstractname}{Instructions and Philosophy}
@@ -45,25 +45,26 @@ NAME: \line(1,0){380}
 }
 
 
-
-\problem{These are questions about McGrayne's book, chapter 15.}
+\problem{This problem is about the normal-normal model using a \qu{semi-conjugate} prior. Reference relevant questions in HW7.}
 
 \begin{enumerate}
 
-\easysubproblem{During the H-Bomb search in Spain and its coastal regions, RAdm. William Guest was busy sending ships here, there and everywhere even if the ships couldn't see the bottom of the ocean. How did Richardson use those useless searches?}\spc{2}
+\easysubproblem{If $\theta$ and $\sigsq$ are assumed to be independent, how can $\prob{\theta,~\sigsq}$ be factored?}\spc{1}
 
-%\easysubproblem{When the fishermen sued, how did the US government evaluate the damages?}\spc{2}
+\easysubproblem{If $\theta \sim \normnot{\sigsq / m}{\tausq}$ and $\sigsq \sim \invgammanot{\overtwo{n_0}}{\overtwo{n_0 \sigsq_0}}$, find the kernel of $\prob{\theta,~\sigsq}$. (Note that I have renamed $\nu_0$ to $n_0$ to reflect that this hyperparameter is directly interpretable as number of prior samples you've seen in the normal-normal conjugate model but if you use the old notation, I will not penalize you.)}\spc{2}
 
-\intermediatesubproblem{When the Navy was looking for the \textit{Scorpion} submarine, they used Monte Carlo methods (which we will see in class soon). How does the description of these methods by Richardson (p199) remind you of the \qu{sampling} techniques to approximate integrals we did in class?}\spc{4}
+\easysubproblem{Using your answer to (b), find the kernel of $\cprob{\theta,~\sigsq}{X}$}.\spc{2}
 
-\intermediatesubproblem{What is a Kalman filter? Read about it online and write a few descriptive sentences.}\spc{4}
+\hardsubproblem{Show that the kernel in (c) cannot be factored into the kernel of a normal and the kernel of an inverse gamma. This is lecture 15 bottom of page 1. My algebra may not be 100\% correct there.}\spc{8}
 
+\hardsubproblem{Your answer to (d) looks like a normal and a $k(\sigsq~|~X)$. Find its mode.}\spc{10}
 
-\intermediatesubproblem{Where to frequentist methods practically break down? (end of the chapter)}\spc{4}
+\easysubproblem{Describe how you would sample from $\cprob{\sigsq}{X}$ using a normal approximation.}\spc{10}
 
+\easysubproblem{Describe how you would sample from $\cprob{\sigsq}{X}$ using a grid approximation.}\spc{8}
+
+\hardsubproblem{What's the bad part about not using a conjugate model?}\spc{4}
 \end{enumerate}
-
-
 
 \end{document}
 
