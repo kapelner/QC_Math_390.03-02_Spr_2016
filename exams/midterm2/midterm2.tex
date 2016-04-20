@@ -22,7 +22,7 @@
 Since the college is an academic community, its fundamental purpose is the pursuit of knowledge. Essential to the success of this educational mission is a commitment to the principles of academic integrity. Every member of the college community is responsible for upholding the highest standards of honesty at all times. Students, as members of the community, are also responsible for adhering to the principles and spirit of the following Code of Academic Integrity.
 
 Activities that have the effect or intention of interfering with education, pursuit of knowledge, or fair evaluation of a student's performance are prohibited. Examples of such activities include but are not limited to the following definitions:
-
+3
 \paragraph{Cheating} Using or attempting to use unauthorized assistance, material, or study aids in examinations or other academic work or preventing, or attempting to prevent, another from using authorized assistance, material, or study aids. Example: using a cheat sheet in a quiz or exam, altering a graded exam and resubmitting it for a better grade, etc.
 \\
 
@@ -193,7 +193,7 @@ Fuel efficiency & Price New \\
 
 \subquestionwithpoints{3} Would you be able to use logistic regression to predict car price? \\ Yes / no. Circle the answer.  \spc{0} \vspace{-0.7cm}
 
-\subquestionwithpoints{6} Let's say you have no prior information on where your intercept should be, but prior information on where your slope should be indexed by $m$ such that $\beta_1 \sim \normnot{0}{\sigsq / m}$. Find the most parsimonious kernel for the posterior of $\cprob{\beta_1, \beta_0}{\X, y, \sigsq}$ assuming the OLS assumptions. \spc{9}
+\subquestionwithpoints{6} Let's say you have no prior information on where your intercept should be, but prior information on where your slope should be indexed by $m$ such that $\beta_1 \sim \normnot{0}{\sigsq / m}$. Find the most parsimonious kernel for the posterior of $\cprob{\beta_1, \beta_0}{\X, y, \sigsq}$ assuming the OLS assumptions. Show your steps for partial credit. \spc{9}
 
 \subquestionwithpoints{3} [Extra credit] Solve for this \qu{half ridge} estimator (denote it $B_{\tilde{R}}$) proposed in (f). Hint: the ridge estimator is $B_R := \inverse{\XtX +m I_p} \Xt Y$.\spc{6}
 
@@ -238,14 +238,14 @@ Below are the sample average selling prices (in USD) of Honda Accords from 16 ot
 \subquestionwithpoints{6} What is the probability I get a really good deal --- that I can buy a car from these Astoria people for under \$17,000? Use the notation from Table~\ref{tab:eqs} but do not solve numerically.\spc{3}
 
 
-\subquestionwithpoints{4} If you were to estimate (g) without knowledge that $\sigma = \$1000$ but instead use a uninformative prior for $\sigsq$, would the probability of getting the same really good deal be greater than, less than or equal to your answer in (g)? Explain why. \spc{8}
+\subquestionwithpoints{4} If you were to estimate (g) without knowledge that $\sigma = \$1000$ but instead use \textit{an} uninformative prior (not necessarily \qu{the} uniformative prior) for $\sigsq$, would the probability of getting the same really good deal be greater than, less than or equal to your answer in (g)? Explain why. \spc{8}
 
 
 \subquestionwithpoints{6} We will continue to not rely on the nationwide average of $\sigma = \$1000$. Here, instead of an uninformative prior, use the data from the problem header to \textit{estimate} a conjugate prior for $\sigsq$. Pretend those 16 car dealerships are cars themselves. Be clear about everything your estimate relies on. Round the parameters to two decimal points.\spc{4}
 
-\subquestionwithpoints{4} We want to use the answer from (i) to fit a \textit{conjugate} normal-normal model (with $\sigsq$ unknown). This requires solving for (m) in the $\cprob{\theta}{\sigsq}$ prior. So we set $s^2$ from (a) equal to $\sigsq / m$ and solve for $m$ and we get $m$ = 0.45 rounded to the nearest two digits. What is our prior on $\theta, \sigsq$ now? You can notate your answer in terms of standard densities and you do not have to simplify it to a kernel. \spc{4}
+\subquestionwithpoints{4} We want to use the answer from (i) to fit a \textit{conjugate} normal-normal model (with $\sigsq$ unknown). This requires solving for $m$ in the $\cprob{\theta}{\sigsq}$ prior. So we set $s^2$ from (a) equal to $\sigsq / m$ and solve for $m$ and we get $m$ = 0.45 rounded to the nearest two digits. What is our prior on $\theta, \sigsq$ now? You can notate your answer in terms of standard densities and you do not have to simplify it to a kernel. \spc{4}
 
-\subquestionwithpoints{6} Given the data in (d) which is $x_1=19000$ and $x_2 = 18200$, what is your best guess of the mean price of Honda Accords sold here? Assume your conjugate prior from (j).\spc{2}
+\subquestionwithpoints{6} Given the data in (d) which is $x_1=19000$ and $x_2 = 18200$, what is your best guess of the mean price of Honda Accords sold here? Assume your conjugate prior from (j). Round to the nearest cent. \spc{2}
 
 
 \subquestionwithpoints{4} If you were to answer (k) but this time assume an independent prior for $\theta$ from (a) and independent prior for $\sigsq$ from (i) and \textit{not} use the conjugate prior in (k), you would not be able to simply compute an estimate of mean price. Explain one way in which you could go about estimating this mean now. Provide one sentence of explanation \textit{only}. I am not looking for you to do any computation or describe a computer program. \spc{6}
