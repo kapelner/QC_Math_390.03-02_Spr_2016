@@ -47,8 +47,7 @@ My lectures can be listened to as clyp.it tracks and lecture notes are also scan
 
 * Midterm II April 20 (in class). 
 
-<!--
-[(exam)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm2/midterm2.pdf) [(exam solutions)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm2/midterm2_solutions.pdf)-->
+[(exam)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm2/midterm2.pdf) [(exam solutions)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/midterm2/midterm2_solutions.pdf)
 
 * Final May 25 2016 8:30AM-10:30AM
 
