@@ -12,7 +12,7 @@
 \author{Professor Adam Kapelner} %STUDENTS: write your name here
 
 \iftoggle{professormode}{
-\date{Due \emph{in class}, May 9, 2016 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+\date{Due \emph{in class}, May 16, 2016 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
 }
 
 \renewcommand{\abstractname}{Instructions and Philosophy}
@@ -92,12 +92,100 @@ NAME: \line(1,0){380}
 
 %\extracreditsubproblem{One of my PhD advisors, \href{https://statistics.wharton.upenn.edu/profile/563/}{Ed George} at Wharton told me that \qu{Bayesian Statistics is really `knowledge engineering.'} Is this true? Explain.}\spc{20}
 
+\end{enumerate}
 
 
+\problem{These are questions about the prior being a mixture distribution.}
 
+\begin{enumerate}
+\easysubproblem{Let's say you have a prior distribution $\prob{\theta}$ which is a mixture of $M$ distributions that you are mixing. Call them, $\probsub{1}{\theta}, \probsub{2}{\theta}, \ldots, \probsub{M}{\theta}$ and the mixing proportions are $\rho_1, \rho_2, \ldots, \rho_M$. Write the prior below using the formula we discussed in class.}\spc{4}
+
+\easysubproblem{Is there a restriction on the mixing proportions, $\rho_1, \rho_2, \ldots, \rho_M$? Discuss.}\spc{4}
+
+\intermediatesubproblem{Why is a mixture distribution sometimes called a \qu{convex combination?} What's \qu{convex} about it? }\spc{4}
+
+\easysubproblem{Explain how you can use a mixture distribution of betas to approximate any continuous distribution (within reason) with support $\zeroonecl$.}\spc{4}
+
+\intermediatesubproblem{Rederive from the class notes that the posterior is also a mixture distribution. What distributions does it mix? What are the new mixing proportions ($\rho_1', \rho_2', \ldots, \rho_M'$)?}\spc{8}
+
+
+\hardsubproblem{Derive the posterior predictive distribution.}\spc{8}
+
+\end{enumerate}
+
+\problem{If the prior is a mixture distribution of conjugate priors, then the math is convenient. We explore a case like this here.}
+
+\begin{enumerate}
+\easysubproblem{Let's say you have a sample of heights from people in the U.S. but you don't know if the people are males or females. According to \href{https://en.wikipedia.org/wiki/Human_height}{wikipedia}, the average male in America is 5' 9.5" or 69.5" and the average female is 5' 4'' or 64". Let's design a mixture prior. Assume equal mixing. What is $\mu_{0,M}$ for the males and what is $\mu_{0,F}$ for females? Use inches as the unit to keep things simple.}\spc{4}
+
+\easysubproblem{If there is no reason to suspect that the sample you have is male or female, what are the mixing proportions, $\rho_M$ and $\rho_F$?}\spc{4}
+
+\easysubproblem{Use $\theta$ for the mean height in your sample. Assume the standard deviation is $\sigma = 2.8''$. What is the likelihood model?}\spc{8}
+
+\intermediatesubproblem{According to Wikipedia, there were 895 males and 980 females? Using that information and your answer to (a) and (b) and the information given in (c), construct $\prob{\theta}$. This is review for the final as a question similar to this one was on the midterm.}\spc{5}
+
+
+\hardsubproblem{Derive the posterior distribution, $\cprob{\theta}{X, \sigsq = 2.8"^2}$.}\spc{8}
+
+\easysubproblem{You get a sample of $n=10$ where the heights are: \\
+
+$X = \braces{\texttt{62.8, 60.2, 58.0, 62.7, 66.4, 58.6, 64.0, 59.8, 66.7, 62.0}}$.\\
+
+Given your answer to (e), what is the posterior distribution $\cprob{\theta}{X, \sigsq = 2.8"^2}$ now?
+}\spc{8}
+
+\easysubproblem{What is the posterior mixture proportion $\rho_M'$? Does this make sense given the data?}\spc{4}
+
+\hardsubproblem{[M.A.] Your answer to (g) was a \qu{best guess} but it was not Bayesian. Let's put a prior on $\rho \sim \betanot{\alpha}{\beta}$. This is now known as a \qu{hierarchical Bayesian model} since there's both a prior on the parameters and a prior on the prior called a \qu{hyperprior} with \qu{hyperhyperparameters.} Write out the posterior as best as you could below.}\spc{7}
 
 \end{enumerate}
 
 
+\problem{We practice using the Newton-Raphson algorithm here using the beta distribution.}
+
+\begin{enumerate}
+
+\easysubproblem{If $\theta \sim \betanot{10}{30}$ then what is the prior expectation and the prior mode? Use the formulas we gave in class before the first midterm.}\spc{4}
+
+\easysubproblem{State the Newton-Raphson algorithm below.}\spc{3}
+
+\hardsubproblem{We will make sure this formula for the mode of a beta distribution is correct by using Newton-Raphson. Begin at the expectation and iterate twice. By what percentage are you off by?}\spc{11}
+
+
+\easysubproblem{[M.A.] State the generalized Newton-Raphson algorithm (for arbitrary dimension) below.}\spc{6}
+
+
+\easysubproblem{[M.A.] In lecture 20 we discussed the likelihood mixture model 
+
+\beqn
+\Xoneton \exchdist \rho ~\normnot{\theta_1}{\sigsq_1} + (1-\rho)~ \normnot{\theta_2}{\sigsq_2} ~\text{where $\thetavec := \bracks{\theta_1,~\sigsq_1,~\theta_2,~\sigsq_2,~\rho}$}.
+\eeqn
+
+Explain why it would be a disaster to find $\thetavechatmle$ via the generalized Newton-Raphson algorithm.}\spc{6}
+
+\end{enumerate}
+
+
+\problem{We practice using the E-M algorithm here using an example similar to the lecture.}
+
+\begin{enumerate}
+
+\easysubproblem{What does \qu{data augmentation} mean?}\spc{2}
+
+\easysubproblem{Imagine we have the likelihood model found in 4(e). If we knew the membership of each $X_i$ denoted by $I_i$ where if $I_i=1$ it means the $i$th observation belongs to the first distribution i.e. $\normnot{\theta_1}{\sigsq_1}$ and if $I_i=0$ it means it did not belong to the first distribution, it belongs to the second distribution i.e. $\normnot{\theta_2}{\sigsq_2}$. What is the likelihood now?}\spc{5}
+
+\easysubproblem{Consider the situation where we are once again trying to estimate mean heights. Here, we are trying to estimate the mean height of males which is denoted $\theta_1$, the mean height of females denoted $\theta_2$ and the variances denoted by $\sigsq_1$ and $\sigsq_2$. If $n=10$ and you know that the first sample of $n_1 = 5$ heights comes from males: $71.6, 67.0, 70.0, 66.5, 72.2$ (in inches) and the second sample of heights $n_2 = 5$ comes from females: $63.1, 64.3, 59.2, 60.0, 68.3$ (in inches), what are your best estimates of $\theta_1$, $\theta_2$, $\sigsq_1$, $\sigsq_2$ and $\rho$? This is marked easy for a reason.}\spc{5}
+
+\intermediatesubproblem{An 11th data point comes in and its height is $x_{11} = 68.1"$ but you do not know if it's from a male or a female. Could this new data point help with estimating $\theta_1$ even though you do not know it's a measurement from a male?}\spc{4}
+
+\easysubproblem{What is the E-M algorthim generally speaking? And is it Bayesian in its general form?}\spc{8}
+
+
+\hardsubproblem{Implement the E-M algorithm here by starting with the values from (c) and do two iterations. What are your new values for $\theta_1$ and $\theta_2$?}\spc{17}
+
+\hardsubproblem{What is the probability the 11th measurement comes from a male?}\spc{4}
+
+
+\end{enumerate}
 
 \end{document}
