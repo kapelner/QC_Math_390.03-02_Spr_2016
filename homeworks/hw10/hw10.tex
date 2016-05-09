@@ -12,7 +12,7 @@
 \author{Professor Adam Kapelner} %STUDENTS: write your name here
 
 \iftoggle{professormode}{
-\date{Due \emph{in class}, May 16, 2016 \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+\date{Due 4PM, Friday, May 20, 2016 \\ (but can be handed in without penalty until May 25, 2016 at 8:30AM) \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
 }
 
 \renewcommand{\abstractname}{Instructions and Philosophy}
@@ -59,6 +59,17 @@ NAME: \line(1,0){380}
 \easysubproblem{According to Geman, what is the most powerful argument for Bayesian Statistics?}\spc{3}
 
 \end{enumerate}
+
+
+\problem{These are questions introduce Gibbs Sampling.}
+
+\begin{enumerate}
+\easysubproblem{Outline the systematic sweep Gibbs Sampler algorithm below.}\spc{8}
+
+
+\intermediatesubproblem{We previously have shown that if $X~|~\theta \sim \binomial{n}{\theta}$ and the prior on $\theta \sim \betanot{\alpha}{\beta}}$, then $X \sim \betabinomial{n}{\alpha}{\beta}$. Even though we proved this result, pretend like you didn't know it and create a Gibbs sampler which finds $\prob{X}$.\spc{8}
+\end{enumerate}
+
 
 \end{document}
 
