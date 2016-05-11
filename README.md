@@ -6,6 +6,9 @@ This is the course homepage for the Bayesian Statistics Experimental Courses (AK
 
 My lectures can be listened to as clyp.it tracks and lecture notes are also scanned in as PDF files contributed by students and myself. Clyp has an iphone and android app as well.
 
+* Review 3 5/18/16
+* Lecture 23 5/16/16
+* Lecture 22 5/11/16 [(audio)](https://clyp.it/zpm1r3xl) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec22kap.pdf)
 * Lecture 21 5/9/16 [(audio)](https://clyp.it/2av2owk3) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec21kap.pdf)
 * Lecture 20 5/4/16 [(audio)](https://clyp.it/tkmnibam) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec20kap.pdf)
 * Lecture 19 5/2/16 [(audio)](https://clyp.it/5mrjy5zs) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec19kap.pdf) [(Elliot Gangaram)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec19elg.pdf)
@@ -32,6 +35,7 @@ My lectures can be listened to as clyp.it tracks and lecture notes are also scan
 
 ## Homeworks
 
+* Homework 10 due 5/18/16 (not complete yet) [(download)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw09/hw09.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/hw10.pdf)
 * Homework 9 due 5/16/16 [(download)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw09/hw09.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw09/hw09.pdf)
 * Homework 8 due 4/21/16 [(download)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw08/hw08.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw08/hw08.pdf)
 * Homework 7 due 4/11/16 [(download)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw07/hw07.pdf?raw=true) [(view)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw07/hw07.pdf)
