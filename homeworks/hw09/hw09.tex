@@ -122,10 +122,45 @@ NAME: \line(1,0){380}
 
 \easysubproblem{Use $\theta$ for the mean height in your sample. Assume the standard deviation is $\sigma = 2.8''$. What is the likelihood model?}\spc{8}
 
-\intermediatesubproblem{According to Wikipedia, there were 895 males and 980 females? Using that information and your answer to (a) and (b) and the information given in (c), construct $\prob{\theta}$. This is review for the final as a question similar to this one was on the midterm.}\spc{5}
+\intermediatesubproblem{According to Wikipedia, there were 895 males and 980 females? Using that information and your answer to (a) and (b) and the information given in (c), construct $\prob{\theta}$. This is review for the final as a question similar to this one was on the midterm.}
+
+Hint: $\tausq_M = \sigsq / 895$ and $\tausq_F = \sigsq / 980$.
+
+~\spc{5}
 
 
-\hardsubproblem{Derive the posterior distribution, $\cprob{\theta}{X, \sigsq = 2.8"^2}$.}\spc{8}
+\hardsubproblem{Derive the posterior distribution, $\cprob{\theta}{X, \sigsq = 2.8"^2}$.}
+
+We need to compute $\rho_M' = \rho_M \frac{\probsub{M}{X}}{\probsub{M}{X} + \probsub{F}{X}}$ where:
+
+\beqn
+\probsub{M}{X} &:=& \probsub{M}{X_1, \ldots, X_n} \\
+&=&  \int_\reals \cprob{X_1, \ldots, X_n}{\theta} \probsub{M}{\theta} d\theta \\
+&=&  \int_\reals \parens{\prod_{i=1}^n \normnot{\theta}{\sigsq}} \normnot{\mu_M}{\tausq_M} d\theta \\
+&=&  \int_\reals \parens{\prod_{i=1}^n \oneoversqrt{2\pi \sigsq} \exp{-\oneover{2\sigsq} \squared{x_i - \theta}}} \oneoversqrt{2\pi \tausq_M} \exp{-\oneover{2\tausq_M} \squared{\theta - \mu_M}}d\theta \\
+&=&  \tothepow{\oneoversqrt{2\pi \sigsq}}{n} \int_\reals  \exp{-\oneover{2\sigsq} \underbrace{\sum_{i=1}^n \squared{x_i - \theta}}_{\text{Lec 13 page 5}}}  \normnot{\mu_M}{\tausq_M}d\theta \\
+&=&  \tothepow{\oneoversqrt{2\pi \sigsq}}{n} \int_\reals  \exp{-\oneover{2\sigsq} \parens{(n-1)s^2 + n(\xbar - \theta)^2}}  \normnot{\mu_M}{\tausq_M}d\theta \\
+&=&  \tothepow{\oneoversqrt{2\pi \sigsq}}{n} e^{-\oneover{2\sigsq} \parens{(n-1)s^2}} \int_\reals  \exp{-\oneover{2\sigsq / n} (\xbar - \theta)^2}  \normnot{\mu_M}{\tausq_M}d\theta \\
+&=&  \tothepow{\oneoversqrt{2\pi \sigsq}}{n} e^{-\oneover{2\sigsq} \parens{(n-1)s^2}} \sqrt{2\pi\sigsq/n} \times \\
+&& \int_\reals  \oneoversqrt{2\pi\sigsq/n} \exp{-\oneover{2\sigsq / n} (\xbar - \theta)^2}  \normnot{\mu_M}{\tausq_M}d\theta \\
+&=&  \tothepow{\oneoversqrt{2\pi \sigsq}}{n} e^{-\oneover{2\sigsq} \parens{(n-1)s^2}} \sqrt{2\pi\sigsq/n} \underbrace{\int_\reals  \normnot{\xbar}{\sigsq/n}  \normnot{\mu_M}{\tausq_M}d\theta}_{\text{See p9 Lec 12}} \\
+&=&  \tothepow{\oneoversqrt{2\pi \sigsq}}{n} e^{-\oneover{2\sigsq} \parens{(n-1)s^2}} \sqrt{2\pi\sigsq/n}   ~\underbrace{\normnot{\mu_M}{\sigsq/n + \tausq_M}}_{\text{free variable: $\xbar$}} \\
+\eeqn
+
+Note how everything before the normal density is a constant which cancels out when we compute the posterior weight:
+
+\beqn
+\rho_M' &=& \rho_M \frac{\probsub{M}{X}}{\probsub{M}{X} + \probsub{F}{X}} \\
+&=& \half \frac{\normnot{\mu_M}{\sigsq/n + \tausq_M}}{\normnot{\mu_M}{\sigsq/n + \tausq_M} + \normnot{\mu_F}{\sigsq/n + \tausq_F}} \\
+&=& \half \frac{\oneoversqrt{2\pi \parens{\sigsq/n + \tausq_M}} e^{-\oneover{2 \parens{\sigsq/n + \tausq_M}} \squared{\xbar - \mu_M}} }{
+\oneoversqrt{2\pi \parens{\sigsq/n + \tausq_M}} e^{-\oneover{2 \parens{\sigsq/n + \tausq_M}} \squared{\xbar - \mu_M}} 
++
+\oneoversqrt{2\pi \parens{\sigsq/n + \tausq_F}} e^{-\oneover{2 \parens{\sigsq/n + \tausq_F}} \squared{\xbar - \mu_F}} 
+}
+\eeqn
+
+and $\rho_F'$ can be calculated similarly. Your answer for (f) should show that $\rho_F' \approx 100\%$ and $\rho_M' \approx 0\%$.
+~\spc{10}
 
 \easysubproblem{You get a sample of $n=10$ where the heights are: \\
 
