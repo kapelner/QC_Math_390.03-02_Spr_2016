@@ -12,6 +12,7 @@ for (i in 1 : n){
 	ys[i] = rpois(1, true_beta0 + true_beta1 * ts[i])
 }
 plot(ts, ys)
+#plot
 
 
 mod = lm(ys ~ ts)
@@ -79,7 +80,7 @@ plot(1 : T, beta1s)
 abline(h = mean(beta1s[B : T]), col = "blue")
 abline(h = true_beta1, col = "red")
 abline(v = B, col = "grey")
-
+#plot
 
 ##assess autocorrelation
 
@@ -87,7 +88,7 @@ par(mfrow = c(2, 1))
 
 acf(beta0s[B : T], xlim = c(0, 100))
 acf(beta1s[B : T], xlim = c(0, 100))
-
+#plot
 
 #burn and thin
 beta0s = beta0s[B : T]
@@ -111,5 +112,5 @@ abline(v = mean(beta1s), col = "blue", lwd = 3)
 abline(v = quantile(beta1s, 0.025), col = "grey", lwd = 3)
 abline(v = quantile(beta1s, 0.975), col = "grey", lwd = 3)
 abline(v = true_beta1, col = "red", lwd = 3)
-
+#plot
 

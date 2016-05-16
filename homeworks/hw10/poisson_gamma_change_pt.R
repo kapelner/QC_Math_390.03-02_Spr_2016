@@ -9,6 +9,7 @@ x = rpois(true_m, true_lambda_1)
 x = c(x, rpois(n - true_m, true_lambda_2))
 
 plot(1 : n, x, type = "o")
+#plot
 
 ## hyperparams
 alpha = 1
@@ -73,6 +74,7 @@ plot(1 : T, ms)
 abline(h = mean(ms[B : T]), col = "blue")
 abline(h = sqrt(true_m), col = "red")
 abline(v = B, col = "grey")
+#plot
 
 ##assess autocorrelation
 
@@ -81,7 +83,7 @@ par(mfrow = c(3, 1))
 acf(lambda1s[B : T], xlim = c(0, 16))
 acf(lambda2s[B : T], xlim = c(0, 16))
 acf(ms[B : T], xlim = c(0, 16))
-
+#plot
 
 #burn and thin
 lambda1s = lambda1s[B : T]
@@ -113,3 +115,4 @@ abline(v = mean(ms), col = "blue", lwd = 3)
 abline(v = quantile(ms, 0.025), col = "grey", lwd = 3)
 abline(v = quantile(ms, 0.975), col = "grey", lwd = 3)
 abline(v = true_m, col = "red", lwd = 3)
+#plot

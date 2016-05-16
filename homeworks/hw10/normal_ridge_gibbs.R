@@ -17,6 +17,7 @@ plot(xs, ys)
 mod = lm(ys ~ xs)
 coef(mod)
 abline(a = coef(mod)[1], b = coef(mod)[2])
+#plot
 
 #statistics of data (for speed)
 sumx = sum(xs)
@@ -74,6 +75,7 @@ plot(1 : T, sqrt(sigsqs))
 abline(h = mean(sqrt(sigsqs[B : T])), col = "blue")
 abline(h = sqrt(true_sigsq), col = "red")
 abline(v = B, col = "grey")
+#plot
 
 ##assess autocorrelation
 
@@ -82,7 +84,7 @@ par(mfrow = c(3, 1))
 acf(beta0s[B : T], xlim = c(0, 13))
 acf(beta1s[B : T], xlim = c(0, 13))
 acf(sqrt(sigsqs[B : T]), xlim = c(0, 13))
-
+#plot
 
 #burn and thin
 beta0s = beta0s[B : T]
@@ -114,4 +116,4 @@ abline(v = sqrt(true_sigsq), col = "red", lwd = 3)
 abline(v = mean(sqrt(sigsqs)), col = "blue", lwd = 3)
 abline(v = quantile(sqrt(sigsqs), 0.025), col = "grey", lwd = 3)
 abline(v = quantile(sqrt(sigsqs), 0.975), col = "grey", lwd = 3)
-
+#plot

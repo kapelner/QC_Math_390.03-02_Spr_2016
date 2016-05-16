@@ -47,6 +47,7 @@ plot(1 : T, sqrt(sigsqs))
 abline(h = mean(sqrt(sigsqs[B : T])), col = "blue")
 abline(h = sqrt(true_sigsq), col = "red")
 abline(v = B, col = "grey")
+#plot
 
 hist(thetas[B : T], br = 500)
 abline(v = mean(thetas[B : T]), col = "blue", lwd = 3)
@@ -55,4 +56,4 @@ abline(v = true_mu, col = "red", lwd = 3)
 hist(sqrt(sigsqs[B : T]), br = 500)
 abline(v = sqrt(true_sigsq), col = "red", lwd = 3)
 abline(v = mean(sqrt(sigsqs[B : T])), col = "blue", lwd = 3)
-
+#plot
