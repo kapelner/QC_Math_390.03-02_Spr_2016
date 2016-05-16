@@ -7,7 +7,7 @@ This is the course homepage for the Bayesian Statistics Experimental Courses (AK
 My lectures can be listened to as clyp.it tracks and lecture notes are also scanned in as PDF files contributed by students and myself. Clyp has an iphone and android app as well.
 
 * Review 3 5/18/16
-* Lecture 23 5/16/16
+* Lecture 23 5/16/16 [(audio)](https://clyp.it/vcp1p31a) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec23kap.pdf)
 * Lecture 22 5/11/16 [(audio)](https://clyp.it/zpm1r3xl) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec22kap.pdf)
 * Lecture 21 5/9/16 [(audio)](https://clyp.it/2av2owk3) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec21kap.pdf)
 * Lecture 20 5/4/16 [(audio)](https://clyp.it/tkmnibam) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec20kap.pdf)
@@ -15,21 +15,21 @@ My lectures can be listened to as clyp.it tracks and lecture notes are also scan
 * Review 2 4/18/16 [(audio)](https://clyp.it/fuyth421)
 * Lecture 18 4/13/16 [(audio)](https://clyp.it/4zkak03f) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec18kap.pdf)
 * Lecture 17 4/11/16 [(audio)](https://clyp.it/01hbpm5q) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec17kap.pdf)
-* Lecture 16 4/6/16 [(audio)](https://clyp.it/yq4azo3f) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec16kap.pdf)
-* Lecture 15 4/4/16 [(audio)](https://clyp.it/wtvfwmww) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec15kap.pdf)
+* Lecture 16 4/6/16 [(audio)](https://clyp.it/yq4azo3f) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec16kap.pdf) [(Qiman Wang)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec16bob.pdf)
+* Lecture 15 4/4/16 [(audio)](https://clyp.it/wtvfwmww) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec15kap.pdf) [(Qiman Wang)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec15bob.pdf)
 * Lecture 14 3/30/16 [(audio)](https://clyp.it/co3uftb4) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec14kap.pdf) [(Bilal Azmi)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec14ba.pdf)
 * Lecture 13 3/28/16 [(audio)](https://clyp.it/kou33fio) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec13kap.pdf) [(Bilal Azmi)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec13ba.pdf)
-* Lecture 12 3/21/16 [(audio)](https://clyp.it/xi1btxuw) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec12kap.pdf)
+* Lecture 12 3/21/16 [(audio)](https://clyp.it/xi1btxuw) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec12kap.pdf) [(Qiman Wang)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec12bob.pdf)
 * Lecture 11 3/16/16 [(audio)](https://clyp.it/lfazklg4) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec11kap.pdf)
 * Review 1 3/9/16 [(audio)](https://clyp.it/wk50hjrw)
-* Lecture 10 3/7/16 [(audio)](https://clyp.it/4i4r5ttn) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec10kap.pdf)
+* Lecture 10 3/7/16 [(audio)](https://clyp.it/4i4r5ttn) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec10kap.pdf) [(Qiman Wang)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec10bob.pdf)
 * Lecture 9 3/2/16 [(audio)](https://clyp.it/sdgprqba) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec09kap.pdf)
-* Lecture 8 2/29/16 [(audio)](https://clyp.it/rpbeekhy) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec08kap.pdf)
+* Lecture 8 2/29/16 [(audio)](https://clyp.it/rpbeekhy) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec08kap.pdf) [(Qiman Wang)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec08bob.pdf)
 * Lecture 7 2/24/16 [(audio)](https://clyp.it/lbe3cawg) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec07kap.pdf) [(Bilal Azmi)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec07ba.pdf)
 * Lecture 6 2/22/16 [(audio)](https://clyp.it/okfpbdki) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec06kap.pdf) [(Bilal Azmi)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec06ba.pdf)
-* Lecture 5 2/17/16 [(audio)](https://clyp.it/g0texiis) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec05kap.pdf)
-* Lecture 4 2/10/16 [(audio)](https://clyp.it/1srsb14t) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec04kap.pdf)
-* Lecture 3 2/8/16 [(audio)](https://clyp.it/fshu43qn) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec03kap.pdf)
+* Lecture 5 2/17/16 [(audio)](https://clyp.it/g0texiis) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec05kap.pdf) [(Qiman Wang)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec05bob.pdf)
+* Lecture 4 2/10/16 [(audio)](https://clyp.it/1srsb14t) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec04kap.pdf) [(Qiman Wang)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec04bob.pdf)
+* Lecture 3 2/8/16 [(audio)](https://clyp.it/fshu43qn) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec03kap.pdf) [(Qiman Wang)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec03bob.pdf)
 * Lecture 2 2/3/16 [(audio)](https://clyp.it/epg3ptbh) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec02kap.pdf) [(Bilal Azmi)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec02ba.pdf)
 * Lecture 1 2/1/16 [(audio)](https://clyp.it/pxhx0ple) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec01kap.pdf) [(Bilal Azmi)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec01ba.pdf)
 
