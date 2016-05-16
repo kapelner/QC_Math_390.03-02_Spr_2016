@@ -12,7 +12,7 @@
 \author{Professor Adam Kapelner} %STUDENTS: write your name here
 
 \iftoggle{professormode}{
-\date{Due 11:59PM, Wednesday, May 18, 2016 \\ (but can be handed in without penalty until May 25, 2016 at 8:30AM) \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+\date{Due 8:30AM, Wednesday, May 25, 2016 \\ (not required -- for extra credit only) \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
 }
 
 \renewcommand{\abstractname}{Instructions and Philosophy}
@@ -44,7 +44,7 @@ NAME: \line(1,0){380}
 \clearpage
 }
 
-\problem{These are questions about McGrayne's book, chapter 17 and the Epilogue.}
+\problem{These are questions about McGrayne's book, chapter 17 and the Epilogue. They are optional.}
 
 \begin{enumerate}
 
@@ -64,68 +64,35 @@ NAME: \line(1,0){380}
 \problem{These are questions which introduce Gibbs Sampling.}
 
 \begin{enumerate}
-\easysubproblem{Outline the systematic sweep Gibbs Sampler algorithm below.}\spc{8}
+\easysubproblem{Outline the systematic sweep Gibbs Sampler algorithm below (in your notes).}\spc{7}
+
+\easysubproblem{Pretend you are estimating $\cprob{\theta_1,~\theta_2}{X}$ and the joint posterior looks like the picture below where the $x$ axis is $\theta_1$ and the $y$ axis is $\theta_2$ and darker colors indicate higher probability. Begin at $\angbracks{\theta_1,\theta_2} = \angbracks{0.5,0.5}$ and simulate 5 iterations of the systematic sweep Gibbs sampling algorithm just as we did in class.}
 
 
-\intermediatesubproblem{We previously have shown that if $X~|~\theta \sim \binomial{n}{\theta}$ and the prior on $\theta \sim \betanot{\alpha}{\beta}}$, then $X \sim \betabinomial{n}{\alpha}{\beta}$. Even though we proved this result, pretend like you didn't know it and create a Gibbs sampler which finds $\prob{X}$.\spc{8}
+\begin{figure}[htp]
+\centering
+\includegraphics[width=4in]{contour.png}
+\end{figure}
+
+\intermediatesubproblem{We previously have shown that if $X~|~\theta \sim \binomial{n}{\theta}$ and the prior on $\theta \sim \betanot{\alpha}{\beta}$, then $X \sim \betabinomial{n}{\alpha}{\beta}$. Even though we proved this result, pretend like you didn't know it and create a Gibbs sampler which finds $\prob{X}$.} \spc{8}
+
+\easysubproblem{Consider the simple linear regression model under OLS with $n$ data points. Assume the true $\beta_0 = 2$ and $\beta_1 = -2$ and $\sigsq = 1$. Let's sample $n=3$ points. Run the code on lines 1--20 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/normal_ridge_gibbs.R}{here} which will plot the 3 data points and provide a best fit line. Do you think the best fit line does a good job?}\spc{1}
+
+
+\easysubproblem{Consider the model in (d). We impose priors of $\beta_0 \sim \normnot{0}{\sigsq / m}$, $\beta_1 \sim \normnot{0}{\sigsq / m}$ and $\sigsq \sim \invgammanot{\overtwo{n_0}}{\overtwo{n_0 \sigsq_0}}$ which is the model we did in class. Find the kernel of the posterior.}\spc{8}
+
+\easysubproblem{Consider the model in (d). Find the conditional distribution of $\sigsq$. The other two conditionals are filled in below so you don't have to complete the squares:
+
+\beqn
+\beta_0~|~\beta_1, \sigsq, \X, \y &\sim& \normnot{\frac{\ybar n - \beta_1 \xbar n}{n + m}}{\frac{\sigsq}{n + m}} \\
+\beta_1~|~\beta_0, \sigsq, \X, \y &\sim& \normnot{\frac{\displaystyle \sum x_i y_i - \beta_0 \xbar n}{m + \displaystyle \sum x_i^2}}{\frac{\sigsq}{m + \displaystyle \sum x_i^2}} \\ \spc{2}
+\cprob{\sigsq}{\beta_0, \beta_1, \X, \y} &\propto& 
+\eeqn} \spc{4}
+
+\easysubproblem{Let's run 10,000 iterations of the Gibbs sampler you created in part (f) by running lines  22--78 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/normal_ridge_gibbs.R}{here}. What are the three plots that popped up? Where would you say the chains burned in at?}\spc{4}
+
 \end{enumerate}
-
+%
 
 \end{document}
 
-
-\problem{These are questions about McGrayne's book, chapters 15 and 16.}
-
-\begin{enumerate}
-
-\easysubproblem{During the H-Bomb search in Spain and its coastal regions, RAdm. William Guest was busy sending ships here, there and everywhere even if the ships couldn't see the bottom of the ocean. How did Richardson use those useless searches?}\spc{2}
-
-\intermediatesubproblem{When the Navy was looking for the \textit{Scorpion} submarine, they used Monte Carlo methods (which we will see in class soon). How does the description of these methods by Richardson (p199) remind you of the \qu{sampling} techniques to approximate integrals we did in class?}\spc{4}
-
-\intermediatesubproblem{What is a Kalman filter? Read about it online and write a few descriptive sentences.}\spc{4}
-
-
-\intermediatesubproblem{Where do frequentist methods practically break down? (end of chapter 15)}\spc{4}
-
-\easysubproblem{What was the main problem facing Bayesian Statistics in the early 1980's?}\spc{4}
-
-\intermediatesubproblem{What is the \qu{curse of dimensionality?}}\spc{4}
-
-\easysubproblem{How did Bayesian Statistics help sociologists?}\spc{4}
-
-\easysubproblem{How did Gibbs sampling come to be?}\spc{3}
-
-\easysubproblem{Were the Geman brothers the first to discover the Gibbs sampler?}\spc{4}
-
-\easysubproblem{Who officially discovered the expectation-maximization (EM) algorithm? And who \textit{really} discovered it?}\spc{4}
-
-\intermediatesubproblem{How did Bayesians \qu{break} the curse of dimensionality?}\spc{4}
-
-\intermediatesubproblem{Consider the integrals we use in class to find expectations or to approximate PDF's / PMF's --- how can they be replaced?}\spc{4}
-
-\easysubproblem{What did physicists call \qu{Markov Chain Monte Carlo} (MCMC)? (p222)}\spc{1}
-
-\easysubproblem{Why is sampling called \qu{Monte Carlo} and who named it that?}\spc{4}
-
-\easysubproblem{The Metropolis-Hastings (MH) Algorithm is world famous and used in myriad applications. Why didn't Hastings get any credit?}\spc{4}
-
-\easysubproblem{The combination of Bayesian Statistics + MCMC has been called ... (p224)}\spc{1}
-
-
-\extracreditsubproblem{p225 talks about Thomas Kuhn's ideas of \qu{paradigm shifts.} What is a \qu{paradigm shift} and does Bayesian Statistics + MCMC qualify?}\spc{8}
-
-\easysubproblem{How did the \href{http://www.mrc-bsu.cam.ac.uk/software/bugs/}{BUGS} software change the world?}\spc{4}
-
-\easysubproblem{Lindley said that Bayesian Statistics would win out over Frequentist Statistics because it was more logical. What in reality was the reason of its eventual victory?}\spc{4}
-
-%\extracreditsubproblem{One of my PhD advisors, \href{https://statistics.wharton.upenn.edu/profile/563/}{Ed George} at Wharton told me that \qu{Bayesian Statistics is really `knowledge engineering.'} Is this true? Explain.}\spc{20}
-
-
-
-
-
-\end{enumerate}
-
-
-
-\end{document}
