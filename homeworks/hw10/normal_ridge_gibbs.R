@@ -1,4 +1,6 @@
-library(MCMCpack)
+options(repos = structure(c(CRAN = "http://cran.revolutionanalytics.com/"))); tryCatch(library(MCMCpack),
+                error = function(e){install.packages("MCMCpack")},
+                finally = library(MCMCpack))
 
 #hyperparams
 m = 1

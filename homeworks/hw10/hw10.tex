@@ -12,7 +12,7 @@
 \author{Professor Adam Kapelner} %STUDENTS: write your name here
 
 \iftoggle{professormode}{
-\date{Due 8:30AM, Wednesday, May 25, 2016 \\ (not required -- for extra credit only) \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
+\date{Due 8:30AM, Wednesday, May 25, 2016 \\ (material covered on exam, writeup not required -- for extra credit only) \\ \vspace{0.5cm} \small (this document last updated \today ~at \currenttime)}
 }
 
 \renewcommand{\abstractname}{Instructions and Philosophy}
@@ -24,7 +24,7 @@
 \begin{abstract}
 The path to success in this class is to do many problems. Unlike other courses, exclusively doing reading(s) will not help. Coming to lecture is akin to watching workout videos; thinking about and solving problems on your own is the actual ``working out.''  Feel free to \qu{work out} with others; \textbf{I want you to work on this in groups.}
 
-Reading is still \textit{required}. For this homework set, read about ridge regression and Gibbs sampling. Also read ch17 and the epilogue in McGrayne.
+Reading is still \textit{required}. For this homework set, read about Gibbs sampling and Metropolis-Hastings sampling. Also read ch17 and the epilogue in McGrayne.
 
 The problems below are color coded: \ingreen{green} problems are considered \textit{easy} and marked \qu{[easy]}; \inorange{yellow} problems are considered \textit{intermediate} and marked \qu{[harder]}, \inred{red} problems are considered \textit{difficult} and marked \qu{[difficult]} and \inpurple{purple} problems are extra credit. The \textit{easy} problems are intended to be ``giveaways'' if you went to class. Do as much as you can of the others; I expect you to at least attempt the \textit{difficult} problems. 
 
@@ -64,9 +64,9 @@ NAME: \line(1,0){380}
 \problem{These are questions which introduce Gibbs Sampling.}
 
 \begin{enumerate}
-\easysubproblem{Outline the systematic sweep Gibbs Sampler algorithm below (in your notes).}\spc{7}
+\easysubproblem{Outline the systematic sweep Gibbs Sampler algorithm below (in your notes).}\spc{6}
 
-\easysubproblem{Pretend you are estimating $\cprob{\theta_1,~\theta_2}{X}$ and the joint posterior looks like the picture below where the $x$ axis is $\theta_1$ and the $y$ axis is $\theta_2$ and darker colors indicate higher probability. Begin at $\angbracks{\theta_1,\theta_2} = \angbracks{0.5,0.5}$ and simulate 5 iterations of the systematic sweep Gibbs sampling algorithm just as we did in class.}
+\easysubproblem{Pretend you are estimating $\cprob{\theta_1,~\theta_2}{X}$ and the joint posterior looks like the picture below where the $x$ axis is $\theta_1$ and the $y$ axis is $\theta_2$ and darker colors indicate higher probability. Begin at $\angbracks{\theta_1,\theta_2} = \angbracks{0.5,0.5}$ and simulate 5 iterations of the systematic sweep Gibbs sampling algorithm by drawing new points on the plot (just as we did in class).}
 
 
 \begin{figure}[htp]
@@ -89,8 +89,10 @@ NAME: \line(1,0){380}
 \cprob{\sigsq}{\beta_0, \beta_1, \X, \y} &\propto& 
 \eeqn} \spc{4}
 
-\easysubproblem{Let's run 10,000 iterations of the Gibbs sampler you created in part (f) by running lines  22--78 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/normal_ridge_gibbs.R}{here}. What are the three plots that popped up? Where would you say the chains burned in at?}\spc{4}
+\easysubproblem{Let's run 10,000 iterations of the Gibbs sampler you created in part (f) by running lines  22--78 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/normal_ridge_gibbs.R}{here}. Explain the three plots that popped up. Where would you say the chains burned in at?}\spc{4}
 
+
+\easysubproblem{Now let's assess autocorrelation for the Gibbs chains in part (g) by running lines 82--87 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/normal_ridge_gibbs.R}{here}. Explain these three plots? What do we mod our chains by to thin them out so the chains represent independent samples?}\spc{4}
 \end{enumerate}
 %
 
