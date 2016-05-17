@@ -148,9 +148,18 @@ NAME: \line(1,0){380}
 
 \easysubproblem{Did the M-H sampler \qu{capture} the true parameter values in the approximate 95\% credible region?}\spc{4}
 
+\easysubproblem{Run a hypothesis test of $H_0: \beta_1 \leq 2.5$ by approximating the $p$-value from the plot.}\spc{4}
+
+
+\hardsubproblem{Explain carefully how you would use MCMC to create samples from $\cprob{Y^*(t=1)}{Y,t}$.}\spc{4}
+
 \hardsubproblem{Look at lines 41 and 53 in the code \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/ppoisson_regression_mh.R}{here}. What is the M-H \qu{candidate density?} You need to reference line 2 as well.}\spc{4}
 
+\easysubproblem{Run the code on lines 117--120 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/ppoisson_regression_mh.R}{here} which will print out the acceptance probability for the $\beta_{t+1, 0}~|~\beta_{t, 0}$ proposal followed by the acceptance probability of the $\beta_{t+1, 1}~|~\beta_{t, 1}$ proposal. Write them down here.}\spc{4}
 
+\hardsubproblem{[M.A.] During the times the proposals were not accepted, what exactly was going on?}\spc{4}
+
+\hardsubproblem{[M.A.] Why is the candidate density you wrote in (j) silly given the model in (a)? Think carefully about what a Poisson r.v. is and you will see why.}\spc{4}
 
 \end{enumerate}
 
