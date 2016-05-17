@@ -114,3 +114,8 @@ abline(v = quantile(beta1s, 0.975), col = "grey", lwd = 3)
 abline(v = true_beta1, col = "red", lwd = 3)
 #plot
 
+#assess the efficiency of the MH-steps
+sum(accbeta0s) / T
+sum(accbeta1s) / T
+#print
+

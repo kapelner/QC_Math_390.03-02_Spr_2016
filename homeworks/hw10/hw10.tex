@@ -76,7 +76,7 @@ NAME: \line(1,0){380}
 
 \intermediatesubproblem{We previously have shown that if $X~|~\theta \sim \binomial{n}{\theta}$ and the prior on $\theta \sim \betanot{\alpha}{\beta}$, then $X \sim \betabinomial{n}{\alpha}{\beta}$. Even though we proved this result, pretend like you didn't know it and create a Gibbs sampler which finds $\prob{X}$.} \spc{8}
 
-\easysubproblem{Consider the simple linear regression model under OLS with $n$ data points. Assume the true $\beta_0 = 2$ and $\beta_1 = -2$ and $\sigsq = 1$. Let's sample $n=3$ points. Run the code on lines 1--20 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/normal_ridge_gibbs.R}{here} which will plot the 3 data points and provide a best fit line. Do you think the best fit line does a good job?}\spc{1}
+\easysubproblem{Consider the simple linear regression model under OLS with $n$ data points. Assume the true $\beta_0 = 2$ and $\beta_1 = -2$ and $\sigsq = 1$. Let's sample $n=3$ points. Run the code on lines 1--20 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/normal_ridge_gibbs.R}{here} by copying them from the website and pasting them into an R console. This will plot the 3 data points and provide a best fit line. Do you think the best fit line does a good job?}\spc{1}
 
 
 \easysubproblem{Consider the model in (d). We impose priors of $\beta_0 \sim \normnot{0}{\sigsq / m}$, $\beta_1 \sim \normnot{0}{\sigsq / m}$ and $\sigsq \sim \invgammanot{\overtwo{n_0}}{\overtwo{n_0 \sigsq_0}}$ which is the model we did in class. Find the kernel of the posterior.}\spc{8}
@@ -93,8 +93,66 @@ NAME: \line(1,0){380}
 
 
 \easysubproblem{Now let's assess autocorrelation for the Gibbs chains in part (g) by running lines 82--87 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/normal_ridge_gibbs.R}{here}. Explain these three plots? What do we mod our chains by to thin them out so the chains represent independent samples?}\spc{4}
+
+
+\easysubproblem{Now run lines 99 -- 119 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/normal_ridge_gibbs.R}{here} which will first burn and thin the chains. Explain these three plots. What distributions do these frequency histograms approximate? You must have $\prob{\text{something}}$ in your answer. What are the blue lines? What are the red lines? What are the grey lines? Read the code if you have to for the answers.}\spc{4}
+
 \end{enumerate}
-%
+
+\problem{These are questions which deal with the change point model. We did this in class in Lecture 23.}
+
+\begin{enumerate}
+
+\easysubproblem{Consider the change point Poisson model we looked at in class. We have $m$ exchangeable Poisson r.v.'s with parameter $\lambda_1$ followed by $n-m$ exchangeable Poisson r.v.'s with parameter $\lambda_2$. Both rate parameters and the value of $m$ are unknown so the parameter space is 3-dimensional. Write the likelihood below.}\spc{4}
+
+\easysubproblem{Consider the model in (a) where $\lambda_1 = 2$ and $\lambda_2 = 4$ and $m=10$ and $n=30$. Run the code on lines 1--12 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/poisson_gamma_change_pt.R}{here} by copying them from the website and pasting them into an R console. This will plot a realization of the data with those parameters. Can you identify the change point visually?}\spc{1}
+
+\easysubproblem{Consider the model in (a) but we are blinded to the true values of the parameters given in (b) and we wish to estimate them via a Gibbs sampler. Run the code on lines 19--77 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/poisson_gamma_change_pt.R}{here} which will run 10,000 iterations. What iteration number do you think the sampler converged?}\spc{1}
+
+\easysubproblem{Now we wish to assess autocorrelation among the chains from the Gibbs sampler run in (d). Run the code on lines 81--86 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/poisson_gamma_change_pt.R}{here}. What do we mod our chains by to thin them out so the chains represent independent samples?}\spc{1}
+
+\easysubproblem{Run the code on lines 98--118 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/poisson_gamma_change_pt.R}{here} which will first burn and thin the chains. Explain these three plots. What distributions do these frequency histograms approximate? You must have $\prob{\text{something}}$ in your answer. What are the blue lines? What are the red lines? What are the grey lines? Read the code if you have to for the answers.}\spc{4}
+
+\hardsubproblem{Test the following hypothesis: $H_0: m \leq 15$ by approximating the $p$-value from one of the plots in (e).}\spc{4}
+
+\hardsubproblem{[M.A.] Explain a procedure to test $H_0: \lambda_1 = \lambda_2$. You can use the plots if you wish, but you do not have to.}\spc{8}
+
+\hardsubproblem{What exactly would come from $\cprob{X^*}{X}$ in the context of this problem? Assume $X^*$ is the same dimension of $X$ (in our toy example, $n=30$). Explain in full detail. Be careful!}\spc{4}
+
+\hardsubproblem{Explain how you would estimate $\cov{\lambda_1}{\lambda_2}$ and what do you think this estimate will be close to?}\spc{4}
+
+
+\end{enumerate}
+
+
+\problem{These are questions which deal with using the Metropolis-Hastings (M-H) algorithm to estimate the parameters in a Poisson regression. We did this in class in Lecture 23.}
+
+\begin{enumerate}
+
+\easysubproblem{Consider the Poisson regression where we have $Y_i \exchdist \poisson{\beta_0 + \beta_1 t_i}$ with $n$ samples. Each sample has s timestamp and a count i.e. $\angbracks{t_i, y_i}$. Write the likelihood below.}\spc{4}
+
+
+\easysubproblem{Explain why you cannot create a systematic sweep Gibbs sampler for $\cprob{\beta_0, \beta_1}{X}$.}\spc{4}
+
+\easysubproblem{If you cannot use a Gibbs sampler for $\cprob{\beta_0, \beta_1}{X}$, what algorithm can you use instead?}\spc{4}
+
+\easysubproblem{Consider the model in (a) where $\beta_0 = 1$ and $\beta_1 = 3$ and $n=50$. Run the code on lines 1--22 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/poisson_regression_mh.R}{here} by copying the lines (exactly) from the website and pasting them into an R console. This will plot $n$ realizations of the data with $t_i$ evenly spaced in $\bracks{0,2}$. Can you identify the expectation's linear relationship with time visually?}\spc{1}
+
+\easysubproblem{Consider the model in (a) but we are blinded to the true values of the parameters given in (c) and we wish to estimate them via a M-H sampler. Run the code on lines 23--83 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/poisson_regression_mh.R}{here} which will run 100,000 iterations. What iteration number do you think the sampler converged?}\spc{1}
+
+\easysubproblem{Now we wish to assess autocorrelation among the chains from the Gibbs sampler run in (d). Run the code on lines 87--91 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/poisson_regression_mh.R}{here}. What do we mod our chains by to thin them out so the chains represent independent samples?}\spc{1}
+
+\hardsubproblem{Why is the autocorrelation so much higher than what you found in the normal-ridge with unknow variance model's Gibbs sampler and the Poisson change point model's Gibbs sampler (problems 2h and 3d)?}\spc{4}
+
+\easysubproblem{Run the code on lines 100--115 of the code at the link \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/ppoisson_regression_mh.R}{here} which will first burn and thin the chains. Explain these three plots. What distributions do these frequency histograms approximate? You must have $\prob{\text{something}}$ in your answer. What are the blue lines? What are the red lines? What are the grey lines? Read the code if you have to for the answers.}\spc{4}
+
+\easysubproblem{Did the M-H sampler \qu{capture} the true parameter values in the approximate 95\% credible region?}\spc{4}
+
+\hardsubproblem{Look at lines 41 and 53 in the code \href{https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/homeworks/hw10/ppoisson_regression_mh.R}{here}. What is the M-H \qu{candidate density?} You need to reference line 2 as well.}\spc{4}
+
+
+
+\end{enumerate}
 
 \end{document}
 
