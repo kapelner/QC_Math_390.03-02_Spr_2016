@@ -9,7 +9,7 @@ My lectures can be listened to as clyp.it tracks and lecture notes are also scan
 * Review 3 5/18/16 [(audio)](https://clyp.it/s5ndrkhm)
 * Lecture 23 5/16/16 [(audio)](https://clyp.it/vcp1p31a) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec23kap.pdf)
 * Lecture 22 5/11/16 [(audio)](https://clyp.it/zpm1r3xl) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec22kap.pdf)
-* Lecture 21 5/9/16 [(audio)](https://clyp.it/2av2owk3) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec21kap.pdf)
+* Lecture 21 5/9/16 [(audio)](https://clyp.it/2av2owk3) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec21kap.pdf) [(Elliot Gangaram)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec21elg.pdf)
 * Lecture 20 5/4/16 [(audio)](https://clyp.it/tkmnibam) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec20kap.pdf) [(Elliot Gangaram)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec20elg.pdf)
 * Lecture 19 5/2/16 [(audio)](https://clyp.it/5mrjy5zs) [(Prof)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec19kap.pdf) [(Elliot Gangaram)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/lectures/lec19elg.pdf)
 * Review 2 4/18/16 [(audio)](https://clyp.it/fuyth421)
