@@ -58,8 +58,7 @@ My lectures can be listened to as clyp.it tracks and lecture notes are also scan
 
 * Final May 25 2016 8:30AM-10:30AM
 
-<!--
-[(exam)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/final/final.pdf) [(exam solutions)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/final/final_solutions.pdf)-->
+[(exam)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/final/final.pdf) [(exam solutions)](https://github.com/kapelner/QC_Math_390.03-02_Spr_2016/blob/master/exams/final/final_solutions.pdf)
 
 ## Office Hours
 
